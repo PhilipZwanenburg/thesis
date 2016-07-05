@@ -1,0 +1,667 @@
+\documentclass[12pt,Bold,letterpaper,TexShade]{mcgilletdclass}
+%\usepackage[dvips,final]{graphicx}
+\usepackage[dvips]{geometry}
+\usepackage{texshade}
+
+% NOTES:
+% To get bibtex to work correctly, perform the following steps:
+% 1) In the command prompt, type 'pdflatex mydoc.tex'
+% 2) 						type 'bibtex mydoc'
+% 3)						type 'pdflatex mydoc.tex'
+% If there were no errors, the bibliography and references should now be displayed.
+% http://tex.stackexchange.com/questions/85147/mac-os-latex-install-not-compiling-bibliography
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% My packages
+
+\usepackage{wrapfig}
+\usepackage{lettrine}
+\usepackage{amssymb}
+\usepackage{mdwlist}
+\usepackage{color}
+\usepackage{capt-of}
+\usepackage{multirow}
+
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage[euler]{textgreek}
+\usepackage{epstopdf}
+\usepackage{mathtools}
+\usepackage{amsmath,amsthm,mathtools}
+\usepackage{relsize}
+\usepackage{breqn}
+\usepackage{standalone}
+\usepackage{tikz}
+\usepackage{lineno}
+\numberwithin{equation}{section}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+% For Theorems, Lemmas, Proofs, etc; 
+% http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/Theorems.html
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{soul}
+\usepackage{cases}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+\usepackage{appendix}
+\usepackage{color}
+
+% For section symbol
+\def\Snospace~{\S{}}
+\renewcommand*\sectionautorefname{\Snospace}
+\renewcommand*\subsectionautorefname{\Snospace}
+\renewcommand*\subsubsectionautorefname{\Snospace}
+
+\newcommand{\slfrac}[2]{\left.#1\middle/#2\right.}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}
+
+ % Define commands to assure consistent treatment throughout document
+ \newcommand{\eqnref}[1]{(\ref{#1})}
+ \newcommand{\class}[1]{\texttt{#1}}
+ \newcommand{\package}[1]{\texttt{#1}}
+ \newcommand{\file}[1]{\texttt{#1}}
+ \newcommand{\BibTeX}{\textsc{Bib}\TeX}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Have you configured your TeX system for proper  %%
+%% page alignment? See the McGillETD documentation %%
+%% for two methods that can be used to control     %%
+%% page alignment. One method is demonstrated      %%
+%% below. See documentation and the ufalign.tex    %%
+%% file for instructions on how to adjust these    %%
+%% parameters.                                     %%
+\addtolength{\hoffset}{0pt}                        %%
+\addtolength{\voffset}{0pt}                        %%
+%%                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       Define student-specific info
+\SetTitle{\huge{Title of Thesis\\Title of Thesis Line 2\\Title of Thesis Line3}}%
+\SetAuthor{Author of Thesis}%
+\SetDegreeType{Doctor of Philosophy}%
+\SetDepartment{Department}%
+\SetUniversity{McGill University}%
+\SetUniversityAddr{Montreal,Quebec}%
+\SetThesisDate{2004-12-01}%
+\SetRequirements{Requirements Statement}%
+\SetCopyright{Copyright Statement}%
+
+
+
+%\listfiles%
+\begin{document}
+
+\maketitle%
+
+\begin{romanPagenumber}{2}%
+
+\SetDedicationName{\uppercase{Dedication}}%
+\SetDedicationText{This document is dedicated to the graduate students of the McGill University.}%
+\Dedication%
+
+\SetAcknowledgeName{\uppercase{Acknowledgements}}%
+\SetAcknowledgeText{Acknowledgments, if included, must be written in complete sentences.  Do not use direct address.  For example, instead of Thanks, Mom and Dad!, you should say I thank my parents. }%
+\Acknowledge%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         English Abstract                        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\SetAbstractEnName{\uppercase{Abstract}}%
+\SetAbstractEnText{ Abstract in English and French are required. The text of the abstract in English begins here.}
+\AbstractEn%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%         French Abstract                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\SetAbstractFrName{\uppercase{ABR\'{E}G\'{E}}}%
+\SetAbstractFrText{ The text of the abstract in French begins here.  }%
+\AbstractFr%
+
+\begingroup
+\hypersetup{linkcolor=black}
+\TOCHeading{\uppercase{Table of Contents}}%
+\LOTHeading{\uppercase{List of Tables}}%
+\LOFHeading{\uppercase{List of Figures}}%
+\tableofcontents %
+\listoftables %
+\listoffigures %
+\endgroup
+
+\end{romanPagenumber}
+
+%\mainmatter %
+ 
+\chapter{Introduction}
+\section{Introduction}
+
+There is an eps file of the mcgill logo here: https://github.com/vijayrudraraju/thesis.
+
+\begin{equation} \nonumber
+\begin{split}
+& \frac{\partial}{\partial t} u(\boldsymbol x^{c},t) + \nabla \cdot \boldsymbol f(u(\boldsymbol x^{c},t)) = 0, t \ge 0, 
+\boldsymbol x^{c} \coloneqq
+\begin{bmatrix} x & y & z \end{bmatrix} \in \boldsymbol \Omega, \\
+& u(\boldsymbol x^{c},0) = u_0(\boldsymbol x^{c}), \boldsymbol x^{c} \in \boldsymbol \Omega,
+\end{split}
+\end{equation}
+
+\begin{equation} \label{eq:DG_strong_integral_poly_ref}
+\begin{split}
+\int_{\boldsymbol \Omega_r}
+\boldsymbol \chi(\boldsymbol \xi^r)^T &
+J_m^{\Omega} \boldsymbol \chi(\boldsymbol \xi^r) \frac{d}{dt} \hat{\boldsymbol u}_m(t)^T
+d \boldsymbol \Omega_r
++ \int_{\boldsymbol \Omega_r} \boldsymbol \chi(\boldsymbol \xi^r)^T \frac{\partial}{\partial \xi} \boldsymbol \chi(\boldsymbol \xi^r) \hat{\boldsymbol f}^r_{1m}(t)^T d \boldsymbol \Omega_r \\
+& + \int_{\boldsymbol \Omega_r} \boldsymbol \chi(\boldsymbol \xi^r)^T \frac{\partial}{\partial \eta} \boldsymbol \chi(\boldsymbol \xi^r) \hat{\boldsymbol f}^r_{2m}(t)^T d \boldsymbol \Omega_r
++ \int_{\boldsymbol \Omega_r} \boldsymbol \chi(\boldsymbol \xi^r)^T \frac{\partial}{\partial \zeta} \boldsymbol \chi(\boldsymbol \xi^r) \hat{\boldsymbol f}^r_{3m}(t)^T d \boldsymbol \Omega_r \\
+& + \int_{\boldsymbol \Gamma_r} 
+\boldsymbol \chi(\boldsymbol \xi^r)^T 
+J_m^{\Gamma} \hat{\boldsymbol n}_m \cdot \boldsymbol f^{C}_m
+d \boldsymbol \Gamma_r = \boldsymbol 0^T,
+\end{split}
+\end{equation}
+
+Selecting suitable sets of surface and volume cubature nodes and using~\eqref{eq:DG_strong_integral_poly_ref} is given discretely by \cite[eq. ({\color{blue}4.24})]{castonguay2012}, \cite[eq. ({\color{blue}23})]{williams2014a},
+
+presented in~\autoref{sec:NumericalResults} to numerically verify
+
+
+\begin {table}[!htbp]
+\begin{center}
+\begin{tabular}{| l | l | c c c | c c c |}
+	\hline
+	 & & $L_2$ Error & & & Conv. Order & & \\
+	\hline
+	Polynomial & Mesh Size & $\rho$ & $p$     & $s$     & $\rho$ & $p$     & $s$     \\
+	\hline
+P1	& 7.91e-02 & 1.66e-01 & 2.42e-01 & 4.52e-02 & - & - & - \\
+	& 3.95e-02 & 4.93e-02 & 6.58e-02 & 1.58e-02 & 1.75 & 1.88 & 1.52 \\
+	& 1.98e-02 & 1.63e-02 & 2.08e-02 & 5.63e-03 & 1.60 & 1.66 & 1.49 \\
+	& 9.88e-03 & 5.56e-03 & 6.90e-03 & 2.00e-03 & 1.55 & 1.59 & 1.49 \\
+	\hline
+P2	& 1.09e-01 & 1.75e-03 & 1.78e-03 & 1.55e-03 & - & - & - \\
+	& 5.46e-02 & 2.20e-04 & 2.06e-04 & 2.38e-04 & 2.99 & 3.11 & 2.70 \\
+	& 2.73e-02 & 2.75e-05 & 2.47e-05 & 3.22e-05 & 3.00 & 3.06 & 2.89 \\
+	& 1.36e-02 & 3.43e-06 & 2.99e-06 & 4.15e-06 & 3.01 & 3.05 & 2.96 \\
+	& 6.82e-03 & 4.29e-07 & 3.69e-07 & 5.25e-07 & 3.00 & 3.02 & 2.98 \\
+	\hline
+P3	& 8.33e-02 & 6.68e-04 & 8.98e-04 & 6.25e-05 & - & - & - \\
+	& 4.17e-02 & 7.09e-05 & 9.54e-05 & 4.82e-06 & 3.24 & 3.24 & 3.70 \\
+	& 2.08e-02 & 7.25e-06 & 9.89e-06 & 4.05e-07 & 3.29 & 3.27 & 3.57 \\
+	& 1.04e-02 & 7.64e-07 & 1.06e-06 & 2.76e-08 & 3.24 & 3.22 & 3.87 \\
+	& 5.21e-03 & 7.23e-08 & 1.03e-07 & 1.76e-09 & 3.40 & 3.36 & 3.97 \\
+	\hline
+P4	& 6.74e-02 & 6.33e-06 & 7.24e-06 & 4.53e-06 & - & - & - \\
+	& 3.37e-02 & 2.58e-07 & 2.68e-07 & 2.39e-07 & 4.62 & 4.76 & 4.24 \\
+	& 1.69e-02 & 8.27e-09 & 7.60e-09 & 8.92e-09 & 4.96 & 5.14 & 4.74 \\
+	& 8.43e-03 & 2.56e-10 & 2.22e-10 & 2.91e-10 & 5.01 & 5.10 & 4.94 \\
+	\hline
+\end{tabular}
+\caption{Errors and Convergence Orders - $PI_c  = 2P$ (GL/Cools), $PI_{cf} = 2P$ (GL), $PG = P$, EFE = 1}
+\label{tab:SM_PIc=2P(GL/Cools)_PIcf=2P(GL)_PG=P_EFE=1}
+\end{center}
+\end{table}
+
+
+\begin{minipage}{\textwidth}
+\centering
+    \includegraphics[width=.4\textwidth]{example-image.pdf}
+ \captionof{figure}{figure caption}
+ \label{fig:fig1}
+\end{minipage}
+
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{./figures/StructuredMixedML1P4_ToBeCurved.eps}
+        \caption{Mesh before Mapping}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{./figures/StructuredMixedML1P4_Curved.eps}
+        \caption{Mapped Mesh}
+    \end{subfigure}
+    \caption{Supersonic Vortex Structured Mixed Mesh}
+    \label{fig:SupersonicVortexStructuredML1P4}
+\end{figure}
+
+
+\begin{figure}[ht!] 
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/SupersonicVortexMachDist_ML1P4.eps}
+\caption{Mach Number Distribution: $P=4$, $PG=4$, $PF=5$, $PFr=8$, $PIs =8$, $PIc =11$, $PIsf =8$, $PIcf =12$, $EFE = 1$}
+\label{fig:MachDistP4PG4PF5PFr8PIs8PIc11PIsf8PIcf12EFE1}
+\end{figure}
+
+
+\begin{BulletList}
+	\item{setspace (2000/12/01)}
+	\item{ulem (2000/05/26)}
+		\subitem{You can use \verb=\uline{text}= to underline \uline{text}. The documentation
+of the ulem package provides more information.}
+	\item{sectsty (1999/04/12)}
+		\subitem{Since underlining in section headings is rather nontrivial, the
+sectsty package was used to manipulate the formatting of sectional
+headings.}
+	\item{ragged2e (1999/06/08)}
+		\subitem{This package adds support to handle ragged right justification appropriately.}
+	\item{everysel (1999/06/08)}
+		\subitem{Required by the ragged2e package.}
+\end{BulletList}
+\section{General Guidelines}
+\label{sec:NumericalResults}
+\begin{BulletList}
+	\item{Please use commands provided by mcgilletdclass, otherwise your thesis may not be able to pass the validation check.}
+	\item{If you run into problems using this stylesheet, please contact us as soon as possible.}
+	\item{Files you must submit: *.tex, *.dvi and *.bib files.}
+\end{BulletList}
+
+
+\chapter{Usage}
+An example of how to use the mcgilletdclass document class is provided in 
+mcgilletdsample.tex. Details of how to compile the example are 
+provided in a later section.
+Use this class file the same way as the report class, by putting
+\verb=\documentclass{mcgilletdclass}= at the beginning of the \LaTeXe file.
+There are only a few options available with this document class, which
+will be described in the following sections. Due to the requirements of
+the McGill University, this document class does not support \BVisualEmphasis{two-sided
+printing or two-column page layout}.
+
+\chapter{The document class options}
+\section{Font Size Options: 10pt, 11pt or 12pt}
+These are the font sizes that are available in the standard \LaTeXe report 
+document class. The 12pt font size is the preferred option for the final 
+typeset version of the document. Obviously, only one of these options should 
+be used in the \verb=\documentclass= command. The 12pt option is selected by default 
+if none of these options are specified in
+the \verb=\documentclass= command.
+
+
+\chapter{Title Page}
+The document preamble is the part that occurs before the \verb=\begin{document}=
+statement. Throughout the document, information about the author,
+the title, etc., is \BVisualEmphasis{required}. The following commands are used in
+the document preamble to define all of the required text strings that
+are used to personalize the document.
+\begin{BulletList}
+	\item{\verb=\SetTitle{text}= :This is the title as it appears on the 
+title page. The title must be entered using
+all upper-case letters. Line-breaks can be entered in the title by
+using the \verb=\\= command.}
+	\item{\verb=\SetAuthor{text}= :The author's name, using capital letters 
+where appropriate.}
+	\item{\verb=\SetDegreeType{text}= :Something like "Master of Science" or 
+"Doctor of Philosophy".}
+	\item{\verb=\SetDepartment{text}= :The department or faculty }
+	\item{\verb=\SetUniversity{text}= :McGill University }
+	\item{\verb=\SetUniversityAddr{text}= :Montreal, Quebec}
+	\item{\verb=\SetThesisDate{text}= :Date of your thesis}%
+	\item{\verb=\SetRequirements{text}= :Text of requirements statements }%
+	\item{\verb=\SetCopyright{text}= :Copyright Statements}%
+\end{BulletList}
+
+
+\chapter{The Thesis FrontSection}
+In this section, we present the commands used to add all pages prior to
+the first chapter of the thesis. Some of these commands are required
+while some of them are optional.
+\section{Title page(required)}
+The command \verb=\maketitle= formats the title page. 
+\section{Dedication}
+The optional dedication can be inserted by using the command 
+\verb=\SetDedicationName{text},\SetDedicationText{text}= and
+\verb=\Dedication=, where text is the contents of the dedication.
+\section{Acknowledgments}
+In order to format the optional acknowledgments, use the command 
+\verb=\SetAcknowledgeName{text},\SetAcknowledgeText{text}= and
+\verb=\Acknowledge{text}=. The title "ACKNOWLEDGMENTS" is automatically
+added to the table of contents. 
+\section{Table of Contents, List of Tables and Figures(required)}
+These lists are generated with the commands \verb=\tableofcontents=,
+\verb=\listoftables and \listoffigures=. The titles of these lists may
+be changed by renewing the \verb=\TOCHeading{text}, \LOTHeading{text}=, and
+the \verb=\LOFHeadling{text}= macros, respectively.
+\section{Abstract(required)}
+This command, which actually is an environment, sets up the required 
+text for the abstract. The proper use is : \verb=\SetAbstractEnName{text}=
+for the heading of the abstract and \verb=\SetAbstractEnText{text}= for the 
+text of the abstract. The command \verb=\AbstractEn= is used to incorporate 
+the heading of the abstract and the abstract text into your document.
+\verb=\SetAbstractFrName{text},\SetAbstracFrText{text} and \AbstractFr= are the
+equivalent commands for the French abstract, and \verb=\SetAbstractOtName{text}=, 
+\verb=\SetAbstracOtText{text}= and \verb=\AbstractOt= are for an abstract in 
+another language. And abstract in English and French are required by the University.
+
+
+\chapter{The Thesis "Mainmatter"}
+In this section, we describe the commands used to format the
+main chapters of the thesis. Please refer to the sample thesis file
+mcgilletdsample.tex for examples of how these commands are used.
+\section{Chapter Titles}
+Use the \verb=\chapter= command to start a new chapter in the document. If 
+the boolean SetDSpace is true, then the chapter will
+be typeset using double-spacing. In general, the class file sets the
+SetDSpace boolean appropriately so that the selection of singlespacing
+or double-spacing is transparent to the user.
+Note that the chapter title may extend over more than one line
+by using the following form:
+\verb=\chapter=[Title Line 1 \verb=\protect\newline= Title Line 2]{%
+Title Line 1 \verb=\\= Title Line 2}%
+\section{Section Headings}
+Use the \verb=\section= command for first-level subheadings. Use the 
+\verb=\subsection= command for second-level subheadings. Since it
+may be difficult to distinguish third-level subheadings from second-level
+subheadings, it is suggested that the \verb=\paragraph= command be
+used for all third-level subheadings. Note that the text of the heading
+may extend over more than one line. In this case, use the same command
+as shown for the \verb=\chapter= command above.
+\section{Tables and Figures}
+Use the \verb=\begin{table} and \end{table}= to contain a new table.\\
+Use the \verb=\begin{figure} and \end{figure}= to include a new figure.
+Captions must be placed above
+tables and below figures. \verb=\TableCaption{text}= is for tables and 
+\verb=\FigureCaption{text}= is for figures.  Please note that captions
+are required for both figures and tables, and must be supplied on a 
+strictly one-to-one basis. \\
+
+\verb=\TableCaptionOpt{text1}{text2}= is another command for the similar use.
+Here, text1 will appear in the list of tables; text2 is the actual caption of
+a table. Similarly, \verb=\FigureCaptionOpt{text1}{text2}= is for figures. \\
+
+
+
+\chapter{The Thesis "Backmatter"}
+The following commands are used to control the appearance and content
+of appendices and other thesis end-matter.
+You might have to tailor some of these commands to suit your 
+requirements.
+Use the \verb=\ETDAppendix{Appendix}{text}=
+and \verb=\ETDAppendix{Appendix}{text}=
+commands to add an appendix; you may have more than one appendix if 
+necessary.
+
+\section{List of References}
+We only support the BibTex tool.
+Use the \verb=\bibHeading{text}= command to set the heading of your references.
+Use the \verb=\bibliography{bibtexdatabase}= to incorporate your BibTex list.
+Use the \verb=\bibliographystyle{text}= to set the citation style of your
+bibliography.
+
+Here is a simple example to demonstrate the use of BibTex.
+
+The following text and latex commands (in conjunction with the mgilletd.bib
+file included in the mcgilletd package):
+
+
+produce:
+
+
+
+The references themselves are inserted in the document at
+the point of the \verb=\bibliography{mcgilletd}= command
+(see the end of this document).
+
+\chapter{Special Commands}
+The commands described in this section are used to aid in the commenting
+of the source file, and also describe support for special formatting.
+These commands are optional, in that they are not required in order
+to format the document.
+\section{Automatically Generated Indices}
+Several commands have been included in this document class file to facilitate
+the creation of automatically generated lists with the MakeIndex
+program. 
+Use this command in the document preamble to enable the creation of an 
+index file. If only one index is to be created, then just use
+the
+
+command. However, if there is to be more than one index, or it is
+desirable to name the index file something besides the default, use
+the following command
+
+A unique filename for each index must be assigned, so a 
+command should exist for each index, in the document preamble.
+Issue this command at the point in the document where the index 
+is to be typeset. Typically, this will be after the lists of figures and
+tables (if included). The command creates a new chapter and sets up
+the initial page formatting for the list to be generated. The form of
+the command directly corresponds to the form of the
+command used in the document. 
+This is the command that is used to actually define what is going to be 
+added to the index list. As with the other indexing commands
+there are two forms that can be used, depending on how the
+command was issued. For generating only one index file,
+use the command shown below
+If there are more than one index files, or if a custom filename was used
+for the index, then the following form of the command must be used:
+Of course, for each index file that is created, a run of the
+MakeIndex program will be required. 
+\section{Changing the Code . . .}
+It might be necessary to modify some of the commands defined in the
+documentclass. However, you do NOT have to (and SHOULD NOT!) edit
+the mcgilletdclass.cls file directly. Instead, place any commands
+you wish to create or modify in a file called mcgilletdclass.cfg and
+put it in the same directory as your main thesis file.  The mcgilletdclass
+documentclass will automatically load this file.  Please note that 
+required commands must not be changed if your thesis is to be correctly
+converted to XML for the McGill EThesis Project.
+
+\section{An Example Thesis File}
+In order to typeset the example file, the following files should exist:
+mcgilletdclass.cls, mcgilletdsample.tex, mcgilletd.bib, chick.eps, and the additional
+packages described at the beginning of this document.  (See the documentation
+for your local installation of \LaTeXe for information on how to install
+local customizations.)
+
+Use the following commands to typeset the mcgilletdsample file:
+
+\begin{verbatim}
+latex mcgilletdsample
+bibtex mcgilletdsample
+latex mcgilletdsample
+latex mcgilletdsample
+\end{verbatim}
+
+\section{Special Cases}
+An objective of the McGill Electronic Thesis Project is to create a means to 
+ensure the long-term preservation and long-term accessibility of theses created 
+at McGill University. The submitted theses will be archived as XML, which is a 
+subset of SGML, a markup language for the interchange of structured data.  
+The basis for SGML/XML is the description of the contents, not the layout.  Therefore,
+the mcgilletdclass documentclass adds sematic support to text layout commands. Some of them
+are described as below:
+
+
+\begin{BulletList}
+		\item{Emphasis ProperName}
+		\begin{romanList}
+			\item{ \verb=\BProperName= is to set text to boldface; the text will be treated as a proper name}.
+			\item{ \verb=\BIProperName= is to set text to boldface and italic; the text will be treated as a proper name}.
+			\item{ \verb=\BIUProperName= is to set text to boldface, italic and underline; the text will be treated as a proper name}.
+			\item{ \verb=\BUProperName= is to set text to boldface and underline; the text will be treated as a proper name}.
+			\item{ \verb=\IUProperName= is to set text to italic and underline; the text will be treated as a proper name}.
+			\item{ \verb=\UProperName= is to set text to underline; the text will be treated as a proper name}.
+			\item{ \verb=\IProperName= is to set text to italic; the text will be treated as a proper name}.
+		\end{romanList}
+		\item{Emphasis Technical Term}
+		\begin{romanList}
+			\item{ \verb=\BTechnicalTerm= is to set text to boldface; the text will be treated as a technical term}.
+			\item{ \verb=\BITechnicalTerm= is to set text to boldface and italic; the text will be treated as a technical term}.
+			\item{ \verb=\BIUTechnicalTerm= is to set text to boldface, italic and underline; the text will be a treated as technical term}.
+			\item{ \verb=\BUTechnicalTerm= is to set text to boldface and underline; the text will be treated as a technical term}.
+			\item{ \verb=\IUTechnicalTerm= is to set text to italic and underline; the text will be treated as a technical term}.
+			\item{ \verb=\UTechnicalTerm= is to set text to underline; the text will be treated as a technical term}.
+			\item{ \verb=\ITechnicalTerm= is to set text to italic; the text will be treated as a technical term}.
+		\end{romanList}
+
+		\item{Emphasis Title}
+		\begin{romanList}
+			\item{ \verb=\BTitle= is to set text to boldface; the text will be treated as a title}.
+			\item{ \verb=\BITitle= is to set text to boldface and italic; the text will be treated as a title}.
+			\item{ \verb=\BIUTitle= is to set text to boldface, italic and underline; the text will be a treated as title}.
+			\item{ \verb=\BUTitle= is to set text to boldface and underline; the text will be treated as a title}.
+			\item{ \verb=\IUTitle= is to set text to italic and underline; the text will be treated as a title}.
+			\item{ \verb=\UTitle= is to set text to underline; the text will be treated as a title}.
+			\item{ \verb=\ITitle= is to set text to italic; the text will be treated as a title}.
+		\end{romanList}
+
+		\item{Emphasis ForeignWord}
+		\begin{romanList}
+			\item{ \verb=\BForeignWord= is to set text to boldface; the text will be treated as a Foreign Word}.
+			\item{ \verb=\BIForeignWord= is to set text to boldface and italic; the text will be treated as a Foreign Word}.
+			\item{ \verb=\BIUForeignWord= is to set text to boldface, italic and underline; the text will be a treated as Foreign Word}.
+			\item{ \verb=\BUForeignWord= is to set text to boldface and underline; the text will be treated as a Foreign Word}.
+			\item{ \verb=\IUForeignWord= is to set text to italic and underline; the text will be treated as a Foreign Word}.
+			\item{ \verb=\UForeignWord= is to set text to underline; the text will be treated as a Foreign Word}.
+			\item{ \verb=\IForeignWord= is to set text to italic; the text will be treated as a Foreign Word}.
+		\end{romanList}
+
+		\item{Visual Emphasis}
+		\begin{romanList}
+			\item{ \verb=\BVisualEmphasis= is to set text to boldface; the text will be treated as Visual Emphasis}.
+			\item{ \verb=\BIVisualEmphasis= is to set text to boldface and italic; the text will be treated as Visual Emphasis}.
+			\item{ \verb=\BIUVisualEmphasis= is to set text to boldface, italic and underline; the text will be treated as Visual Emphasis}.
+			\item{ \verb=\BUVisualEmphasis= is to set text to boldface and underline; the text will be treated as Visual Emphasis}.
+			\item{ \verb=\IUVisualEmphasis= is to set text to italic and underline; the text will be treated as Visual Emphasis}.
+			\item{ \verb=\UVisualEmphasis= is to set text to underline; the text will be treated as Visual Emphasis}.
+			\item{ \verb=\IVisualEmphasis= is to set text to italic; the text will be treated as Visual Emphasis}.
+		\end{romanList}
+		
+		\item{Quotation}
+			\begin{romanList}
+			\item{Use \verb=\SingleInlineQuote= command to do \SingleInlineQuote{inline quote}. }
+			\item{Use \verb=\DoubleInlineQuote= command to do \DoubleInlineQuote{inline quote}. }
+			\item{Use \verb=\begin{quote}= and \verb=\end{quote}= for block quote}
+			\end{romanList}
+
+		\item{Verse}
+			\begin{romanList}
+			\item{Use \verb=\verse= command for verse. }
+			\end{romanList}
+		\item{Lists}
+			\begin{romanList}
+			\item{Use \verb=\begin{BulletList}= and \verb=\end{BulletList}= commands to create bulleted lists. }
+			\item{Use \verb=\begin{RomanList}= and \verb=\end{RomanList}= commands to create upper case Roman numbered lists. }
+			\item{Use \verb=\begin{romanList}= and \verb=\end{romanList}= commands to create lower case roman numbered lists. }
+			\item{Use \verb=\begin{AlphList}= and \verb=\end{AlphList}= commands to create upper case Alphabetical lists. }
+			\item{Use \verb=\begin{alphList}= and \verb=\end{alphList}= commands to create lower case alphabetical lists. }
+			\item{Use \verb=\begin{arabicList}= and \verb=\end{arabicList}= commands to create arabic numbered lists. }
+			\end{romanList}
+		\item{Formula}
+			\begin{romanList}
+			\item{Use \verb=\begin{MathFormula}= and \verb=\end{MathFormula}= commands to embed normal math formula as per the following example:}
+				\subitem{  \\
+									\verb=\begin{MathFormula}=\\
+									\verb=\begin{math}=\\
+										... \\
+									\verb=\end{math}=\\
+									\verb=\end{MathFormula}=\\
+							Example:    \begin{MathFormula}
+										\begin{eqnarray}
+										\bar u&=& \int_{I}^E g(x)dx \nonumber \\
+										\end{eqnarray}
+										\end{MathFormula}
+						}
+			\item{Use \verb=\begin{ChemFormula}= and \verb=\end{ChemFormula}= commands for chemical formulae, similar to the above example.}
+				\subitem{  \\
+								\verb=\begin{ChemFormula}=\\
+										... \\
+								\verb=\end{ChemFormula}=\\}
+
+			\end{romanList}					 
+		
+\end{BulletList}
+
+\section{Testing figures and tables.}
+\begin{table}[htbp]
+  \begin{center}
+    \TableCaption{The First Table}
+    \begin{tabular}{llll}
+      \hline
+      First & Second & Third & Fourth\\
+      \hline
+      12 & 26 & 12 & 33 \\
+      17 & 93 & 88 & 3  \\
+      12 & 26 & 12 & 33 \\
+      12 & 26 & 12 & 33 \\
+      12 & 26 & 12 & 33 \\
+      17 & 93 & 88 & 3  \\
+      12 & 26 & 12 & 33 \\
+      12 & 26 & 12 & 33 \\
+      12 & 26 & 12 & 33 \\
+      17 & 93 & 88 & 3  \\
+      12 & 26 & 12 & 33 \\
+      12 & 26 & 12 & 33 \\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\newpage
+
+
+
+
+\chapter{TESTING FOOTNOTES}
+We will now work on testing footnotes.\footnote{This is the first footnote.}
+And now let's add some spurious text so that we can have a second\footnote{This
+is the second footnote. To test if the footnote is typeset single-spaced, 
+we add meaningless text until we can see a second line.} footnote.
+
+
+
+
+	
+	
+
+
+
+
+\SetAppendixName{Appendix}%
+\SetAppendixText{Here is the text of an Appendix.  If only one appendix is required, place it here.}%
+\ETDAppendix{Appendix A}{Here is the text of an Appendix.}%
+\ETDAppendix{Appendix B}{Here is the text of a second, additional Appendix}%
+%fjklsdafjklsdafjkldasjfkldjaskl
+%\end{\ETDAppendix}%
+\bibHeading{References}
+\bibliography{PhD_Thesis}
+\bibliographystyle{elsarticle-num}
+
+
+
+\printindex[keylist]{Index}{Index}{}
+\printindex[abbr]{KEY TO ABBREVIATIONS}{KEY TO ABBREVIATIONS}{}
+
+\end{document}
+
+
+ 
+
+
+
+
+
+
+\grid

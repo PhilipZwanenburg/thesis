@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{castonguay2012}
+P.~Castonguay, P.~Vincent, A.~Jameson,
+  \href{http://dx.doi.org/10.1007/s10915-011-9505-3}{A new class of high-order
+  energy stable flux reconstruction schemes for triangular elements}, Journal
+  of Scientific Computing 51~(1) (2012) 224--256.
+\newblock \href {http://dx.doi.org/10.1007/s10915-011-9505-3}
+  {\path{doi:10.1007/s10915-011-9505-3}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s10915-011-9505-3}
+
+\bibitem{williams2014a}
+D.~Williams, A.~Jameson,
+  \href{http://dx.doi.org/10.1007/s10915-013-9780-2}{Energy stable flux
+  reconstruction schemes for advection-diffusion problems on tetrahedra},
+  Journal of Scientific Computing 59~(3) (2014) 721--759.
+\newblock \href {http://dx.doi.org/10.1007/s10915-013-9780-2}
+  {\path{doi:10.1007/s10915-013-9780-2}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s10915-013-9780-2}
+
+\end{thebibliography}

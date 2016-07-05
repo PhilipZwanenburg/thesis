@@ -1,0 +1,35 @@
+\contentsline {extrachapter}{\uppercase {Dedication}}{ii}{Doc-Start}
+\contentsline {extrachapter}{\uppercase {Acknowledgements}}{iii}{Doc-Start}
+\contentsline {extrachapter}{\uppercase {Abstract}}{iv}{Doc-Start}
+\contentsline {extrachapter}{\uppercase {ABR\'{E}G\'{E}}}{v}{Doc-Start}
+\contentsline {extrachapter}{\uppercase {List of Tables}}{viii}{chapter*.2}
+\contentsline {extrachapter}{\uppercase {List of Figures}}{ix}{chapter*.3}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}General Guidelines}{4}{section.1.2}
+\contentsline {chapter}{\numberline {2}Usage}{6}{chapter.2}
+\contentsline {chapter}{\numberline {3}The document class options}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Font Size Options: 10pt, 11pt or 12pt}{7}{section.3.1}
+\contentsline {chapter}{\numberline {4}Title Page}{8}{chapter.4}
+\contentsline {chapter}{\numberline {5}The Thesis FrontSection}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}Title page(required)}{9}{section.5.1}
+\contentsline {section}{\numberline {5.2}Dedication}{9}{section.5.2}
+\contentsline {section}{\numberline {5.3}Acknowledgments}{9}{section.5.3}
+\contentsline {section}{\numberline {5.4}Table of Contents, List of Tables and Figures(required)}{9}{section.5.4}
+\contentsline {section}{\numberline {5.5}Abstract(required)}{10}{section.5.5}
+\contentsline {chapter}{\numberline {6}The Thesis "Mainmatter"}{11}{chapter.6}
+\contentsline {section}{\numberline {6.1}Chapter Titles}{11}{section.6.1}
+\contentsline {section}{\numberline {6.2}Section Headings}{11}{section.6.2}
+\contentsline {section}{\numberline {6.3}Tables and Figures}{12}{section.6.3}
+\contentsline {chapter}{\numberline {7}The Thesis "Backmatter"}{13}{chapter.7}
+\contentsline {section}{\numberline {7.1}List of References}{13}{section.7.1}
+\contentsline {chapter}{\numberline {8}Special Commands}{14}{chapter.8}
+\contentsline {section}{\numberline {8.1}Automatically Generated Indices}{14}{section.8.1}
+\contentsline {section}{\numberline {8.2}Changing the Code . . .}{15}{section.8.2}
+\contentsline {section}{\numberline {8.3}An Example Thesis File}{15}{section.8.3}
+\contentsline {section}{\numberline {8.4}Special Cases}{16}{section.8.4}
+\contentsline {section}{\numberline {8.5}Testing figures and tables.}{21}{section.8.5}
+\contentsline {chapter}{\numberline {9}TESTING FOOTNOTES}{22}{chapter.9}
+\contentsline {extrachapter}{Appendix A}{23}{chapter.9}
+\contentsline {extrachapter}{Appendix B}{24}{chapter.9}
+\contentsline {extrachapter}{References}{25}{chapter*.8}
