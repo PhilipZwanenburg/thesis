@@ -21,7 +21,6 @@
 \usepackage{color}
 \usepackage{capt-of}
 \usepackage{multirow}
-
 \usepackage{graphicx}
 \usepackage{epsfig}
 \usepackage[euler]{textgreek}
@@ -33,6 +32,7 @@
 \usepackage{standalone}
 \usepackage{tikz}
 \usepackage{lineno}
+\usepackage{textcomp}
 \numberwithin{equation}{section}
 
 \newlength\tindent
@@ -73,13 +73,14 @@
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}
 
- % Define commands to assure consistent treatment throughout document
- \newcommand{\eqnref}[1]{(\ref{#1})}
- \newcommand{\class}[1]{\texttt{#1}}
- \newcommand{\package}[1]{\texttt{#1}}
- \newcommand{\file}[1]{\texttt{#1}}
- \newcommand{\BibTeX}{\textsc{Bib}\TeX}
+% Define commands to assure consistent treatment throughout document
+\newcommand{\eqnref}[1]{(\ref{#1})}
+\newcommand{\class}[1]{\texttt{#1}}
+\newcommand{\package}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\BibTeX}{\textsc{Bib}\TeX}
 
+\usepackage{titling}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -95,32 +96,64 @@
 \addtolength{\voffset}{0pt}                        %%
 %%                                                 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%       Define student-specific info
-\SetTitle{\huge{Title of Thesis\\Title of Thesis Line 2\\Title of Thesis Line3}}%
-\SetAuthor{Author of Thesis}%
-\SetDegreeType{Doctor of Philosophy}%
-\SetDepartment{Department}%
-\SetUniversity{McGill University}%
-\SetUniversityAddr{Montreal,Quebec}%
-\SetThesisDate{2004-12-01}%
-\SetRequirements{Requirements Statement}%
-\SetCopyright{Copyright Statement}%
+
+%%%       Define student-specific info
+%\SetTitle{\huge{Target-Based Adaptation Using the\\Discontinuous Petrov-Galerkin Method}}%
+%\SetAuthor{Philip Zwanenburg}%
+%\SetDegreeType{Bachelor of Engineering}%
+%\SetDepartment{Department of Mechanical Engineering}%
+%\SetUniversity{McGill University}%
+%\SetUniversityAddr{Montreal,Quebec}%
+%\SetThesisDate{2018-08-31}%
+%\SetRequirements{A thesis submitted to\\McGill University\\in partial fulfillment of the requirements of the degree of\\Doctor of Philosophy}%
+%\SetCopyright{\textcopyright\hspace{1mm}Philip Zwanenburg, 2018}%
+%
+%\pretitle{%
+%  \begin{center}
+%  \LARGE
+%  \includegraphics[width=0.2\textwidth]{./figures/McGillcrest.eps}
+%}
+%\posttitle{\end{center}}
 
 
-
-%\listfiles%
 \begin{document}
 
-\maketitle%
+\begin{titlepage}
+    \centering
+    \large
+    {\huge Target-Based Adaptation Using the\\Discontinuous Petrov-Galerkin Method}
+    \vfill
+    {\Large Philip Zwanenburg}\\
+    Bachelor of Engineering\\
+    \vfill
+    Department of Mechanical Engineering\\
+    McGill University\\
+    Montreal, Quebec\\
+    \vfill
+    \date{\today}
+    \vfill
+    A thesis submitted to\\McGill University\\in partial fulfillment of the requirements of the degree of\\Doctor of Philosophy\\
+    \vfill
+    \includegraphics[width=0.2\textwidth]{./figures/McGillcrest.eps}
+    \vfill
+    {\normalsize \textcopyright\hspace{1mm}Philip Zwanenburg, \the\year}\\
+    \vfill
+    \vfill
+\end{titlepage}
+
+%\maketitle
 
 \begin{romanPagenumber}{2}%
 
-\SetDedicationName{\uppercase{Dedication}}%
-\SetDedicationText{This document is dedicated to the graduate students of the McGill University.}%
-\Dedication%
+%\SetDedicationName{\uppercase{Dedication}}%
+%\SetDedicationText{This document is dedicated to the graduate students of the McGill University.}%
+%\Dedication%
 
 \SetAcknowledgeName{\uppercase{Acknowledgements}}%
-\SetAcknowledgeText{Acknowledgments, if included, must be written in complete sentences.  Do not use direct address.  For example, instead of Thanks, Mom and Dad!, you should say I thank my parents. }%
+\SetAcknowledgeText{
+{\color{red}ToBeDone}\\
+Don't forget NSERC+McGill Funding
+}%
 \Acknowledge%
 
 
@@ -128,14 +161,18 @@
 %%         English Abstract                        %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \SetAbstractEnName{\uppercase{Abstract}}%
-\SetAbstractEnText{ Abstract in English and French are required. The text of the abstract in English begins here.}
+\SetAbstractEnText{
+{\color{red}ToBeDone}
+}
 \AbstractEn%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%         French Abstract                         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \SetAbstractFrName{\uppercase{ABR\'{E}G\'{E}}}%
-\SetAbstractFrText{ The text of the abstract in French begins here.  }%
+\SetAbstractFrText{
+{\color{red}ToBeDone}
+}%
 \AbstractFr%
 
 \begingroup
@@ -152,10 +189,66 @@
 
 %\mainmatter %
  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction}
-\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Motivation}
 
-There is an eps file of the mcgill logo here: https://github.com/vijayrudraraju/thesis.
+The use of computational fluid dynamics (CFD) tools for the numerical analysis of fluid flows has significantly reduced costs associated with aerodynamic design over the past several decades. As computing systems have become increasingly powerful, there has been a corresponding advance in the equations employed for flow simulation (initially beginning with potential equations and now using the full Navier-Stokes equations) as well as in the resolution of complex flow phenomena.
+\\~
+
+Finite volume methods currently represent the industry and, to a great extent, academic standard for the solution of partial differential equations (PDEs) in the aerospace community. This is in large part due to their robustness in the presence of steep gradients in the flow as well as their ability to model geometrically complex objects as a result of the possibly unstructured nature of the volumes. However, finite volume schemes are inherently second order accurate, making their usage inefficient when flow solutions are smooth. In these cases, it is advantageous to use higher-order functions for the representation of the solution, resulting in solution convergence at greater rates than second order as well as necessitating fewer degrees of freedom (DOF) to obtain similar levels of solution resolution. One would thus like to employ spectral methods because of their exponential convergence properties, however these methods are unsuitable in the presence of complex geometry. Pseudo-spectral methods (which can be thought of as a spectral method being used within each control volume of a finite volume scheme) have become the most popular choice when attempting to address the concern of employing high-order accurate (greater than second order) solution representation in the presence of complex geometry. 
+\\~
+
+The discontinuous Galerkin (DG) method, initially proposed by Reed et al.~\cite{reed1973} and subsequently analyzed for the solution of systems of conservation laws~\cite{cockburn1991,cockburn1989a,cockburn1989b,cockburn1990,cockburn1998}, has become the most popular choice of high-order scheme in the CFD community.  Despite its widespread usage, there are still several major issues related to the standard DG method:
+
+\begin{itemize}
+\item High computational complexity with increasing order of accuracy;
+\item Restrictive Courant-Friedrichs-Lewy (CFL) conditions for explicit time stepping and suboptimal dissipation and dispersion characteristics for wave propagation;
+\item Difficulty in generating meshes for complex geometrical objects as well as in converting low-order meshes provided by standard mesh generators to high-order meshes;
+\item Improper test space for best approximation in the energy norm when applied to hyperbolic PDEs. %Niemi2012
+\end{itemize}
+
+The last of these issues provides the motivation for the thesis, however, many difficulties arising from the other listed problems have already been encountered simply while setting up the framework to begin the novel research. With particular regard to the representation of complex curved geometry, it has been observed that improper geometry treatment can contribute significant error to a flow simulation, potentially eliminating any advantages obtained from the use of better test spaces, for example.
+\\~
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Computational Complexity}
+\label{sec:Comp_comp}
+{\color{red} Provide links to sections where related results are provided if available}
+\\~
+
+Significant progress has been made with regard to the DG method's computational complexity, notably through the exploitation of sum factorization techniques, originally proposed by Orszag~\cite{orszag1980} and now employed in the tensor-product Spectral element method (SEM) of Kopriva~\cite{kopriva2009} and for general elements using collapsed tensor-product spaces by Karniadakis et al.~\cite{karniadakis1999}. When explicit methods are used, use of the sum factorization technique reduces the growth in computational complexity from $O(N^{2d})$ to $O(N^{d+1})$ where $d$ is the dimension of the problem and $N = P+1$ where $P$ is the order of the method. Savings for implicit schemes are even greater and further, the appropriate decomposition of element bases into corner, edge, facet, and volume modes allows for the ability to statically condense out the volume modes, significantly reducing the growth rate of globally coupled DOF as the order of the solution is increased in global matrix inversion stages. 
+\\~
+
+Another technique pursued for computational complexity minimization is the use of collocated schemes. Collocated schemes, notably the nodal DG scheme~\cite{hesthaven2002,hesthaven2007}, minimize interpolation and integration costs by collocating solution and flux interpolation nodes with cubature nodes. While this culminates in satisfactory results for linear PDEs solved on straight-sided elements, the use of higher-order accurate cubature rules is advocated in curved elements or when solving nonlinear systems of equations, destroying the collocation property of the scheme. It has also been demonstrated that simplex element ``alpha-optimized'' nodes~\cite{warburton2006} associated with the nodal DG scheme, were unsuitable when solving nonlinear PDEs due to significant aliasing errors~\cite{witherden2014}. This in turn spurred research into the derivation of triangular and tetrahedral element nodes which possess good interpolation properties and have an associated cubature rule, recovering at least volume collocation; this has been pursued by several authors~\cite{witherden2014,williams2014b,shunn2012}. However, cubature rules associated with these nodes are weak in the sense that they can not even exactly integrate linear PDEs on linear elements when cast in the variational weak DG framework which might degrade their accuracy and high-order convergence properties; the conclusions of Bassi et al.~\cite{bassi2013} suggest that this occurs for tensor-product elements.
+\\~
+
+A final avenue which has been pursued for the minimization of computational cost associated with high-order methods is the use of pre-integrated DG schemes~\cite{atkins1996} or DG-type schemes cast in differential form, notably the Energy Stable Flux Reconstruction (ESFR) schemes introduced in~\autoref{sec:CFL_diss_disp}. In these versions of the DG scheme, integral operations associated with the weak formulation of the DG scheme are performed in a preprocessing stage, eliminating many of the cubature operations associated with the original scheme. It is shown in {\color{red} link to scheme derivation section} that the majority of operators can be pre-computed in this fashion for both weak and strong forms of DG-type schemes and that it would in fact be naive not to do so.
+\\~
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Restrictive CFL Condition and Suboptimal Dissipation and Dispersion Properties}
+\label{sec:CFL_diss_disp}
+
+As there is some level of subcell resolution in high-order schemes, the maximum CFL number decreases with the order of approximation of the solution on a fixed mesh. This results in restrictive time step sizes when solving problems explicitly. The recently introduced Flux Reconstruction (FR) schemes, initially proposed for tensor-product elements~\cite{huynh2007} and subsequently generalized to simplex elements~\cite{wang2009}, were originally presented as a unifying framework for DG-type schemes where stable time step limits greatly in excess of the standard DG scheme were achieved. However, restrictions on the type of flux reconstruction allowable while maintaining linear stability of the various schemes proposed by Huynh~\cite{huynh2007} were initially unclear. Appropriate choices for energy stability resulted in the derivation of the ESFR schemes, energy stable for linear advection on tensor-product elements~\cite{vincent2011} and for advection-diffusion on tensor-product elements~\cite{castonguay2013}; the extension to simplex elements has also been made~\cite{castonguay2012,williams2013,williams2014a}.
+\\~
+
+Within the ESFR framework, with different schemes parametrized simply by two parameters $c$ and $k$ (which can be associated with a scaling of the highest mode of the numerical flux correction), investigations were performed to find the values of $c$ and $k$ achieving the maximum stable time steps for linear advection-diffusion problems. These values were denoted as $c_+$ and $k_+$, allowing for time steps approximately twice as large as in the original DG formulation while maintaining the optimal order of convergence~\cite{castonguay2013,castonguay2012,williams2013,williams2014a}. A similar analysis relating to filtering of the numerical flux in the standard DG formulation also demonstrated that the stable time step could be increased while maintaining the optimal order of convergence~\cite{chalmers2014}. More recent work has focused on optimizing within an ESFR framework to find optimal flux reconstruction operators for the minimization of dissipation and dispersion~\cite{asthana2014}. Interestingly, it was found that there existed an FR operator, not fitting within the ESFR framework, which had significantly improved performance as compared to the optimal ESFR operator for the minimization of dissipation and dispersion. While the authors were unable to conclude that this method was energy stable, the extension of the energy stability envelope may make this possible~\cite{vincent2015}.
+\\~
+
+As the formulation of the ESFR schemes is extremely similar to that of the original DG scheme, it was natural that comparisons between the two would be made and it was eventually determined that ESFR schemes could be interpreted as modally filtered DG schemes. This was initially demonstrated in 1D and for straight-sided tensor product extensions~\cite{allaneau2011} and subsequently generalized to straight-sided simplex elements~\cite{williams2014a}. A related investigation proving the equivalence of certain ESFR schemes with DG variants on both straight-sided and curved tensor-product elements was also performed~\cite{degrazia2014,mengaldo2015}. More recently, equivalence between all ESFR schemes and modally filtered DG schemes on curved tensor-product and simplex elements was demonstrated, with the important conclusion that ESFR schemes can be formulated as a weak DG scheme where discontinuous edge flux is substituted for numerical edge flux correction~\cite{zwanenburg2016}. Given the theoretical justifications for the numerical flux and the significant computational effort expended to compute it, this interpretation puts the modification of its contribution to the residual into question, despite increasing the stable time step size. It was further demonstrated that ESFR schemes are inherently less efficient than DG schemes in weak form when solving problems implicitly.
+\\~
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Treatment of Complex Geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Thesis Overview}
+{\color{red} ToBeDone}
+
+\section{Testing}
+
 
 \begin{equation} \nonumber
 \begin{split}

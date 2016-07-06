@@ -1,9 +1,169 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{reed1973}
+W.~Reed, T.~Hill,
+  \href{http://www.osti.gov/scitech/servlets/purl/4491151}{Triangular mesh
+  methods for the neutron transport equation}, 1973.
+\newline\urlprefix\url{http://www.osti.gov/scitech/servlets/purl/4491151}
+
+\bibitem{cockburn1991}
+B.~Cockburn, C.-W. Shu, The {R}unge-{K}utta local projection p1-discontinuous
+  {G}alerkin finite element method for scalar conservation laws, RAIRO
+  Mod{\'e}l. Math. Anal. Num{\'e}r 25~(3) (1991) 337--361.
+
+\bibitem{cockburn1989a}
+B.~Cockburn, C.-W. Shu, {TVB} {R}unge-{K}utta local projection discontinuous
+  {G}alerkin finite element method for conservation laws. ii. general
+  framework, Mathematics of Computation 52~(186) (1989) 411--435.
+
+\bibitem{cockburn1989b}
+B.~Cockburn, S.-Y. Lin, C.-W. Shu, {TVB} {R}unge-{K}utta local projection
+  discontinuous {G}alerkin finite element method for conservation laws iii:
+  one-dimensional systems, Journal of Computational Physics 84~(1) (1989)
+  90--113.
+
+\bibitem{cockburn1990}
+B.~Cockburn, S.~Hou, C.-W. Shu, The {R}unge-{K}utta local projection
+  discontinuous {G}alerkin finite element method for conservation laws. iv. the
+  multidimensional case, Mathematics of Computation 54~(190) (1990) 545--581.
+
+\bibitem{cockburn1998}
+B.~Cockburn, C.-W. Shu, The {R}unge-{K}utta discontinuous {G}alerkin method for
+  conservation laws v: multidimensional systems, Journal of Computational
+  Physics 141~(2) (1998) 199--224.
+
+\bibitem{orszag1980}
+S.~A. Orszag,
+  \href{http://www.sciencedirect.com/science/article/pii/0021999180900054}{Spectral
+  methods for problems in complex geometries}, Journal of Computational Physics
+  37~(1) (1980) 70 -- 92.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/0021-9991(80)90005-4}
+  {\path{doi:http://dx.doi.org/10.1016/0021-9991(80)90005-4}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/0021999180900054}
+
+\bibitem{kopriva2009}
+D.~Kopriva, \href{http://dx.doi.org/10.1007/978-90-481-2261-5_8}{Spectral
+  element methods}, in: Implementing Spectral Methods for Partial Differential
+  Equations, Scientific Computation, Springer Netherlands, 2009, pp. 293--354.
+\newblock \href {http://dx.doi.org/10.1007/978-90-481-2261-5_8}
+  {\path{doi:10.1007/978-90-481-2261-5_8}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/978-90-481-2261-5_8}
+
+\bibitem{karniadakis1999}
+G.~Karniadakis, S.~Sherwin,
+  \href{https://books.google.ca/books?id=R\_ydFKtI59cC}{Spectral/hp Element
+  Methods for CFD}, Numerical mathematics and scientific computation, Oxford
+  University Press, 1999.
+\newline\urlprefix\url{https://books.google.ca/books?id=R\_ydFKtI59cC}
+
+\bibitem{hesthaven2002}
+J.~Hesthaven, T.~Warburton,
+  \href{http://www.sciencedirect.com/science/article/pii/S0021999102971184}{Nodal
+  high-order methods on unstructured grids: I. time-domain solution of
+  {M}axwell's equations}, Journal of Computational Physics 181~(1) (2002) 186
+  -- 221.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1006/jcph.2002.7118}
+  {\path{doi:http://dx.doi.org/10.1006/jcph.2002.7118}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0021999102971184}
+
+\bibitem{hesthaven2007}
+J.~S. Hesthaven, T.~Warburton,
+  \href{http://www.springer.com/mathematics/computational+science+%26+engineering/book/978-0-387-72065-4}{Nodal
+  Discontinuous {G}alerkin Methods: Algorithms, Analysis, and Applications},
+  1st Edition, Springer Publishing Company, Incorporated, 2007.
+\newline\urlprefix\url{http://www.springer.com/mathematics/computational+science+%26+engineering/book/978-0-387-72065-4}
+
+\bibitem{warburton2006}
+T.~Warburton, \href{http://dx.doi.org/10.1007/s10665-006-9086-6}{An explicit
+  construction of interpolation nodes on the simplex}, Journal of Engineering
+  Mathematics 56~(3) (2006) 247--262.
+\newblock \href {http://dx.doi.org/10.1007/s10665-006-9086-6}
+  {\path{doi:10.1007/s10665-006-9086-6}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s10665-006-9086-6}
+
+\bibitem{witherden2014}
+F.~Witherden, P.~Vincent, \href{http://dx.doi.org/10.1007/s10915-014-9832-2}{An
+  analysis of solution point coordinates for flux reconstruction schemes on
+  triangular elements}, Journal of Scientific Computing 61~(2) (2014) 398--423.
+\newblock \href {http://dx.doi.org/10.1007/s10915-014-9832-2}
+  {\path{doi:10.1007/s10915-014-9832-2}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s10915-014-9832-2}
+
+\bibitem{williams2014b}
+D.~Williams, L.~Shunn, A.~Jameson,
+  \href{http://www.sciencedirect.com/science/article/pii/S0377042714000211}{Symmetric
+  quadrature rules for simplexes based on sphere close packed lattice
+  arrangements}, Journal of Computational and Applied Mathematics 266~(0)
+  (2014) 18--38.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1016/j.cam.2014.01.007}
+  {\path{doi:http://dx.doi.org/10.1016/j.cam.2014.01.007}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0377042714000211}
+
+\bibitem{shunn2012}
+L.~Shunn, F.~Ham,
+  \href{http://www.sciencedirect.com/science/article/pii/S0377042712001604}{Symmetric
+  quadrature rules for tetrahedra based on a cubic close-packed lattice
+  arrangement}, Journal of Computational and Applied Mathematics 236~(17)
+  (2012) 4348--4364.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1016/j.cam.2012.03.032}
+  {\path{doi:http://dx.doi.org/10.1016/j.cam.2012.03.032}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0377042712001604}
+
+\bibitem{bassi2013}
+F.~Bassi, N.~Franchina, A.~Ghidoni, S.~Rebay,
+  \href{http://dx.doi.org/10.1002/fld.3713}{A numerical investigation of a
+  spectral-type nodal collocation discontinuous {G}alerkin approximation of the
+  {E}uler and {N}avier-{S}tokes equations}, International Journal for Numerical
+  Methods in Fluids 71~(10) (2013) 1322--1339.
+\newblock \href {http://dx.doi.org/10.1002/fld.3713}
+  {\path{doi:10.1002/fld.3713}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1002/fld.3713}
+
+\bibitem{atkins1996}
+H.~L. Atkins, W.~Chi-Shu, Quadrature-free implementation of discontinuous
+  {G}alerkin method for hyperbolic equations, Tech. rep. (1996).
+
+\bibitem{huynh2007}
+H.~T. Huynh, \href{http://dx.doi.org/10.2514/6.2007-4079}{A Flux Reconstruction
+  Approach to High-Order Schemes Including Discontinuous {G}alerkin Methods},
+  American Institute of Aeronautics and Astronautics, 2007.
+\newblock \href {http://dx.doi.org/doi:10.2514/6.2007-4079}
+  {\path{doi:doi:10.2514/6.2007-4079}}.
+\newline\urlprefix\url{http://dx.doi.org/10.2514/6.2007-4079}
+
+\bibitem{wang2009}
+Z.~Wang, H.~Gao,
+  \href{http://www.sciencedirect.com/science/article/pii/S0021999109004239}{A
+  unifying lifting collocation penalty formulation including the discontinuous
+  {G}alerkin, spectral volume/difference methods for conservation laws on mixed
+  grids}, Journal of Computational Physics 228~(21) (2009) 8161 -- 8186.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1016/j.jcp.2009.07.036}
+  {\path{doi:http://dx.doi.org/10.1016/j.jcp.2009.07.036}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0021999109004239}
+
+\bibitem{vincent2011}
+P.~Vincent, P.~Castonguay, A.~Jameson,
+  \href{http://dx.doi.org/10.1007/s10915-010-9420-z}{A new class of high-order
+  energy stable flux reconstruction schemes}, Journal of Scientific Computing
+  47~(1) (2011) 50--72.
+\newblock \href {http://dx.doi.org/10.1007/s10915-010-9420-z}
+  {\path{doi:10.1007/s10915-010-9420-z}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s10915-010-9420-z}
+
+\bibitem{castonguay2013}
+P.~Castonguay, D.~Williams, P.~Vincent, A.~Jameson,
+  \href{http://www.sciencedirect.com/science/article/pii/S0045782513002156}{Energy
+  stable flux reconstruction schemes for advection-diffusion problems},
+  Computer Methods in Applied Mechanics and Engineering (2013) 400--417.
+\newblock \href {http://dx.doi.org/doi:10.1016/j.cma.2013.08.012}
+  {\path{doi:doi:10.1016/j.cma.2013.08.012}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0045782513002156}
 
 \bibitem{castonguay2012}
 P.~Castonguay, P.~Vincent, A.~Jameson,
@@ -14,6 +174,15 @@ P.~Castonguay, P.~Vincent, A.~Jameson,
   {\path{doi:10.1007/s10915-011-9505-3}}.
 \newline\urlprefix\url{http://dx.doi.org/10.1007/s10915-011-9505-3}
 
+\bibitem{williams2013}
+D.~Williams, P.~Castonguay, P.~Vincent, A.~Jameson,
+  \href{http://www.sciencedirect.com/science/article/pii/S0021999113003318}{Energy
+  stable flux reconstruction schemes for advection-diffusion problems on
+  triangles}, Journal of Computational Physics 250 (2013) 53 -- 76.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1016/j.jcp.2013.05.007}
+  {\path{doi:http://dx.doi.org/10.1016/j.jcp.2013.05.007}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0021999113003318}
+
 \bibitem{williams2014a}
 D.~Williams, A.~Jameson,
   \href{http://dx.doi.org/10.1007/s10915-013-9780-2}{Energy stable flux
@@ -22,5 +191,72 @@ D.~Williams, A.~Jameson,
 \newblock \href {http://dx.doi.org/10.1007/s10915-013-9780-2}
   {\path{doi:10.1007/s10915-013-9780-2}}.
 \newline\urlprefix\url{http://dx.doi.org/10.1007/s10915-013-9780-2}
+
+\bibitem{chalmers2014}
+N.~Chalmers, L.~Krivodonova, R.~Qin,
+  \href{http://dx.doi.org/10.1137/130927504}{Relaxing the {CFL} number of the
+  discontinuous {G}alerkin method}, SIAM Journal on Scientific Computing 36~(4)
+  (2014) A2047--A2075.
+\newblock \href {http://arxiv.org/abs/http://dx.doi.org/10.1137/130927504}
+  {\path{arXiv:http://dx.doi.org/10.1137/130927504}}, \href
+  {http://dx.doi.org/10.1137/130927504} {\path{doi:10.1137/130927504}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1137/130927504}
+
+\bibitem{asthana2014}
+K.~Asthana, A.~Jameson,
+  \href{http://dx.doi.org/10.1007/s10915-014-9882-5}{High-order flux
+  reconstruction schemes with minimal dispersion and dissipation}, Journal of
+  Scientific Computing (2014) 1--32.
+\newblock \href {http://dx.doi.org/10.1007/s10915-014-9882-5}
+  {\path{doi:10.1007/s10915-014-9882-5}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s10915-014-9882-5}
+
+\bibitem{vincent2015}
+P.~Vincent, A.~Farrington, F.~Witherden, A.~Jameson,
+  \href{http://www.sciencedirect.com/science/article/pii/S0045782515002418}{An
+  extended range of stable-symmetric-conservative flux reconstruction
+  correction functions}, Computer Methods in Applied Mechanics and Engineering
+  296 (2015) 248 -- 272.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1016/j.cma.2015.07.023}
+  {\path{doi:http://dx.doi.org/10.1016/j.cma.2015.07.023}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0045782515002418}
+
+\bibitem{allaneau2011}
+Y.~Allaneau, A.~Jameson,
+  \href{http://www.sciencedirect.com/science/article/pii/S004578251100274X}{Connections
+  between the filtered discontinuous {G}alerkin method and the flux
+  reconstruction approach to high order discretizations}, Computer Methods in
+  Applied Mechanics and Engineering 200~(49–52) (2011) 3628--3636.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1016/j.cma.2011.08.019}
+  {\path{doi:http://dx.doi.org/10.1016/j.cma.2011.08.019}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S004578251100274X}
+
+\bibitem{degrazia2014}
+D.~De~Grazia, G.~Mengaldo, D.~Moxey, P.~E. Vincent, S.~J. Sherwin,
+  \href{http://dx.doi.org/10.1002/fld.3915}{Connections between the
+  discontinuous {G}alerkin method and high-order flux reconstruction schemes},
+  International Journal for Numerical Methods in Fluids 75~(12) (2014)
+  860--877.
+\newblock \href {http://dx.doi.org/10.1002/fld.3915}
+  {\path{doi:10.1002/fld.3915}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1002/fld.3915}
+
+\bibitem{mengaldo2015}
+G.~Mengaldo, D.~De~Grazia, P.~Vincent, S.~Sherwin,
+  \href{http://dx.doi.org/10.1007/s10915-015-0119-z}{On the connections between
+  discontinuous {G}alerkin and flux reconstruction schemes: Extension to
+  curvilinear meshes}, Journal of Scientific Computing (2015) 1--21\href
+  {http://dx.doi.org/10.1007/s10915-015-0119-z}
+  {\path{doi:10.1007/s10915-015-0119-z}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s10915-015-0119-z}
+
+\bibitem{zwanenburg2016}
+P.~Zwanenburg, S.~Nadarajah,
+  \href{http://www.sciencedirect.com/science/article/pii/S0021999115007767}{Equivalence
+  between the energy stable flux reconstruction and filtered discontinuous
+  {G}alerkin schemes}, Journal of Computational Physics 306 (2016) 343 -- 369.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1016/j.jcp.2015.11.036}
+  {\path{doi:http://dx.doi.org/10.1016/j.jcp.2015.11.036}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0021999115007767}
 
 \end{thebibliography}
