@@ -3,6 +3,13 @@
 \usepackage[dvips]{geometry}
 \usepackage{texshade}
 
+% Questions to ask when contacting McGill regarding thesis format
+% 0) Possible not to use the mcgilletdclass? And if not, what must not be changed as per 'Please note that required commands must not be changed if your thesis is to be correctly converted to XML for the McGill EThesis Project.'?
+% 1) Links in TOC to Dedication through Abstracts and Appendices do not go to the proper page. How to fix this?
+% 2) Ugly and inconsistent font for "TOC"s and "References". How to fix this without having the boldface appear in the main TOC?
+% 3) Why might it be necessary to modify some of the commands defined in the documentclass?
+
+
 % NOTES:
 % To get bibtex to work correctly, perform the following steps:
 % 1) In the command prompt, type 'pdflatex mydoc.tex'
@@ -58,7 +65,7 @@
     citecolor=blue,
     filecolor=black,
     linkcolor=blue,
-    urlcolor=blue,
+    urlcolor=black,
 }
 \usepackage{appendix}
 \usepackage{color}
@@ -83,6 +90,11 @@
 \usepackage{titling}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%% McGill Guidelines
+% The title must be entered using all upper-case letters.
+% It is suggested that the \paragraph command be used for third-level subheadings.
+% Captions must be placed above tables and below figures. \TableCaption{text} is for tables and \FigureCaption{text} is for figures.
+% \TableCaptionOpt{text1}{text2} is another command for the similar use. Here, text1 will appear in the list of tables; text2 is the actual caption of a table. Similarly, \FigureCaptionOpt{text1}{text2} is for figures.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Have you configured your TeX system for proper  %%
@@ -107,21 +119,23 @@
 %\SetThesisDate{2018-08-31}%
 %\SetRequirements{A thesis submitted to\\McGill University\\in partial fulfillment of the requirements of the degree of\\Doctor of Philosophy}%
 %\SetCopyright{\textcopyright\hspace{1mm}Philip Zwanenburg, 2018}%
-%
-%\pretitle{%
-%  \begin{center}
-%  \LARGE
-%  \includegraphics[width=0.2\textwidth]{./figures/McGillcrest.eps}
-%}
-%\posttitle{\end{center}}
 
+%%\usepackage[nottoc]{tocbibind} % Don't include ToC line in ToC
+%
+%\usepackage{tocloft}
+%%\renewcommand\contentsname{Table of Contents}
+%\renewcommand\cfttoctitlefont{\hfil\mdseries} % use "\bfseries" if you want it in bold
+%\renewcommand{\cftaftertoctitle}{\hfil}
+%\renewcommand{\cftchapfont}{\mdseries}
+%\renewcommand{\cftchappagefont}{\mdseries}
+%\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 
 \begin{document}
 
 \begin{titlepage}
     \centering
     \large
-    {\huge Target-Based Adaptation Using the\\Discontinuous Petrov-Galerkin Method}
+    {\huge TARGET-BASED ADAPTATION USING \\ THE DISCONTINUOUS \\ \vspace{4mm} PETROV-GALERKIN METHOD}
     \vfill
     {\Large Philip Zwanenburg}\\
     Bachelor of Engineering\\
@@ -145,9 +159,9 @@
 
 \begin{romanPagenumber}{2}%
 
-%\SetDedicationName{\uppercase{Dedication}}%
-%\SetDedicationText{This document is dedicated to the graduate students of the McGill University.}%
-%\Dedication%
+\SetDedicationName{\uppercase{Dedication}}%
+\SetDedicationText{This thesis is dedicated to those who have fuelled my interest in numerical analysis through their genious, creativity and passion. {\color{red} Include best graphic or logo}}%
+\Dedication%
 
 \SetAcknowledgeName{\uppercase{Acknowledgements}}%
 \SetAcknowledgeText{
@@ -177,9 +191,9 @@ Don't forget NSERC+McGill Funding
 
 \begingroup
 \hypersetup{linkcolor=black}
-\TOCHeading{\uppercase{Table of Contents}}%
-\LOTHeading{\uppercase{List of Tables}}%
-\LOFHeading{\uppercase{List of Figures}}%
+\TOCHeading{\uppercase{\textbf{Table of Contents}}}%
+\LOTHeading{\uppercase{\textbf{List of Tables}}}%
+\LOFHeading{\uppercase{\textbf{List of Figures}}}%
 \tableofcontents %
 \listoftables %
 \listoffigures %
@@ -192,7 +206,7 @@ Don't forget NSERC+McGill Funding
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Motivation}
+\section{Motivation \& Open Topics}
 
 The use of computational fluid dynamics (CFD) tools for the numerical analysis of fluid flows has significantly reduced costs associated with aerodynamic design over the past several decades. As computing systems have become increasingly powerful, there has been a corresponding advance in the equations employed for flow simulation (initially beginning with potential equations and now using the full Navier-Stokes equations) as well as in the resolution of complex flow phenomena.
 \\~
@@ -218,13 +232,13 @@ The last of these issues provides the motivation for the thesis, however, many d
 {\color{red} Provide links to sections where related results are provided if available}
 \\~
 
-Significant progress has been made with regard to the DG method's computational complexity, notably through the exploitation of sum factorization techniques, originally proposed by Orszag~\cite{orszag1980} and now employed in the tensor-product Spectral element method (SEM) of Kopriva~\cite{kopriva2009} and for general elements using collapsed tensor-product spaces by Karniadakis et al.~\cite{karniadakis1999}. When explicit methods are used, use of the sum factorization technique reduces the growth in computational complexity from $O(N^{2d})$ to $O(N^{d+1})$ where $d$ is the dimension of the problem and $N = P+1$ where $P$ is the order of the method. Savings for implicit schemes are even greater and further, the appropriate decomposition of element bases into corner, edge, facet, and volume modes allows for the ability to statically condense out the volume modes, significantly reducing the growth rate of globally coupled DOF as the order of the solution is increased in global matrix inversion stages. 
+Significant progress has been made with regard to the DG method's computational complexity, notably through the exploitation of sum factorization techniques, originally proposed by Orszag~\cite{orszag1980} and now employed in the tensor-product Spectral element method (SEM) of Kopriva~\cite{kopriva2009} and for general elements using collapsed tensor-product spaces by Karniadakis et al.~\cite{karniadakis1999}. When explicit methods are used, use of the sum factorization technique reduces the growth in computational complexity from $O(N^{2d})$ to $O(N^{d+1})$ where $d$ is the dimension of the problem and $N = P+1$ where $P$ is the order of the method. Savings for implicit schemes are even greater and further, the appropriate decomposition of element bases into corner, edge, facet, and volume modes allows for the ability to statically condense out the volume modes, significantly reducing the growth rate of globally coupled DOF as the order of the solution is increased in global matrix inversion stages. Sum factorization ideas have traditionally mainly been used for relatively high solution polynomial orders ($P \geq 8$) due to the lack of improvement over standard operators at lower orders, a minor goal of this work was to demonstrate that the algorithm is also relevant in the polynomial range considered here ($0 \leq P \leq 4$). {\color{red} Refer to section confirming the break even point. Compare with sparse standard (collocated), discuss cost of application of inverse mass matrix (uncollocated), discuss cost of linear solve (implicit, uncollocated).}
 \\~
 
 Another technique pursued for computational complexity minimization is the use of collocated schemes. Collocated schemes, notably the nodal DG scheme~\cite{hesthaven2002,hesthaven2007}, minimize interpolation and integration costs by collocating solution and flux interpolation nodes with cubature nodes. While this culminates in satisfactory results for linear PDEs solved on straight-sided elements, the use of higher-order accurate cubature rules is advocated in curved elements or when solving nonlinear systems of equations, destroying the collocation property of the scheme. It has also been demonstrated that simplex element ``alpha-optimized'' nodes~\cite{warburton2006} associated with the nodal DG scheme, were unsuitable when solving nonlinear PDEs due to significant aliasing errors~\cite{witherden2014}. This in turn spurred research into the derivation of triangular and tetrahedral element nodes which possess good interpolation properties and have an associated cubature rule, recovering at least volume collocation; this has been pursued by several authors~\cite{witherden2014,williams2014b,shunn2012}. However, cubature rules associated with these nodes are weak in the sense that they can not even exactly integrate linear PDEs on linear elements when cast in the variational weak DG framework which might degrade their accuracy and high-order convergence properties; the conclusions of Bassi et al.~\cite{bassi2013} suggest that this occurs for tensor-product elements.
 \\~
 
-A final avenue which has been pursued for the minimization of computational cost associated with high-order methods is the use of pre-integrated DG schemes~\cite{atkins1996} or DG-type schemes cast in differential form, notably the Energy Stable Flux Reconstruction (ESFR) schemes introduced in~\autoref{sec:CFL_diss_disp}. In these versions of the DG scheme, integral operations associated with the weak formulation of the DG scheme are performed in a preprocessing stage, eliminating many of the cubature operations associated with the original scheme. It is shown in {\color{red} link to scheme derivation section} that the majority of operators can be pre-computed in this fashion for both weak and strong forms of DG-type schemes and that it would in fact be naive not to do so.
+A final avenue which has been pursued for the minimization of computational cost associated with high-order methods is the use of pre-integrated DG schemes~\cite{atkins1996} or DG-type schemes cast in differential form, notably the Energy Stable Flux Reconstruction (ESFR) schemes introduced in~\autoref{sec:CFL_diss_disp}. In these versions of the DG scheme, integral operations associated with the weak formulation of the DG scheme are performed in a preprocessing stage, eliminating many of the cubature operations associated with the original scheme. It is shown in {\color{red} link to scheme derivation section} that the majority of operators can be pre-computed in this fashion for both weak and strong forms of DG-type schemes and that it would be naive not to do so.
 \\~
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,11 +257,51 @@ As the formulation of the ESFR schemes is extremely similar to that of the origi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Treatment of Complex Geometry}
 
+The proper treatment of complex geometry in high-order DG-type methods has been shown to be crucial. In the seminal work on the topic, it was demonstrated that curved geometry had to be represented in an isoparametric space of order $P$ for all solution polynomial orders $P \ge 2$ and in a superparametric space of second order in the case of first order solution representation in order to maintain the optimal convergence properties of these schemes, in two dimensions (2D)~\cite{bassi1997}. It was noted that low-order geometry representation results in deterioration of solution quality as the order of the scheme is increased, due to rarefaction waves being formed at vertices of polygonal mesh surfaces~\cite{krivodonova2006}. 
+\\~
+
+As the majority of mesh generators only provide linear meshes, a necessary inclusion in any high-order spectral element code is the projection of an initially straight-sided mesh to the curved geometry. This projection is commonly achieved through the use of transfinite blending function interpolation, first proposed by Gordon et al. for tensor-product elements~\cite{gordon1973} and subsequently generalized to simplex elements~\cite{nielson1979,haber1981,szabo1991,lacombe1988,dey1997,xie2013}. Assuming that corner nodes are located on the curved geometry, the process proceeds by sequentially projecting straight edge and facet nodes to the curved geometry followed by the application of a blending operation which appropriately displaces volume nodes (not touching the boundary). Ensuring that the error in the curved geometry representation converges at the same rate as the solution and the need for parametrization of arbitrary 3D curved surfaces represent two major challenges.
+\\~
+
+While errors due to improper geometry representation may only begin to manifest themselves at very fine levels of solution resolution, for high-order methods, these levels of accuracy are achievable. Further, if these geometric errors result in decreasing convergence rates of high-order methods, then the increase in the computational complexity would be incurred with no additional benefit, rendering these schemes useless. While optimal convergence orders for nonlinear hyperbolic cases have been demonstrated on curved geometry by many authors in 2D, the geometric complexity of the test cases used for these demonstrations has been minimal, generally with the possibility of employing analytic surface parametrization or using $C^{\infty}$ boundary functions. Curved surface representation is most commonly achieved using nodal geometry interpolation through a set of surface geometry nodes obtained from an arc length surface parametrization. To the author's knowledge, optimal convergence orders have never been published for any 3D simulation of nonlinear hyperbolic systems of equations over curved geometry. In 3D, additional geometric concerns must also be taken into account such as the enforcement of certain metric identities in order to ensure ``free-stream preservation" (i.e. avoid violations of conservation resulting only from curved geometry treatment)~\cite{kopriva2006}.
+\\~
+
+It is important to note that the discussion above assumed that a valid linear mesh could initially be generated for the complex geometry to be modelled in the simulation. In fact, it has recently been estimated that approximately 80\% of overall analysis time in the aerospace industry, among others, is devoted to (linear) mesh generation~\cite{hughes2005}, resulting in serious challenges when attempting to interface between simulated aerodynamic shape optimized profiles and the Computer Aided Design (CAD) model, for example. This motivated the formulation of isogeometric analysis where the solution is represented using the same basis as the CAD geometry, allowing for perfect geometric representation at any level of mesh refinement and seamless interfacing with CAD modelling~\cite{hughes2005}. The competitiveness of this new approach with existing methods has already been demonstrated in numerous benchmark test cases in both structural and fluid mechanics. The Non-uniform rational basis spline (NURBS) enhanced finite element method (NEFEM) in which the standard DG method is employed in the majority of the solution domain while isogeometric analysis is employed in curved elements has also recently been shown to provide superior results to standard DG discretizations on all test cases considered~\cite{sevilla2008,sevilla2011}. A further significant advantage of isogeometric analysis is that no interfacing with the CAD geometry would be required while performing mesh optimization during scheme execution, making these optimization algorithms suitable for the simulation of flow over vastly more complex geometric objects than those generally used for academic purposes.
+\\~
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Optimal Test Spaces}
+
+The Galerkin method was originally developed for the solution of PDEs in structural mechanics in which it can be shown to provide optimal results based on the symmetry and positive-definiteness of the associated variational problem. This optimal approximation property is lost however in the context of hyperbolic PDEs. Thus, robustness issues associated with high-order methods generally result from the development of large oscillations in the presence of steep solution gradients (shocks or boundary layers) on under-resolved meshes. The intuitive remedy for this occurrence of locally refining the discontinuous space used to represent the solution is extremely effective, however, it is generally difficult to know a-priori where solution refinement is required and thus it is desirable to be able to robustly compute solutions on relatively coarse meshes in order to obtain a residual based indicator to guide the process; obtaining solutions on under-resolved meshes often requires some form of stabilization.
+\\~
+
+This issue was first addressed in the context of continuous finite element solutions through the use of residual-based stabilization in the form of the Streamline Upwind Petrov Galerkin (SUPG) formulation, in which the stabilization was interpreted as a variation of the test space~\cite{brooks1982}. It was subsequently shown that the SUPG formulation was in essence complementing the solution space with information related to the fine-scale (unresolvable by the current mesh) Green's function in the context of the variational multiscale method~\cite{hughes1998,hughes2007}.
+\\~
+
+Following the motivation for pursuing test spaces other than the approximation spaces used in DG methods, the discontinuous Petrov-Galerkin (DPG) method with optimal test functions was introduced, where test functions are determined such that they minimize the residual in an appropriate energy setting~\cite{demkowicz2010,demkowicz2011}; in other words, test spaces are chosen for good stability properties as opposed to good approximation properties. Further advantages of the method include the treatment of numerical traces and fluxes as the globally coupled unknowns, resulting in the static condensation discussed above, but also precluding the need for Riemann solvers. The use of optimal test spaces also results in an internally preconditioned algebraic least squares system~\cite{chan2014}, which is symmetric and positive definite, allowing for the use of efficient nonlinear iterative solvers. While the DPG method offers optimally stable spatial discretization with respect to the chosen residual norm without extra stabilization parameters, even in the presence of steep gradients, it has been observed that exact solutions under Newton linearization may contain large oscillations and that artificial viscosity might be needed not as a stabilization but as a regularization mechanism through which such oscillations can be suppressed~\cite{chan_thesis}. Despite this concern, beginning from an extremely coarse solution, the DPG method has already been shown to have the ability to resolve physical features through automatic adaptation, without the use of artificial diffusion or shock capturing terms in the presence of large gradients~\cite{chan2014}.
+\\~
+
+{\color{red} Likely add to this section after further exploring DPG: Comparison of upwinded test space with adjoint for goal-oriented adaptive refinement; investigation into comparison of dissipation of Riemann flux vs DPG.}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Thesis Overview}
-{\color{red} ToBeDone}
+{\color{red} ToBeModified}
+\\~
+
+Implementation of sum factorization for faster algorithms. Note the lack of improvement when simply using sparse operators for the collocated scheme but likely show results for DPG where the scheme is inherently uncollocated and the standard operator is fully dense. Make some nice figures to demonstrate. Also show convergence order results using collocated nodes for simplex elements with suboptimal orders.
+\\~
+
+Investigation of ESFR schemes (comparison with other methods). Possibly some dissipation/dispersion results for DG vs DPG.
+\\~
+
+Potential comparison of blending vs ToBeCurved. Investigation into proper treatment of metric terms and cubature order (provide supporting mathematical analysis if possible). Comparison with NURBS geometry (time permitting).
+\\~
+
+{\color{red} List DPG related work when completed.}
+\\~
 
 \section{Testing}
+\label{sec:NumericalResults}
 
 
 \begin{equation} \nonumber
@@ -282,6 +336,7 @@ presented in~\autoref{sec:NumericalResults} to numerically verify
 
 \begin {table}[!htbp]
 \begin{center}
+\caption{Errors and Convergence Orders - $PI_c  = 2P$ (GL/Cools), $PI_{cf} = 2P$ (GL), $PG = P$, EFE = 1}
 \begin{tabular}{| l | l | c c c | c c c |}
 	\hline
 	 & & $L_2$ Error & & & Conv. Order & & \\
@@ -311,18 +366,9 @@ P4	& 6.74e-02 & 6.33e-06 & 7.24e-06 & 4.53e-06 & - & - & - \\
 	& 8.43e-03 & 2.56e-10 & 2.22e-10 & 2.91e-10 & 5.01 & 5.10 & 4.94 \\
 	\hline
 \end{tabular}
-\caption{Errors and Convergence Orders - $PI_c  = 2P$ (GL/Cools), $PI_{cf} = 2P$ (GL), $PG = P$, EFE = 1}
 \label{tab:SM_PIc=2P(GL/Cools)_PIcf=2P(GL)_PG=P_EFE=1}
 \end{center}
 \end{table}
-
-
-\begin{minipage}{\textwidth}
-\centering
-    \includegraphics[width=.4\textwidth]{example-image.pdf}
- \captionof{figure}{figure caption}
- \label{fig:fig1}
-\end{minipage}
 
 
 \begin{figure}
@@ -349,370 +395,7 @@ P4	& 6.74e-02 & 6.33e-06 & 7.24e-06 & 4.53e-06 & - & - & - \\
 \end{figure}
 
 
-\begin{BulletList}
-	\item{setspace (2000/12/01)}
-	\item{ulem (2000/05/26)}
-		\subitem{You can use \verb=\uline{text}= to underline \uline{text}. The documentation
-of the ulem package provides more information.}
-	\item{sectsty (1999/04/12)}
-		\subitem{Since underlining in section headings is rather nontrivial, the
-sectsty package was used to manipulate the formatting of sectional
-headings.}
-	\item{ragged2e (1999/06/08)}
-		\subitem{This package adds support to handle ragged right justification appropriately.}
-	\item{everysel (1999/06/08)}
-		\subitem{Required by the ragged2e package.}
-\end{BulletList}
-\section{General Guidelines}
-\label{sec:NumericalResults}
-\begin{BulletList}
-	\item{Please use commands provided by mcgilletdclass, otherwise your thesis may not be able to pass the validation check.}
-	\item{If you run into problems using this stylesheet, please contact us as soon as possible.}
-	\item{Files you must submit: *.tex, *.dvi and *.bib files.}
-\end{BulletList}
 
-
-\chapter{Usage}
-An example of how to use the mcgilletdclass document class is provided in 
-mcgilletdsample.tex. Details of how to compile the example are 
-provided in a later section.
-Use this class file the same way as the report class, by putting
-\verb=\documentclass{mcgilletdclass}= at the beginning of the \LaTeXe file.
-There are only a few options available with this document class, which
-will be described in the following sections. Due to the requirements of
-the McGill University, this document class does not support \BVisualEmphasis{two-sided
-printing or two-column page layout}.
-
-\chapter{The document class options}
-\section{Font Size Options: 10pt, 11pt or 12pt}
-These are the font sizes that are available in the standard \LaTeXe report 
-document class. The 12pt font size is the preferred option for the final 
-typeset version of the document. Obviously, only one of these options should 
-be used in the \verb=\documentclass= command. The 12pt option is selected by default 
-if none of these options are specified in
-the \verb=\documentclass= command.
-
-
-\chapter{Title Page}
-The document preamble is the part that occurs before the \verb=\begin{document}=
-statement. Throughout the document, information about the author,
-the title, etc., is \BVisualEmphasis{required}. The following commands are used in
-the document preamble to define all of the required text strings that
-are used to personalize the document.
-\begin{BulletList}
-	\item{\verb=\SetTitle{text}= :This is the title as it appears on the 
-title page. The title must be entered using
-all upper-case letters. Line-breaks can be entered in the title by
-using the \verb=\\= command.}
-	\item{\verb=\SetAuthor{text}= :The author's name, using capital letters 
-where appropriate.}
-	\item{\verb=\SetDegreeType{text}= :Something like "Master of Science" or 
-"Doctor of Philosophy".}
-	\item{\verb=\SetDepartment{text}= :The department or faculty }
-	\item{\verb=\SetUniversity{text}= :McGill University }
-	\item{\verb=\SetUniversityAddr{text}= :Montreal, Quebec}
-	\item{\verb=\SetThesisDate{text}= :Date of your thesis}%
-	\item{\verb=\SetRequirements{text}= :Text of requirements statements }%
-	\item{\verb=\SetCopyright{text}= :Copyright Statements}%
-\end{BulletList}
-
-
-\chapter{The Thesis FrontSection}
-In this section, we present the commands used to add all pages prior to
-the first chapter of the thesis. Some of these commands are required
-while some of them are optional.
-\section{Title page(required)}
-The command \verb=\maketitle= formats the title page. 
-\section{Dedication}
-The optional dedication can be inserted by using the command 
-\verb=\SetDedicationName{text},\SetDedicationText{text}= and
-\verb=\Dedication=, where text is the contents of the dedication.
-\section{Acknowledgments}
-In order to format the optional acknowledgments, use the command 
-\verb=\SetAcknowledgeName{text},\SetAcknowledgeText{text}= and
-\verb=\Acknowledge{text}=. The title "ACKNOWLEDGMENTS" is automatically
-added to the table of contents. 
-\section{Table of Contents, List of Tables and Figures(required)}
-These lists are generated with the commands \verb=\tableofcontents=,
-\verb=\listoftables and \listoffigures=. The titles of these lists may
-be changed by renewing the \verb=\TOCHeading{text}, \LOTHeading{text}=, and
-the \verb=\LOFHeadling{text}= macros, respectively.
-\section{Abstract(required)}
-This command, which actually is an environment, sets up the required 
-text for the abstract. The proper use is : \verb=\SetAbstractEnName{text}=
-for the heading of the abstract and \verb=\SetAbstractEnText{text}= for the 
-text of the abstract. The command \verb=\AbstractEn= is used to incorporate 
-the heading of the abstract and the abstract text into your document.
-\verb=\SetAbstractFrName{text},\SetAbstracFrText{text} and \AbstractFr= are the
-equivalent commands for the French abstract, and \verb=\SetAbstractOtName{text}=, 
-\verb=\SetAbstracOtText{text}= and \verb=\AbstractOt= are for an abstract in 
-another language. And abstract in English and French are required by the University.
-
-
-\chapter{The Thesis "Mainmatter"}
-In this section, we describe the commands used to format the
-main chapters of the thesis. Please refer to the sample thesis file
-mcgilletdsample.tex for examples of how these commands are used.
-\section{Chapter Titles}
-Use the \verb=\chapter= command to start a new chapter in the document. If 
-the boolean SetDSpace is true, then the chapter will
-be typeset using double-spacing. In general, the class file sets the
-SetDSpace boolean appropriately so that the selection of singlespacing
-or double-spacing is transparent to the user.
-Note that the chapter title may extend over more than one line
-by using the following form:
-\verb=\chapter=[Title Line 1 \verb=\protect\newline= Title Line 2]{%
-Title Line 1 \verb=\\= Title Line 2}%
-\section{Section Headings}
-Use the \verb=\section= command for first-level subheadings. Use the 
-\verb=\subsection= command for second-level subheadings. Since it
-may be difficult to distinguish third-level subheadings from second-level
-subheadings, it is suggested that the \verb=\paragraph= command be
-used for all third-level subheadings. Note that the text of the heading
-may extend over more than one line. In this case, use the same command
-as shown for the \verb=\chapter= command above.
-\section{Tables and Figures}
-Use the \verb=\begin{table} and \end{table}= to contain a new table.\\
-Use the \verb=\begin{figure} and \end{figure}= to include a new figure.
-Captions must be placed above
-tables and below figures. \verb=\TableCaption{text}= is for tables and 
-\verb=\FigureCaption{text}= is for figures.  Please note that captions
-are required for both figures and tables, and must be supplied on a 
-strictly one-to-one basis. \\
-
-\verb=\TableCaptionOpt{text1}{text2}= is another command for the similar use.
-Here, text1 will appear in the list of tables; text2 is the actual caption of
-a table. Similarly, \verb=\FigureCaptionOpt{text1}{text2}= is for figures. \\
-
-
-
-\chapter{The Thesis "Backmatter"}
-The following commands are used to control the appearance and content
-of appendices and other thesis end-matter.
-You might have to tailor some of these commands to suit your 
-requirements.
-Use the \verb=\ETDAppendix{Appendix}{text}=
-and \verb=\ETDAppendix{Appendix}{text}=
-commands to add an appendix; you may have more than one appendix if 
-necessary.
-
-\section{List of References}
-We only support the BibTex tool.
-Use the \verb=\bibHeading{text}= command to set the heading of your references.
-Use the \verb=\bibliography{bibtexdatabase}= to incorporate your BibTex list.
-Use the \verb=\bibliographystyle{text}= to set the citation style of your
-bibliography.
-
-Here is a simple example to demonstrate the use of BibTex.
-
-The following text and latex commands (in conjunction with the mgilletd.bib
-file included in the mcgilletd package):
-
-
-produce:
-
-
-
-The references themselves are inserted in the document at
-the point of the \verb=\bibliography{mcgilletd}= command
-(see the end of this document).
-
-\chapter{Special Commands}
-The commands described in this section are used to aid in the commenting
-of the source file, and also describe support for special formatting.
-These commands are optional, in that they are not required in order
-to format the document.
-\section{Automatically Generated Indices}
-Several commands have been included in this document class file to facilitate
-the creation of automatically generated lists with the MakeIndex
-program. 
-Use this command in the document preamble to enable the creation of an 
-index file. If only one index is to be created, then just use
-the
-
-command. However, if there is to be more than one index, or it is
-desirable to name the index file something besides the default, use
-the following command
-
-A unique filename for each index must be assigned, so a 
-command should exist for each index, in the document preamble.
-Issue this command at the point in the document where the index 
-is to be typeset. Typically, this will be after the lists of figures and
-tables (if included). The command creates a new chapter and sets up
-the initial page formatting for the list to be generated. The form of
-the command directly corresponds to the form of the
-command used in the document. 
-This is the command that is used to actually define what is going to be 
-added to the index list. As with the other indexing commands
-there are two forms that can be used, depending on how the
-command was issued. For generating only one index file,
-use the command shown below
-If there are more than one index files, or if a custom filename was used
-for the index, then the following form of the command must be used:
-Of course, for each index file that is created, a run of the
-MakeIndex program will be required. 
-\section{Changing the Code . . .}
-It might be necessary to modify some of the commands defined in the
-documentclass. However, you do NOT have to (and SHOULD NOT!) edit
-the mcgilletdclass.cls file directly. Instead, place any commands
-you wish to create or modify in a file called mcgilletdclass.cfg and
-put it in the same directory as your main thesis file.  The mcgilletdclass
-documentclass will automatically load this file.  Please note that 
-required commands must not be changed if your thesis is to be correctly
-converted to XML for the McGill EThesis Project.
-
-\section{An Example Thesis File}
-In order to typeset the example file, the following files should exist:
-mcgilletdclass.cls, mcgilletdsample.tex, mcgilletd.bib, chick.eps, and the additional
-packages described at the beginning of this document.  (See the documentation
-for your local installation of \LaTeXe for information on how to install
-local customizations.)
-
-Use the following commands to typeset the mcgilletdsample file:
-
-\begin{verbatim}
-latex mcgilletdsample
-bibtex mcgilletdsample
-latex mcgilletdsample
-latex mcgilletdsample
-\end{verbatim}
-
-\section{Special Cases}
-An objective of the McGill Electronic Thesis Project is to create a means to 
-ensure the long-term preservation and long-term accessibility of theses created 
-at McGill University. The submitted theses will be archived as XML, which is a 
-subset of SGML, a markup language for the interchange of structured data.  
-The basis for SGML/XML is the description of the contents, not the layout.  Therefore,
-the mcgilletdclass documentclass adds sematic support to text layout commands. Some of them
-are described as below:
-
-
-\begin{BulletList}
-		\item{Emphasis ProperName}
-		\begin{romanList}
-			\item{ \verb=\BProperName= is to set text to boldface; the text will be treated as a proper name}.
-			\item{ \verb=\BIProperName= is to set text to boldface and italic; the text will be treated as a proper name}.
-			\item{ \verb=\BIUProperName= is to set text to boldface, italic and underline; the text will be treated as a proper name}.
-			\item{ \verb=\BUProperName= is to set text to boldface and underline; the text will be treated as a proper name}.
-			\item{ \verb=\IUProperName= is to set text to italic and underline; the text will be treated as a proper name}.
-			\item{ \verb=\UProperName= is to set text to underline; the text will be treated as a proper name}.
-			\item{ \verb=\IProperName= is to set text to italic; the text will be treated as a proper name}.
-		\end{romanList}
-		\item{Emphasis Technical Term}
-		\begin{romanList}
-			\item{ \verb=\BTechnicalTerm= is to set text to boldface; the text will be treated as a technical term}.
-			\item{ \verb=\BITechnicalTerm= is to set text to boldface and italic; the text will be treated as a technical term}.
-			\item{ \verb=\BIUTechnicalTerm= is to set text to boldface, italic and underline; the text will be a treated as technical term}.
-			\item{ \verb=\BUTechnicalTerm= is to set text to boldface and underline; the text will be treated as a technical term}.
-			\item{ \verb=\IUTechnicalTerm= is to set text to italic and underline; the text will be treated as a technical term}.
-			\item{ \verb=\UTechnicalTerm= is to set text to underline; the text will be treated as a technical term}.
-			\item{ \verb=\ITechnicalTerm= is to set text to italic; the text will be treated as a technical term}.
-		\end{romanList}
-
-		\item{Emphasis Title}
-		\begin{romanList}
-			\item{ \verb=\BTitle= is to set text to boldface; the text will be treated as a title}.
-			\item{ \verb=\BITitle= is to set text to boldface and italic; the text will be treated as a title}.
-			\item{ \verb=\BIUTitle= is to set text to boldface, italic and underline; the text will be a treated as title}.
-			\item{ \verb=\BUTitle= is to set text to boldface and underline; the text will be treated as a title}.
-			\item{ \verb=\IUTitle= is to set text to italic and underline; the text will be treated as a title}.
-			\item{ \verb=\UTitle= is to set text to underline; the text will be treated as a title}.
-			\item{ \verb=\ITitle= is to set text to italic; the text will be treated as a title}.
-		\end{romanList}
-
-		\item{Emphasis ForeignWord}
-		\begin{romanList}
-			\item{ \verb=\BForeignWord= is to set text to boldface; the text will be treated as a Foreign Word}.
-			\item{ \verb=\BIForeignWord= is to set text to boldface and italic; the text will be treated as a Foreign Word}.
-			\item{ \verb=\BIUForeignWord= is to set text to boldface, italic and underline; the text will be a treated as Foreign Word}.
-			\item{ \verb=\BUForeignWord= is to set text to boldface and underline; the text will be treated as a Foreign Word}.
-			\item{ \verb=\IUForeignWord= is to set text to italic and underline; the text will be treated as a Foreign Word}.
-			\item{ \verb=\UForeignWord= is to set text to underline; the text will be treated as a Foreign Word}.
-			\item{ \verb=\IForeignWord= is to set text to italic; the text will be treated as a Foreign Word}.
-		\end{romanList}
-
-		\item{Visual Emphasis}
-		\begin{romanList}
-			\item{ \verb=\BVisualEmphasis= is to set text to boldface; the text will be treated as Visual Emphasis}.
-			\item{ \verb=\BIVisualEmphasis= is to set text to boldface and italic; the text will be treated as Visual Emphasis}.
-			\item{ \verb=\BIUVisualEmphasis= is to set text to boldface, italic and underline; the text will be treated as Visual Emphasis}.
-			\item{ \verb=\BUVisualEmphasis= is to set text to boldface and underline; the text will be treated as Visual Emphasis}.
-			\item{ \verb=\IUVisualEmphasis= is to set text to italic and underline; the text will be treated as Visual Emphasis}.
-			\item{ \verb=\UVisualEmphasis= is to set text to underline; the text will be treated as Visual Emphasis}.
-			\item{ \verb=\IVisualEmphasis= is to set text to italic; the text will be treated as Visual Emphasis}.
-		\end{romanList}
-		
-		\item{Quotation}
-			\begin{romanList}
-			\item{Use \verb=\SingleInlineQuote= command to do \SingleInlineQuote{inline quote}. }
-			\item{Use \verb=\DoubleInlineQuote= command to do \DoubleInlineQuote{inline quote}. }
-			\item{Use \verb=\begin{quote}= and \verb=\end{quote}= for block quote}
-			\end{romanList}
-
-		\item{Verse}
-			\begin{romanList}
-			\item{Use \verb=\verse= command for verse. }
-			\end{romanList}
-		\item{Lists}
-			\begin{romanList}
-			\item{Use \verb=\begin{BulletList}= and \verb=\end{BulletList}= commands to create bulleted lists. }
-			\item{Use \verb=\begin{RomanList}= and \verb=\end{RomanList}= commands to create upper case Roman numbered lists. }
-			\item{Use \verb=\begin{romanList}= and \verb=\end{romanList}= commands to create lower case roman numbered lists. }
-			\item{Use \verb=\begin{AlphList}= and \verb=\end{AlphList}= commands to create upper case Alphabetical lists. }
-			\item{Use \verb=\begin{alphList}= and \verb=\end{alphList}= commands to create lower case alphabetical lists. }
-			\item{Use \verb=\begin{arabicList}= and \verb=\end{arabicList}= commands to create arabic numbered lists. }
-			\end{romanList}
-		\item{Formula}
-			\begin{romanList}
-			\item{Use \verb=\begin{MathFormula}= and \verb=\end{MathFormula}= commands to embed normal math formula as per the following example:}
-				\subitem{  \\
-									\verb=\begin{MathFormula}=\\
-									\verb=\begin{math}=\\
-										... \\
-									\verb=\end{math}=\\
-									\verb=\end{MathFormula}=\\
-							Example:    \begin{MathFormula}
-										\begin{eqnarray}
-										\bar u&=& \int_{I}^E g(x)dx \nonumber \\
-										\end{eqnarray}
-										\end{MathFormula}
-						}
-			\item{Use \verb=\begin{ChemFormula}= and \verb=\end{ChemFormula}= commands for chemical formulae, similar to the above example.}
-				\subitem{  \\
-								\verb=\begin{ChemFormula}=\\
-										... \\
-								\verb=\end{ChemFormula}=\\}
-
-			\end{romanList}					 
-		
-\end{BulletList}
-
-\section{Testing figures and tables.}
-\begin{table}[htbp]
-  \begin{center}
-    \TableCaption{The First Table}
-    \begin{tabular}{llll}
-      \hline
-      First & Second & Third & Fourth\\
-      \hline
-      12 & 26 & 12 & 33 \\
-      17 & 93 & 88 & 3  \\
-      12 & 26 & 12 & 33 \\
-      12 & 26 & 12 & 33 \\
-      12 & 26 & 12 & 33 \\
-      17 & 93 & 88 & 3  \\
-      12 & 26 & 12 & 33 \\
-      12 & 26 & 12 & 33 \\
-      12 & 26 & 12 & 33 \\
-      17 & 93 & 88 & 3  \\
-      12 & 26 & 12 & 33 \\
-      12 & 26 & 12 & 33 \\
-      \hline
-    \end{tabular}
-  \end{center}
-\end{table}
-
-\newpage
 
 
 
@@ -725,8 +408,6 @@ we add meaningless text until we can see a second line.} footnote.
 
 
 
-
-	
 	
 
 
@@ -736,25 +417,13 @@ we add meaningless text until we can see a second line.} footnote.
 \SetAppendixText{Here is the text of an Appendix.  If only one appendix is required, place it here.}%
 \ETDAppendix{Appendix A}{Here is the text of an Appendix.}%
 \ETDAppendix{Appendix B}{Here is the text of a second, additional Appendix}%
-%fjklsdafjklsdafjkldasjfkldjaskl
 %\end{\ETDAppendix}%
-\bibHeading{References}
+
+\bibHeading{\uppercase{\textbf{References}}}
 \bibliography{PhD_Thesis}
 \bibliographystyle{elsarticle-num}
+%\bibliographystyle{plain}
 
 
-
-\printindex[keylist]{Index}{Index}{}
-\printindex[abbr]{KEY TO ABBREVIATIONS}{KEY TO ABBREVIATIONS}{}
 
 \end{document}
-
-
- 
-
-
-
-
-
-
-\grid

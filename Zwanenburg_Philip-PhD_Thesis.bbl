@@ -259,4 +259,191 @@ P.~Zwanenburg, S.~Nadarajah,
   {\path{doi:http://dx.doi.org/10.1016/j.jcp.2015.11.036}}.
 \newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0021999115007767}
 
+\bibitem{bassi1997}
+F.~Bassi, S.~Rebay,
+  \href{http://www.sciencedirect.com/science/article/pii/S0021999197954541}{High-order
+  accurate discontinuous finite element solution of the 2{D} {E}uler
+  equations}, Journal of Computational Physics 138~(2) (1997) 251 -- 285.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1006/jcph.1997.5454}
+  {\path{doi:http://dx.doi.org/10.1006/jcph.1997.5454}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0021999197954541}
+
+\bibitem{krivodonova2006}
+L.~Krivodonova, M.~Berger,
+  \href{http://dx.doi.org/10.1016/j.jcp.2005.05.029}{High-order accurate
+  implementation of solid wall boundary conditions in curved geometries}, J.
+  Comput. Phys. 211~(2) (2006) 492--512.
+\newblock \href {http://dx.doi.org/10.1016/j.jcp.2005.05.029}
+  {\path{doi:10.1016/j.jcp.2005.05.029}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1016/j.jcp.2005.05.029}
+
+\bibitem{gordon1973}
+W.~Gordon, C.~Hall, \href{http://dx.doi.org/10.1007/BF01436298}{Transfinite
+  element methods: Blending-function interpolation over arbitrary curved
+  element domains}, Numerische Mathematik 21~(2) (1973) 109--129.
+\newblock \href {http://dx.doi.org/10.1007/BF01436298}
+  {\path{doi:10.1007/BF01436298}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/BF01436298}
+
+\bibitem{nielson1979}
+G.~M. Nielson,
+  \href{http://www.sciencedirect.com/science/article/pii/0021904579900200}{The
+  side-vertex method for interpolation in triangles}, Journal of Approximation
+  Theory 25~(4) (1979) 318 -- 336.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/0021-9045(79)90020-0}
+  {\path{doi:http://dx.doi.org/10.1016/0021-9045(79)90020-0}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/0021904579900200}
+
+\bibitem{haber1981}
+R.~Haber, M.~S. Shephard, J.~F. Abel, R.~H. Gallagher, D.~P. Greenberg,
+  \href{http://dx.doi.org/10.1002/nme.1620170706}{A general two-dimensional,
+  graphical finite element preprocessor utilizing discrete transfinite
+  mappings}, International Journal for Numerical Methods in Engineering 17~(7)
+  (1981) 1015--1044.
+\newblock \href {http://dx.doi.org/10.1002/nme.1620170706}
+  {\path{doi:10.1002/nme.1620170706}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1002/nme.1620170706}
+
+\bibitem{szabo1991}
+B.~Szabo, I.~Babu{\v{s}}ka,
+  \href{https://books.google.ca/books?id=JsCg-QWUT28C}{Finite Element
+  Analysis}, A Wiley-Interscience publication, Wiley, 1991.
+\newline\urlprefix\url{https://books.google.ca/books?id=JsCg-QWUT28C}
+
+\bibitem{lacombe1988}
+C.~Lacombe, C.~Bedard,
+  \href{http://dx.doi.org/10.1016/0045-7825(88)90114-4}{Face-apex projectors
+  for the interpolation function of a general tetrahedral mid-edge finite
+  element}, Comput. Methods Appl. Mech. Eng. 68~(2) (1988) 177--188.
+\newblock \href {http://dx.doi.org/10.1016/0045-7825(88)90114-4}
+  {\path{doi:10.1016/0045-7825(88)90114-4}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1016/0045-7825(88)90114-4}
+
+\bibitem{dey1997}
+S.~Dey, M.~S. Shephard, J.~E. Flaherty,
+  \href{http://www.sciencedirect.com/science/article/pii/S0045782597001035}{Geometry
+  representation issues associated with p-version finite element computations},
+  Computer Methods in Applied Mechanics and Engineering 150~(1–4) (1997) 39
+  -- 55, symposium on Advances in Computational Mechanics.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/S0045-7825(97)00103-5}
+  {\path{doi:http://dx.doi.org/10.1016/S0045-7825(97)00103-5}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0045782597001035}
+
+\bibitem{xie2013}
+Z.~Xie, R.~Sevilla, O.~Hassan, K.~Morgan,
+  \href{http://dx.doi.org/10.1007/s00466-012-0736-4}{The generation of
+  arbitrary order curved meshes for 3{D} finite element analysis},
+  Computational Mechanics 51~(3) (2013) 361--374.
+\newblock \href {http://dx.doi.org/10.1007/s00466-012-0736-4}
+  {\path{doi:10.1007/s00466-012-0736-4}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s00466-012-0736-4}
+
+\bibitem{kopriva2006}
+D.~Kopriva, \href{http://dx.doi.org/10.1007/s10915-005-9070-8}{Metric
+  identities and the discontinuous spectral element method on curvilinear
+  meshes}, Journal of Scientific Computing 26~(3) (2006) 301--327.
+\newblock \href {http://dx.doi.org/10.1007/s10915-005-9070-8}
+  {\path{doi:10.1007/s10915-005-9070-8}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s10915-005-9070-8}
+
+\bibitem{hughes2005}
+T.~Hughes, J.~Cottrell, Y.~Bazilevs,
+  \href{http://www.sciencedirect.com/science/article/pii/S0045782504005171}{Isogeometric
+  analysis: {CAD}, finite elements, {NURBS}, exact geometry and mesh
+  refinement}, Computer Methods in Applied Mechanics and Engineering
+  194~(39–41) (2005) 4135 -- 4195.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1016/j.cma.2004.10.008}
+  {\path{doi:http://dx.doi.org/10.1016/j.cma.2004.10.008}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0045782504005171}
+
+\bibitem{sevilla2008}
+R.~Sevilla, S.~Fernandez-Mendez, A.~Huerta,
+  \href{http://dx.doi.org/10.1002/fld.1711}{Nurbs-enhanced finite element
+  method for {E}uler equations}, International Journal for Numerical Methods in
+  Fluids 57~(9) (2008) 1051--1069.
+\newblock \href {http://dx.doi.org/10.1002/fld.1711}
+  {\path{doi:10.1002/fld.1711}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1002/fld.1711}
+
+\bibitem{sevilla2011}
+R.~Sevilla, S.~Fernandez-Mendez, A.~Huerta,
+  \href{http://dx.doi.org/10.1007/s11831-011-9066-5}{Nurbs-enhanced finite
+  element method (nefem)}, Archives of Computational Methods in Engineering
+  18~(4) (2011) 441--484.
+\newblock \href {http://dx.doi.org/10.1007/s11831-011-9066-5}
+  {\path{doi:10.1007/s11831-011-9066-5}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s11831-011-9066-5}
+
+\bibitem{brooks1982}
+A.~N. Brooks, T.~J. Hughes,
+  \href{http://www.sciencedirect.com/science/article/pii/0045782582900718}{Streamline
+  upwind/petrov-{G}alerkin formulations for convection dominated flows with
+  particular emphasis on the incompressible navier-stokes equations}, Computer
+  Methods in Applied Mechanics and Engineering 32~(1–3) (1982) 199 -- 259.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/0045-7825(82)90071-8}
+  {\path{doi:http://dx.doi.org/10.1016/0045-7825(82)90071-8}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/0045782582900718}
+
+\bibitem{hughes1998}
+T.~J. Hughes, G.~R. Feijóo, L.~Mazzei, J.-B. Quincy,
+  \href{http://www.sciencedirect.com/science/article/pii/S0045782598000796}{The
+  variational multiscale method—a paradigm for computational mechanics},
+  Computer Methods in Applied Mechanics and Engineering 166~(1–2) (1998) 3 --
+  24, advances in Stabilized Methods in Computational Mechanics.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/S0045-7825(98)00079-6}
+  {\path{doi:http://dx.doi.org/10.1016/S0045-7825(98)00079-6}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0045782598000796}
+
+\bibitem{hughes2007}
+T.~J.~R. Hughes, G.~Sangalli,
+  \href{http://dx.doi.org/10.1137/050645646}{Variational multiscale analysis:
+  the fine‐scale {G}reen’s function, projection, optimization,
+  localization, and stabilized methods}, SIAM Journal on Numerical Analysis
+  45~(2) (2007) 539--557.
+\newblock \href {http://arxiv.org/abs/http://dx.doi.org/10.1137/050645646}
+  {\path{arXiv:http://dx.doi.org/10.1137/050645646}}, \href
+  {http://dx.doi.org/10.1137/050645646} {\path{doi:10.1137/050645646}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1137/050645646}
+
+\bibitem{demkowicz2010}
+L.~Demkowicz, J.~Gopalakrishnan,
+  \href{http://www.sciencedirect.com/science/article/pii/S0045782510000125}{A
+  class of discontinuous petrov-{G}alerkin methods. part i: The transport
+  equation}, Computer Methods in Applied Mechanics and Engineering
+  199~(23–24) (2010) 1558 -- 1572.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1016/j.cma.2010.01.003}
+  {\path{doi:http://dx.doi.org/10.1016/j.cma.2010.01.003}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0045782510000125}
+
+\bibitem{demkowicz2011}
+L.~Demkowicz, J.~Gopalakrishnan, \href{http://dx.doi.org/10.1002/num.20640}{A
+  class of discontinuous petrov-{G}alerkin methods. ii. optimal test
+  functions}, Numerical Methods for Partial Differential Equations 27~(1)
+  (2011) 70--105.
+\newblock \href {http://dx.doi.org/10.1002/num.20640}
+  {\path{doi:10.1002/num.20640}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1002/num.20640}
+
+\bibitem{chan2014}
+J.~Chan, L.~Demkowicz, R.~Moser,
+  \href{http://www.sciencedirect.com/science/article/pii/S0045793014000875}{A
+  {DPG} method for steady viscous compressible flow}, Computers \& Fluids 98
+  (2014) 69 -- 90, 12th {USNCCM} mini-symposium of High-Order Methods for
+  Computational Fluid Dynamics - A special issue dedicated to the 80th birthday
+  of Professor Antony Jameson.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/j.compfluid.2014.02.024}
+  {\path{doi:http://dx.doi.org/10.1016/j.compfluid.2014.02.024}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0045793014000875}
+
+\bibitem{chan_thesis}
+J.~Chan, \href{https://repositories.lib.utexas.edu/handle/2152/21417}{A {DPG}
+  method for convection-diffusion problems}, . Ph.D. Thesis, University of
+  Texas at Austin (2013).
+\newline\urlprefix\url{https://repositories.lib.utexas.edu/handle/2152/21417}
+
 \end{thebibliography}

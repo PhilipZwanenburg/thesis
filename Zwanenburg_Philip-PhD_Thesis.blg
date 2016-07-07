@@ -7,45 +7,45 @@ Warning--empty publisher in reed1973
 Warning--empty chapter and pages in reed1973
 Warning--empty pages in reed1973
 Warning--empty institution in atkins1996
-You've used 31 entries,
+You've used 51 entries,
             2937 wiz_defined-function locations,
-            902 strings with 12647 characters,
-and the built_in function-call counts, 10466 in all, are:
-= -- 1066
-> -- 264
+            1070 strings with 18063 characters,
+and the built_in function-call counts, 17522 in all, are:
+= -- 1824
+> -- 431
 < -- 3
-+ -- 108
-- -- 77
-* -- 938
-:= -- 1418
-add.period$ -- 52
-call.type$ -- 31
-change.case$ -- 32
++ -- 177
+- -- 126
+* -- 1625
+:= -- 2366
+add.period$ -- 90
+call.type$ -- 51
+change.case$ -- 55
 chr.to.int$ -- 6
-cite$ -- 35
-duplicate$ -- 316
-empty$ -- 1176
-format.name$ -- 104
-if$ -- 2706
+cite$ -- 55
+duplicate$ -- 516
+empty$ -- 1950
+format.name$ -- 170
+if$ -- 4519
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 34
-newline$ -- 147
-num.names$ -- 31
-pop$ -- 194
+int.to.str$ -- 51
+missing$ -- 54
+newline$ -- 245
+num.names$ -- 51
+pop$ -- 299
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 549
+skip$ -- 896
 stack$ -- 0
-substring$ -- 612
-swap$ -- 109
+substring$ -- 1066
+swap$ -- 186
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
-while$ -- 65
-width$ -- 33
-write$ -- 323
+while$ -- 108
+width$ -- 53
+write$ -- 543
 (There were 4 warnings)

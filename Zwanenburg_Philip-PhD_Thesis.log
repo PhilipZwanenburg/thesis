@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.4)  5 JUL 2016 23:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.4)  7 JUL 2016 00:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1263,7 +1263,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip124
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 62.
+Package hyperref Info: Option `colorlinks' set `true' on input line 69.
 
 (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
@@ -1284,39 +1284,39 @@ LaTeX Warning: Unused global option(s):
 (./Zwanenburg_Philip-PhD_Thesis.aux)
 \openout1 = `Zwanenburg_Philip-PhD_Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 119.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 119.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 133.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 133.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2013/09/01 v1.0 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 119.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 119.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 133.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 119.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 119.
-LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 119.
+LaTeX Info: Redefining \selectfont on input line 133.
 
 **************************************
 * Executing Begin Document Statement *
@@ -1372,7 +1372,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box71
-Package hyperref Info: Link coloring ON on input line 119.
+Package hyperref Info: Link coloring ON on input line 133.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1382,9 +1382,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count290
 )
-LaTeX Info: Redefining \ref on input line 119.
-LaTeX Info: Redefining \pageref on input line 119.
-LaTeX Info: Redefining \nameref on input line 119.
+LaTeX Info: Redefining \ref on input line 133.
+LaTeX Info: Redefining \pageref on input line 133.
+LaTeX Info: Redefining \nameref on input line 133.
 
 (./Zwanenburg_Philip-PhD_Thesis.out) (./Zwanenburg_Philip-PhD_Thesis.out)
 \@outlinefile=\write6
@@ -1399,15 +1399,15 @@ Package epstopdf Info: Source file: <./figures/McGillcrest.eps>
 (epstopdf)                    size: 7073 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/McGillcrest-eps-
 converted-to.pdf ./figures/McGillcrest.eps>
-(epstopdf)             \includegraphics on input line 137.
+(epstopdf)             \includegraphics on input line 151.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/McGillcrest-eps-converted-to.pdf, id=159, 43.16125pt x 54.2025pt>
+<./figures/McGillcrest-eps-converted-to.pdf, id=74, 43.16125pt x 54.2025pt>
 File: ./figures/McGillcrest-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/McGillcrest-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/McGillcrest-eps-converted-to.pdf used on inp
-ut line 137.
+ut line 151.
 (pdftex.def)             Requested size: 85.9996pt x 108.01103pt.
  [1
 Non-PDF special ignored!
@@ -1420,14 +1420,14 @@ Package hyperref Warning: bookmark level for unknown extrachapter defaults to 0
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 157.
+(hyperref)                removing `\uppercase' on input line 164.
 
 [2
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 167.
+(hyperref)                removing `\uppercase' on input line 171.
 
 [3
 
@@ -1435,9 +1435,17 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 176.
+(hyperref)                removing `\uppercase' on input line 181.
 
 [4
+
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 190.
+
+[5
 
 ] (./Zwanenburg_Philip-PhD_Thesis.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
@@ -1449,17 +1457,17 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [5
-
-
-])
+))
 \tf@toc=\write7
 \openout7 = `Zwanenburg_Philip-PhD_Thesis.toc'.
 
- [6]
+ [6
+
+
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 184.
+(hyperref)                removing `\uppercase' on input line 198.
 
 (./Zwanenburg_Philip-PhD_Thesis.lot)
 \tf@lot=\write8
@@ -1472,7 +1480,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 185.
+(hyperref)                removing `\uppercase' on input line 199.
 
 (./Zwanenburg_Philip-PhD_Thesis.lof)
 \tf@lof=\write9
@@ -1487,12 +1495,12 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 CHAPTER 1.
 ***************************
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--199
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--202
+Underfull \hbox (badness 10000) in paragraph at lines 214--216
 
  []
 
@@ -1500,65 +1508,114 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.202 
+l.216 
        [1
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 212--214
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 218--220
+Underfull \hbox (badness 10000) in paragraph at lines 232--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--223
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 224--226
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 227--229
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--243
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 234--236
+Underfull \hbox (badness 10000) in paragraph at lines 248--250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--239
+Underfull \hbox (badness 10000) in paragraph at lines 251--253
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 240--242
+Underfull \hbox (badness 10000) in paragraph at lines 254--256
 
  []
 
 [6]
-Overfull \hbox (9.7517pt too wide) in paragraph at lines 285--314
- [] 
+Underfull \hbox (badness 10000) in paragraph at lines 260--262
+
  []
 
-<example-image.pdf, id=354, 321.2pt x 240.9pt>
-File: example-image.pdf Graphic file (type pdf)
- <use example-image.pdf>
-Package pdftex.def Info: example-image.pdf used on input line 322.
-(pdftex.def)             Requested size: 171.99922pt x 129.00336pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 275--277
+
+ []
 
 
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 323.
-See the caption package documentation for explanation.
+Underfull \hbox (badness 10000) in paragraph at lines 278--280
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 288--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--293
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--296
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--299
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 300--302
+
+ []
+
+
+Overfull \hbox (9.7517pt too wide) in paragraph at lines 340--370
+ [] 
+ []
 
 Package epstopdf Info: Source file: <./figures/StructuredMixedML1P4_ToBeCurved.
 eps>
@@ -1571,17 +1628,17 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/StructuredMixedM
 L1P4_ToBeCurved-eps-converted-to.pdf ./figures/StructuredMixedML1P4_ToBeCurved.
 eps>
-(epstopdf)             \includegraphics on input line 331.
+(epstopdf)             \includegraphics on input line 377.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/StructuredMixedML1P4_ToBeCurved-eps-converted-to.pdf, id=355, 652.43
+<./figures/StructuredMixedML1P4_ToBeCurved-eps-converted-to.pdf, id=313, 652.43
 75pt x 580.1675pt>
 File: ./figures/StructuredMixedML1P4_ToBeCurved-eps-converted-to.pdf Graphic fi
 le (type pdf)
 
 <use ./figures/StructuredMixedML1P4_ToBeCurved-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/StructuredMixedML1P4_ToBeCurved-eps-converte
-d-to.pdf used on input line 331.
+d-to.pdf used on input line 377.
 (pdftex.def)             Requested size: 193.50076pt x 172.06859pt.
 Package epstopdf Info: Source file: <./figures/StructuredMixedML1P4_Curved.eps>
 
@@ -1593,25 +1650,18 @@ converted-to.pdf>
 (epstopdf)                    size: 18841 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/StructuredMixedM
 L1P4_Curved-eps-converted-to.pdf ./figures/StructuredMixedML1P4_Curved.eps>
-(epstopdf)             \includegraphics on input line 336.
+(epstopdf)             \includegraphics on input line 382.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/StructuredMixedML1P4_Curved-eps-converted-to.pdf, id=356, 652.4375pt
+<./figures/StructuredMixedML1P4_Curved-eps-converted-to.pdf, id=314, 652.4375pt
  x 580.1675pt>
 File: ./figures/StructuredMixedML1P4_Curved-eps-converted-to.pdf Graphic file (
 type pdf)
 
 <use ./figures/StructuredMixedML1P4_Curved-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/StructuredMixedML1P4_Curved-eps-converted-to
-.pdf used on input line 336.
+.pdf used on input line 382.
 (pdftex.def)             Requested size: 193.50076pt x 172.06859pt.
- [7pdfTeX warning (ext4): destination with the same identifier (name{equation.1
-.3.1}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.341 \end{figure}
-                  ] [8]
 Package epstopdf Info: Source file: <./figures/SupersonicVortexMachDist_ML1P4.e
 ps>
 (epstopdf)                    date: 2015-11-20 16:23:00
@@ -1623,146 +1673,44 @@ ps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/SupersonicVortex
 MachDist_ML1P4-eps-converted-to.pdf ./figures/SupersonicVortexMachDist_ML1P4.ep
 s>
-(epstopdf)             \includegraphics on input line 346.
+(epstopdf)             \includegraphics on input line 392.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/SupersonicVortexMachDist_ML1P4-eps-converted-to.pdf, id=372, 652.437
+<./figures/SupersonicVortexMachDist_ML1P4-eps-converted-to.pdf, id=315, 652.437
 5pt x 580.1675pt>
 File: ./figures/SupersonicVortexMachDist_ML1P4-eps-converted-to.pdf Graphic fil
 e (type pdf)
 
 <use ./figures/SupersonicVortexMachDist_ML1P4-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/SupersonicVortexMachDist_ML1P4-eps-converted
--to.pdf used on input line 346.
+-to.pdf used on input line 392.
 (pdftex.def)             Requested size: 344.005pt x 305.91153pt.
- [9 <./figures/StructuredMixedML1P4_ToBeCurved-eps-converted-to.pdf> <./figures
-/StructuredMixedML1P4_Curved-eps-converted-to.pdf> </usr/share/texlive/texmf-di
-st/tex/latex/mwe/example-image.pdf>] [10 <./figures/SupersonicVortexMachDist_ML
-1P4-eps-converted-to.pdf>] [11]
+ [13pdfTeX warning (ext4): destination with the same identifier (name{equation.
+1.3.1}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.403 \chapter
+              {TESTING FOOTNOTES}] [14] [15 <./figures/StructuredMixedML1P4_ToB
+eCurved-eps-converted-to.pdf> <./figures/StructuredMixedML1P4_Curved-eps-conver
+ted-to.pdf>] [16 <./figures/SupersonicVortexMachDist_ML1P4-eps-converted-to.pdf
+>]
 ***************************
 CHAPTER 2.
 ***************************
-
-Overfull \hbox (41.87721pt too wide) in paragraph at lines 376--385
-\OT1/cmr/m/n/12 this class file the same way as the re-port class, by putting [
-]\OT1/cmtt/m/n/12 \documentclass{mcgilletdclass}
- []
-
-[12
-
-]
-***************************
-CHAPTER 3.
-***************************
-[13
-
-]
-***************************
-CHAPTER 4.
-***************************
-[14
-
-]
-***************************
-CHAPTER 5.
-***************************
-
-Overfull \hbox (188.96863pt too wide) in paragraph at lines 427--430
-[]\OT1/cmr/m/n/12 The op-tional ded-i-ca-tion can be in-serted by us-ing the co
-m-mand []\OT1/cmtt/m/n/12 \SetDedicationName{text},\SetDedicationText{text}
- []
-
-
-Overfull \hbox (226.05449pt too wide) in paragraph at lines 431--435
-[]\OT1/cmr/m/n/12 In or-der to for-mat the op-tional ac-knowl-edg-ments, use th
-e com-mand []\OT1/cmtt/m/n/12 \SetAcknowledgeName{text},\SetAcknowledgeText{tex
-t}
- []
-
-
-Overfull \hbox (103.22084pt too wide) in paragraph at lines 436--440
-[]\OT1/cmr/m/n/12 These lists are gen-er-ated with the com-mands []\OT1/cmtt/m/
-n/12 \tableofcontents\OT1/cmr/m/n/12 , []\OT1/cmtt/m/n/12 \listoftables and \li
-stoffigures\OT1/cmr/m/n/12 .
- []
-
-
-Overfull \hbox (75.53282pt too wide) in paragraph at lines 436--440
-\OT1/cmr/m/n/12 The ti-tles of these lists may be changed by re-new-ing the []\
-OT1/cmtt/m/n/12 \TOCHeading{text}, \LOTHeading{text}\OT1/cmr/m/n/12 ,
- []
-
-
-Overfull \hbox (71.48845pt too wide) in paragraph at lines 441--450
-\OT1/cmr/m/n/12 into your doc-u-ment. []\OT1/cmtt/m/n/12 \SetAbstractFrName{tex
-t},\SetAbstracFrText{text} and \AbstractFr
- []
-
-
-Overfull \hbox (12.1688pt too wide) in paragraph at lines 441--450
-\OT1/cmr/m/n/12 are the equiv-a-lent com-mands for the French ab-stract, and []
-\OT1/cmtt/m/n/12 \SetAbstractOtName{text}\OT1/cmr/m/n/12 ,
- []
-
-[15
-
-] [16]
-***************************
-CHAPTER 6.
-***************************
-
-Underfull \hbox (badness 10000) in paragraph at lines 475--482
-
- []
-
 [17
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 483--486
+] [18
 
- []
-
-[18]
-***************************
-CHAPTER 7.
-***************************
-
-Overfull \hbox (89.23048pt too wide) in paragraph at lines 516--519
-[]\OT1/cmr/m/n/12 The ref-er-ences them-selves are in-serted in the doc-u-ment 
-at the point of the []\OT1/cmtt/m/n/12 \bibliography{mcgilletd}
- []
-
-[19
-
-]
-***************************
-CHAPTER 8.
-***************************
-[20
-
-] [21] [22] [23] [24]
-Overfull \hbox (0.82634pt too wide) in paragraph at lines 660--661
-[]\OT1/cmr/m/n/12 Use []\OT1/cmtt/m/n/12 \begin{romanList} \OT1/cmr/m/n/12 and 
-[]\OT1/cmtt/m/n/12 \end{romanList} \OT1/cmr/m/n/12 com-mands to cre-ate lower
- []
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 681--685
-
- []
-
-[26] [27]
-***************************
-CHAPTER 9.
-***************************
-[28
-
-] [29
-
-] [30
+] [19
 
 
 ] (./Zwanenburg_Philip-PhD_Thesis.bbl
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 1.
+
+
 Underfull \hbox (badness 7468) in paragraph at lines 41--49
 []\OT1/cmr/m/n/12 S. A. Orszag, [][]Spec-tral meth-ods for prob-lems in com-ple
 x ge-ome-
@@ -1780,7 +1728,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--49
 / science / article / pii /
  []
 
-[31
+[20
 
 
 
@@ -1856,7 +1804,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--117
 / science / article / pii /
  []
 
-[32]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 141--149
 \OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
 / science / article / pii /
@@ -1910,7 +1858,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--185
 / science / article / pii /
  []
 
-[33]
+[22]
 Underfull \hbox (badness 2828) in paragraph at lines 215--223
 \OT1/cmr/m/n/12 of stable-symmetric-conservative flux re-con-struc-tion cor-rec
 -tion func-tions[][],
@@ -1931,7 +1879,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--233
 / science / article / pii /
  []
 
-[34]
+[23]
 Underfull \hbox (badness 4634) in paragraph at lines 254--261
 []\OT1/cmr/m/n/12 P. Zwa-nen-burg, S. Nadara-jah, [][]Equiv-a-lence be-tween th
 e en-ergy sta-
@@ -1955,31 +1903,207 @@ Underfull \hbox (badness 10000) in paragraph at lines 254--261
 / science / article / pii /
  []
 
-[35])
-No file keylist.ind found.
-No file abbr.ind found.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 750.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 750.
-(./Zwanenburg_Philip-PhD_Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 750.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 750.
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--270
+\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
+/ science / article / pii /
+ []
+
+
+Underfull \hbox (badness 5878) in paragraph at lines 289--297
+[]\OT1/cmr/m/n/12 G. M. Niel-son, [][]The side-vertex method for in-ter-po-la-t
+ion in tri-an-
+ []
+
+
+Underfull \hbox (badness 5924) in paragraph at lines 289--297
+\OT1/cmr/m/n/12 gles[][], Jour-nal of Ap-prox-i-ma-tion The-ory 25 (4) (1979) 3
+18 -- 336.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--297
+\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
+/ science / article / pii /
+ []
+
+[24]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+
+Underfull \hbox (badness 5533) in paragraph at lines 324--333
+[]\OT1/cmr/m/n/12 S. Dey, M. S. Shep-hard, J. E. Fla-herty, [][]Ge-om-e-try rep
+-re-sen-ta-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--333
+\OT1/cmr/m/n/12 is-sues as-so-ci-ated with p-version fi-nite el-e-ment com-pu-t
+a-tions[][], Com-
+ []
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 324--333
+\OT1/cmr/m/n/12 puter Meth-ods in Ap-plied Me-chan-ics and En-gi-neer-ing 150 (
+14) (1997)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--333
+\OT1/cmr/m/n/12 39 -- 55, sym-po-sium on Ad-vances in Com-pu-ta-tional Me-chan-
+ics.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--333
+\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
+/ science / article / pii /
+ []
+
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--360
+\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
+/ science / article / pii /
+ []
+
+[25]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+
+Underfull \hbox (badness 3078) in paragraph at lines 380--389
+[]\OT1/cmr/m/n/12 A. N. Brooks, T. J. Hughes, [][]Stream-line upwind/petrov-Gal
+erkin for-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--389
+\OT1/cmr/m/n/12 mu-la-tions for con-vec-tion dom-i-nated flows with par-tic-u-l
+ar em-pha-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--389
+\OT1/cmr/m/n/12 sis on the in-com-press-ible navier-stokes equa-tions[][], Com-
+puter Meth-
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 380--389
+\OT1/cmr/m/n/12 ods in Ap-plied Me-chan-ics and En-gi-neer-ing 32 (13) (1982) 1
+99 -- 259.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--389
+\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
+/ science / article / pii /
+ []
+
+Missing character: There is no √ in font cmr12!
+Missing character: There is no ≥ in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no î in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+
+Underfull \hbox (badness 1694) in paragraph at lines 391--400
+[]\OT1/cmr/m/n/12 T. J. Hughes, G. R. Feijo, L. Mazzei, J.-B. Quincy, [][]The v
+ari-a-tional
+ []
+
+
+Underfull \hbox (badness 4454) in paragraph at lines 391--400
+\OT1/cmr/m/n/12 mul-ti-scale methoda paradigm for com-pu-ta-tional me-chan-ics[
+][], Com-puter
+ []
+
+
+Underfull \hbox (badness 5345) in paragraph at lines 391--400
+\OT1/cmr/m/n/12 Meth-ods in Ap-plied Me-chan-ics and En-gi-neer-ing 166 (12) (1
+998) 3
+ []
+
+
+Underfull \hbox (badness 5288) in paragraph at lines 391--400
+\OT1/cmr/m/n/12 -- 24, ad-vances in Sta-bi-lized Meth-ods in Com-pu-ta-tional M
+e-chan-ics.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--400
+\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
+/ science / article / pii /
+ []
+
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ê in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ô in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+
+Underfull \hbox (badness 5064) in paragraph at lines 413--421
+[]\OT1/cmr/m/n/12 L. Demkow-icz, J. Gopalakr-ish-nan, [][]A class of dis-con-ti
+n-u-ous petrov-
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 413--421
+\OT1/cmr/m/n/12 Galerkin meth-ods. part i: The trans-port equa-tion[][], Com-pu
+ter Meth-ods
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 413--421
+\OT1/cmr/m/n/12 in Ap-plied Me-chan-ics and En-gi-neer-ing 199 (2324) (2010) 15
+58 -- 1572.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--421
+\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
+/ science / article / pii /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--442
+\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
+/ science / article / pii /
+ []
+
+[26] [27])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 429.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 429.
+ (./Zwanenburg_Philip-PhD_Thesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 429.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 429.
 Package rerunfilecheck Info: File `Zwanenburg_Philip-PhD_Thesis.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: 9E3135ACD643E0F2A45C3210D7D4FA2E;2435.
+(rerunfilecheck)             Checksum: 393E224223AE93283F629C96064945B5;1080.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 750.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 429.
  ) 
 Here is how much of TeX's memory you used:
- 33496 strings out of 493029
- 586945 string characters out of 6136235
- 727824 words of memory out of 5000000
- 36333 multiletter control sequences out of 15000+600000
+ 33425 strings out of 493029
+ 586463 string characters out of 6136235
+ 728439 words of memory out of 5000000
+ 36326 multiletter control sequences out of 15000+600000
  13527 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,20n,96p,10402b,561s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,20n,96p,10402b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist
@@ -1992,13 +2116,13 @@ ts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1
-200.pfb>
-Output written on Zwanenburg_Philip-PhD_Thesis.pdf (43 pages, 615376 bytes).
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfrm1200.pfb>
+Output written on Zwanenburg_Philip-PhD_Thesis.pdf (35 pages, 598919 bytes).
 PDF statistics:
- 778 PDF objects out of 1000 (max. 8388607)
- 700 compressed objects within 7 object streams
- 165 named destinations out of 1000 (max. 500000)
- 350 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 699 PDF objects out of 1000 (max. 8388607)
+ 630 compressed objects within 7 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
 
