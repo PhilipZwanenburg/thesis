@@ -88,6 +88,8 @@
 \newcommand{\BibTeX}{\textsc{Bib}\TeX}
 
 \usepackage{titling}
+\usepackage[parfill]{parskip}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% McGill Guidelines
@@ -191,9 +193,9 @@ Don't forget NSERC+McGill Funding
 
 \begingroup
 \hypersetup{linkcolor=black}
-\TOCHeading{\uppercase{\textbf{Table of Contents}}}%
-\LOTHeading{\uppercase{\textbf{List of Tables}}}%
-\LOFHeading{\uppercase{\textbf{List of Figures}}}%
+\TOCHeading{\uppercase{Table of Contents}}%
+\LOTHeading{\uppercase{List of Tables}}%
+\LOFHeading{\uppercase{List of Figures}}%
 \tableofcontents %
 \listoftables %
 \listoffigures %
@@ -209,10 +211,8 @@ Don't forget NSERC+McGill Funding
 \section{Motivation \& Open Topics}
 
 The use of computational fluid dynamics (CFD) tools for the numerical analysis of fluid flows has significantly reduced costs associated with aerodynamic design over the past several decades. As computing systems have become increasingly powerful, there has been a corresponding advance in the equations employed for flow simulation (initially beginning with potential equations and now using the full Navier-Stokes equations) as well as in the resolution of complex flow phenomena.
-\\~
 
 Finite volume methods currently represent the industry and, to a great extent, academic standard for the solution of partial differential equations (PDEs) in the aerospace community. This is in large part due to their robustness in the presence of steep gradients in the flow as well as their ability to model geometrically complex objects as a result of the possibly unstructured nature of the volumes. However, finite volume schemes are inherently second order accurate, making their usage inefficient when flow solutions are smooth. In these cases, it is advantageous to use higher-order functions for the representation of the solution, resulting in solution convergence at greater rates than second order as well as necessitating fewer degrees of freedom (DOF) to obtain similar levels of solution resolution. One would thus like to employ spectral methods because of their exponential convergence properties, however these methods are unsuitable in the presence of complex geometry. Pseudo-spectral methods (which can be thought of as a spectral method being used within each control volume of a finite volume scheme) have become the most popular choice when attempting to address the concern of employing high-order accurate (greater than second order) solution representation in the presence of complex geometry. 
-\\~
 
 The discontinuous Galerkin (DG) method, initially proposed by Reed et al.~\cite{reed1973} and subsequently analyzed for the solution of systems of conservation laws~\cite{cockburn1991,cockburn1989a,cockburn1989b,cockburn1990,cockburn1998}, has become the most popular choice of high-order scheme in the CFD community.  Despite its widespread usage, there are still several major issues related to the standard DG method:
 
@@ -224,81 +224,64 @@ The discontinuous Galerkin (DG) method, initially proposed by Reed et al.~\cite{
 \end{itemize}
 
 The last of these issues provides the motivation for the thesis, however, many difficulties arising from the other listed problems have already been encountered simply while setting up the framework to begin the novel research. With particular regard to the representation of complex curved geometry, it has been observed that improper geometry treatment can contribute significant error to a flow simulation, potentially eliminating any advantages obtained from the use of better test spaces, for example.
-\\~
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Computational Complexity}
 \label{sec:Comp_comp}
 {\color{red} Provide links to sections where related results are provided if available}
-\\~
 
-Significant progress has been made with regard to the DG method's computational complexity, notably through the exploitation of sum factorization techniques, originally proposed by Orszag~\cite{orszag1980} and now employed in the tensor-product Spectral element method (SEM) of Kopriva~\cite{kopriva2009} and for general elements using collapsed tensor-product spaces by Karniadakis et al.~\cite{karniadakis1999}. When explicit methods are used, use of the sum factorization technique reduces the growth in computational complexity from $O(N^{2d})$ to $O(N^{d+1})$ where $d$ is the dimension of the problem and $N = P+1$ where $P$ is the order of the method. Savings for implicit schemes are even greater and further, the appropriate decomposition of element bases into corner, edge, facet, and volume modes allows for the ability to statically condense out the volume modes, significantly reducing the growth rate of globally coupled DOF as the order of the solution is increased in global matrix inversion stages. Sum factorization ideas have traditionally mainly been used for relatively high solution polynomial orders ($P \geq 8$) due to the lack of improvement over standard operators at lower orders, a minor goal of this work was to demonstrate that the algorithm is also relevant in the polynomial range considered here ($0 \leq P \leq 4$). {\color{red} Refer to section confirming the break even point. Compare with sparse standard (collocated), discuss cost of application of inverse mass matrix (uncollocated), discuss cost of linear solve (implicit, uncollocated).}
-\\~
+Significant progress has been made with regard to the improvement of the DG method's computational complexity, notably through the exploitation of sum factorization techniques, originally proposed by Orszag~\cite{orszag1980} and now employed in the tensor-product Spectral element method (SEM) of Kopriva~\cite{kopriva2009} and for general elements using collapsed tensor-product spaces by Karniadakis et al.~\cite{karniadakis1999}. When explicit methods are used, use of the sum factorization technique reduces the growth in computational complexity from $O(N^{2d})$ to $O(N^{d+1})$ where $d$ is the dimension of the problem and $N = P+1$ where $P$ is the order of the method. Savings for implicit schemes are even greater and further, the appropriate decomposition of element bases into corner, edge, facet, and volume modes allows for the ability to statically condense out the volume modes, significantly reducing the growth rate of globally coupled DOF as the order of the solution is increased in global matrix inversion stages. Sum factorization ideas have traditionally mainly been used for relatively high solution polynomial orders ($P \geq 8$) {\color{red} (reference for this, maybe sherwin)} due to the lack of improvement over standard operators at lower orders, a minor goal of this work was to demonstrate that the algorithm is also relevant in the polynomial range considered here ($0 \leq P \leq 4$). {\color{red} Refer to section confirming the break even point. Compare with sparse standard (collocated), discuss cost of application of inverse mass matrix (uncollocated), discuss cost of linear solve (implicit, uncollocated).}
 
 Another technique pursued for computational complexity minimization is the use of collocated schemes. Collocated schemes, notably the nodal DG scheme~\cite{hesthaven2002,hesthaven2007}, minimize interpolation and integration costs by collocating solution and flux interpolation nodes with cubature nodes. While this culminates in satisfactory results for linear PDEs solved on straight-sided elements, the use of higher-order accurate cubature rules is advocated in curved elements or when solving nonlinear systems of equations, destroying the collocation property of the scheme. It has also been demonstrated that simplex element ``alpha-optimized'' nodes~\cite{warburton2006} associated with the nodal DG scheme, were unsuitable when solving nonlinear PDEs due to significant aliasing errors~\cite{witherden2014}. This in turn spurred research into the derivation of triangular and tetrahedral element nodes which possess good interpolation properties and have an associated cubature rule, recovering at least volume collocation; this has been pursued by several authors~\cite{witherden2014,williams2014b,shunn2012}. However, cubature rules associated with these nodes are weak in the sense that they can not even exactly integrate linear PDEs on linear elements when cast in the variational weak DG framework which might degrade their accuracy and high-order convergence properties; the conclusions of Bassi et al.~\cite{bassi2013} suggest that this occurs for tensor-product elements.
-\\~
 
 A final avenue which has been pursued for the minimization of computational cost associated with high-order methods is the use of pre-integrated DG schemes~\cite{atkins1996} or DG-type schemes cast in differential form, notably the Energy Stable Flux Reconstruction (ESFR) schemes introduced in~\autoref{sec:CFL_diss_disp}. In these versions of the DG scheme, integral operations associated with the weak formulation of the DG scheme are performed in a preprocessing stage, eliminating many of the cubature operations associated with the original scheme. It is shown in {\color{red} link to scheme derivation section} that the majority of operators can be pre-computed in this fashion for both weak and strong forms of DG-type schemes and that it would be naive not to do so.
-\\~
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Restrictive CFL Condition and Suboptimal Dissipation and Dispersion Properties}
 \label{sec:CFL_diss_disp}
 
 As there is some level of subcell resolution in high-order schemes, the maximum CFL number decreases with the order of approximation of the solution on a fixed mesh. This results in restrictive time step sizes when solving problems explicitly. The recently introduced Flux Reconstruction (FR) schemes, initially proposed for tensor-product elements~\cite{huynh2007} and subsequently generalized to simplex elements~\cite{wang2009}, were originally presented as a unifying framework for DG-type schemes where stable time step limits greatly in excess of the standard DG scheme were achieved. However, restrictions on the type of flux reconstruction allowable while maintaining linear stability of the various schemes proposed by Huynh~\cite{huynh2007} were initially unclear. Appropriate choices for energy stability resulted in the derivation of the ESFR schemes, energy stable for linear advection on tensor-product elements~\cite{vincent2011} and for advection-diffusion on tensor-product elements~\cite{castonguay2013}; the extension to simplex elements has also been made~\cite{castonguay2012,williams2013,williams2014a}.
-\\~
 
 Within the ESFR framework, with different schemes parametrized simply by two parameters $c$ and $k$ (which can be associated with a scaling of the highest mode of the numerical flux correction), investigations were performed to find the values of $c$ and $k$ achieving the maximum stable time steps for linear advection-diffusion problems. These values were denoted as $c_+$ and $k_+$, allowing for time steps approximately twice as large as in the original DG formulation while maintaining the optimal order of convergence~\cite{castonguay2013,castonguay2012,williams2013,williams2014a}. A similar analysis relating to filtering of the numerical flux in the standard DG formulation also demonstrated that the stable time step could be increased while maintaining the optimal order of convergence~\cite{chalmers2014}. More recent work has focused on optimizing within an ESFR framework to find optimal flux reconstruction operators for the minimization of dissipation and dispersion~\cite{asthana2014}. Interestingly, it was found that there existed an FR operator, not fitting within the ESFR framework, which had significantly improved performance as compared to the optimal ESFR operator for the minimization of dissipation and dispersion. While the authors were unable to conclude that this method was energy stable, the extension of the energy stability envelope may make this possible~\cite{vincent2015}.
-\\~
 
 As the formulation of the ESFR schemes is extremely similar to that of the original DG scheme, it was natural that comparisons between the two would be made and it was eventually determined that ESFR schemes could be interpreted as modally filtered DG schemes. This was initially demonstrated in 1D and for straight-sided tensor product extensions~\cite{allaneau2011} and subsequently generalized to straight-sided simplex elements~\cite{williams2014a}. A related investigation proving the equivalence of certain ESFR schemes with DG variants on both straight-sided and curved tensor-product elements was also performed~\cite{degrazia2014,mengaldo2015}. More recently, equivalence between all ESFR schemes and modally filtered DG schemes on curved tensor-product and simplex elements was demonstrated, with the important conclusion that ESFR schemes can be formulated as a weak DG scheme where discontinuous edge flux is substituted for numerical edge flux correction~\cite{zwanenburg2016}. Given the theoretical justifications for the numerical flux and the significant computational effort expended to compute it, this interpretation puts the modification of its contribution to the residual into question, despite increasing the stable time step size. It was further demonstrated that ESFR schemes are inherently less efficient than DG schemes in weak form when solving problems implicitly.
-\\~
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Treatment of Complex Geometry}
 
 The proper treatment of complex geometry in high-order DG-type methods has been shown to be crucial. In the seminal work on the topic, it was demonstrated that curved geometry had to be represented in an isoparametric space of order $P$ for all solution polynomial orders $P \ge 2$ and in a superparametric space of second order in the case of first order solution representation in order to maintain the optimal convergence properties of these schemes, in two dimensions (2D)~\cite{bassi1997}. It was noted that low-order geometry representation results in deterioration of solution quality as the order of the scheme is increased, due to rarefaction waves being formed at vertices of polygonal mesh surfaces~\cite{krivodonova2006}. 
-\\~
 
 As the majority of mesh generators only provide linear meshes, a necessary inclusion in any high-order spectral element code is the projection of an initially straight-sided mesh to the curved geometry. This projection is commonly achieved through the use of transfinite blending function interpolation, first proposed by Gordon et al. for tensor-product elements~\cite{gordon1973} and subsequently generalized to simplex elements~\cite{nielson1979,haber1981,szabo1991,lacombe1988,dey1997,xie2013}. Assuming that corner nodes are located on the curved geometry, the process proceeds by sequentially projecting straight edge and facet nodes to the curved geometry followed by the application of a blending operation which appropriately displaces volume nodes (not touching the boundary). Ensuring that the error in the curved geometry representation converges at the same rate as the solution and the need for parametrization of arbitrary 3D curved surfaces represent two major challenges.
-\\~
 
 While errors due to improper geometry representation may only begin to manifest themselves at very fine levels of solution resolution, for high-order methods, these levels of accuracy are achievable. Further, if these geometric errors result in decreasing convergence rates of high-order methods, then the increase in the computational complexity would be incurred with no additional benefit, rendering these schemes useless. While optimal convergence orders for nonlinear hyperbolic cases have been demonstrated on curved geometry by many authors in 2D, the geometric complexity of the test cases used for these demonstrations has been minimal, generally with the possibility of employing analytic surface parametrization or using $C^{\infty}$ boundary functions. Curved surface representation is most commonly achieved using nodal geometry interpolation through a set of surface geometry nodes obtained from an arc length surface parametrization. To the author's knowledge, optimal convergence orders have never been published for any 3D simulation of nonlinear hyperbolic systems of equations over curved geometry. In 3D, additional geometric concerns must also be taken into account such as the enforcement of certain metric identities in order to ensure ``free-stream preservation" (i.e. avoid violations of conservation resulting only from curved geometry treatment)~\cite{kopriva2006}.
-\\~
 
 It is important to note that the discussion above assumed that a valid linear mesh could initially be generated for the complex geometry to be modelled in the simulation. In fact, it has recently been estimated that approximately 80\% of overall analysis time in the aerospace industry, among others, is devoted to (linear) mesh generation~\cite{hughes2005}, resulting in serious challenges when attempting to interface between simulated aerodynamic shape optimized profiles and the Computer Aided Design (CAD) model, for example. This motivated the formulation of isogeometric analysis where the solution is represented using the same basis as the CAD geometry, allowing for perfect geometric representation at any level of mesh refinement and seamless interfacing with CAD modelling~\cite{hughes2005}. The competitiveness of this new approach with existing methods has already been demonstrated in numerous benchmark test cases in both structural and fluid mechanics. The Non-uniform rational basis spline (NURBS) enhanced finite element method (NEFEM) in which the standard DG method is employed in the majority of the solution domain while isogeometric analysis is employed in curved elements has also recently been shown to provide superior results to standard DG discretizations on all test cases considered~\cite{sevilla2008,sevilla2011}. A further significant advantage of isogeometric analysis is that no interfacing with the CAD geometry would be required while performing mesh optimization during scheme execution, making these optimization algorithms suitable for the simulation of flow over vastly more complex geometric objects than those generally used for academic purposes.
-\\~
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Optimal Test Spaces}
 
 The Galerkin method was originally developed for the solution of PDEs in structural mechanics in which it can be shown to provide optimal results based on the symmetry and positive-definiteness of the associated variational problem. This optimal approximation property is lost however in the context of hyperbolic PDEs. Thus, robustness issues associated with high-order methods generally result from the development of large oscillations in the presence of steep solution gradients (shocks or boundary layers) on under-resolved meshes. The intuitive remedy for this occurrence of locally refining the discontinuous space used to represent the solution is extremely effective, however, it is generally difficult to know a-priori where solution refinement is required and thus it is desirable to be able to robustly compute solutions on relatively coarse meshes in order to obtain a residual based indicator to guide the process; obtaining solutions on under-resolved meshes often requires some form of stabilization.
-\\~
 
 This issue was first addressed in the context of continuous finite element solutions through the use of residual-based stabilization in the form of the Streamline Upwind Petrov Galerkin (SUPG) formulation, in which the stabilization was interpreted as a variation of the test space~\cite{brooks1982}. It was subsequently shown that the SUPG formulation was in essence complementing the solution space with information related to the fine-scale (unresolvable by the current mesh) Green's function in the context of the variational multiscale method~\cite{hughes1998,hughes2007}.
-\\~
 
 Following the motivation for pursuing test spaces other than the approximation spaces used in DG methods, the discontinuous Petrov-Galerkin (DPG) method with optimal test functions was introduced, where test functions are determined such that they minimize the residual in an appropriate energy setting~\cite{demkowicz2010,demkowicz2011}; in other words, test spaces are chosen for good stability properties as opposed to good approximation properties. Further advantages of the method include the treatment of numerical traces and fluxes as the globally coupled unknowns, resulting in the static condensation discussed above, but also precluding the need for Riemann solvers. The use of optimal test spaces also results in an internally preconditioned algebraic least squares system~\cite{chan2014}, which is symmetric and positive definite, allowing for the use of efficient nonlinear iterative solvers. While the DPG method offers optimally stable spatial discretization with respect to the chosen residual norm without extra stabilization parameters, even in the presence of steep gradients, it has been observed that exact solutions under Newton linearization may contain large oscillations and that artificial viscosity might be needed not as a stabilization but as a regularization mechanism through which such oscillations can be suppressed~\cite{chan_thesis}. Despite this concern, beginning from an extremely coarse solution, the DPG method has already been shown to have the ability to resolve physical features through automatic adaptation, without the use of artificial diffusion or shock capturing terms in the presence of large gradients~\cite{chan2014}.
-\\~
 
 {\color{red} Likely add to this section after further exploring DPG: Comparison of upwinded test space with adjoint for goal-oriented adaptive refinement; investigation into comparison of dissipation of Riemann flux vs DPG.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Thesis Overview}
 {\color{red} ToBeModified}
-\\~
 
 Implementation of sum factorization for faster algorithms. Note the lack of improvement when simply using sparse operators for the collocated scheme but likely show results for DPG where the scheme is inherently uncollocated and the standard operator is fully dense. Make some nice figures to demonstrate. Also show convergence order results using collocated nodes for simplex elements with suboptimal orders.
-\\~
 
 Investigation of ESFR schemes (comparison with other methods). Possibly some dissipation/dispersion results for DG vs DPG.
-\\~
 
 Potential comparison of blending vs ToBeCurved. Investigation into proper treatment of metric terms and cubature order (provide supporting mathematical analysis if possible). Comparison with NURBS geometry (time permitting).
-\\~
 
 {\color{red} List DPG related work when completed.}
-\\~
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Thesis Overview}
 
 \section{Testing}
 \label{sec:NumericalResults}
@@ -396,6 +379,289 @@ P4	& 6.74e-02 & 6.33e-06 & 7.24e-06 & 4.53e-06 & - & - & - \\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Governing Equations}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Thermodynamics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Navier-Stokes Equations}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Boundary Conditions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Non-Dimensionalization}
+{\color{red}Under Consideration}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Numerical Methods}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discontinuous Galerkin Method}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discontinuous Petrov-Galerkin Method}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Adjoint Formulation}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Computational Complexity Improvements}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sum Factorization}
+
+As discussed in~\autoref{sec:Comp_comp}, sum factorization reduces computational complexity of operator application from $O(N^{2d})$ to $O(N^{d+1})$ where $d$ is the dimension of the problem and $N = P+1$ where $P$ is the order of the method. This is achieved by noting the decomposition of multi-dimensional operators into their 1D components in a tensor-product (TP) fashion, whenever both the basis functions and interpolation/cubature nodes admit such a decomposition. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Representative Example}
+The algorithm is most clearly illustrated with a 3D example. Consider the case of numerical over-integration of the $r$ component of the flux divergence with respect to the DG test functions all represented in a P1 basis, $\chi_r(\boldsymbol r)$, using P2 cubature nodes, $\boldsymbol r_{vI}$, as in {\color{red} refer to equation},
+
+\begin{equation} \nonumber
+\boldsymbol \chi_r(\boldsymbol r_{vI})^T \boldsymbol W_{vI} \boldsymbol \chi(\boldsymbol r_{vI}) \hat{\boldsymbol f^r_{r}} 
+\hspace{2mm} \coloneqq \hspace{2mm}
+\boldsymbol D^{Weak}_r {\hat{\boldsymbol f}^{r,T}_{1}}.
+\end{equation}
+
+Defining the 1D differentiation and interpolation operators as
+
+\begin{equation} \nonumber
+\begin{split}
+\boldsymbol I^{Weak,1D} 
+\coloneqq &
+\boldsymbol \chi^{1D}(\boldsymbol r^{1D}_{vI})^T \boldsymbol W^{1D}_{vI} \boldsymbol \chi(\boldsymbol r^{1D}_{vI}) \\
+= &
+\begin{bmatrix}
+\chi^{1D}_0(r_{v,0}) & \chi^{1D}_0(r_{v,1}) & \chi^{1D}_0(r_{v,2}) \\
+\chi^{1D}_1(r_{v,0}) & \chi^{1D}_1(r_{v,1}) & \chi^{1D}_1(r_{v,2}) \\
+\end{bmatrix}
+\begin{bmatrix}
+W^{1D}_0 & 0 & 0 \\
+0 & W^{1D}_1 & 0 \\
+0 & 0 & W^{1D}_2 \\
+\end{bmatrix}
+\begin{bmatrix}
+\chi^{1D}_0(r_{v,0}) & \chi^{1D}_1(r_{v,0}) \\
+\chi^{1D}_0(r_{v,1}) & \chi^{1D}_1(r_{v,1}) \\
+\chi^{1D}_0(r_{v,2}) & \chi^{1D}_1(r_{v,2}) \\
+\end{bmatrix} \\
+\coloneqq &
+\begin{bmatrix}
+I_{00} & I_{01} \\
+I_{10} & I_{11} \\
+\end{bmatrix}
+\end{split}
+\end{equation}
+
+and
+
+\begin{equation} \nonumber
+\begin{split}
+\boldsymbol D^{Weak,1D} 
+\coloneqq &
+\boldsymbol \chi^{1D}_r(\boldsymbol r^{1D}_{vI})^T \boldsymbol W^{1D}_{vI} \boldsymbol \chi(\boldsymbol r^{1D}_{vI}) \\
+= &
+\begin{bmatrix}
+\chi^{1D}_{r,0}(r_{v,0}) & \chi^{1D}_{r,0}(r_{v,1}) & \chi^{1D}_{r,0}(r_{v,2}) \\
+\chi^{1D}_{r,1}(r_{v,0}) & \chi^{1D}_{r,1}(r_{v,1}) & \chi^{1D}_{r,1}(r_{v,2}) \\
+\end{bmatrix}
+\begin{bmatrix}
+W^{1D}_0 & 0 & 0 \\
+0 & W^{1D}_1 & 0 \\
+0 & 0 & W^{1D}_2 \\
+\end{bmatrix}
+\begin{bmatrix}
+\chi^{1D}_0(r_{v,0}) & \chi^{1D}_1(r_{v,0}) \\
+\chi^{1D}_0(r_{v,1}) & \chi^{1D}_1(r_{v,1}) \\
+\chi^{1D}_0(r_{v,2}) & \chi^{1D}_1(r_{v,2}) \\
+\end{bmatrix} \\
+\coloneqq &
+\begin{bmatrix}
+D_{00} & D_{01} \\
+D_{10} & D_{11} \\
+\end{bmatrix}
+\end{split}
+\end{equation}
+
+the standard operation can be decomposed as
+
+\begin{equation} \nonumber
+\begin{split}
+\boldsymbol D^{Weak}_r 
+\coloneqq &
+\begin{bmatrix}
+I_{00} & 0 & 0 & 0 & I_{01} & 0 & 0 & 0 \\
+0 & I_{00} & 0 & 0 & 0 & I_{01} & 0 & 0 \\
+0 & 0 & I_{00} & 0 & 0 & 0 & I_{01} & 0 \\
+0 & 0 & 0 & I_{00} & 0 & 0 & 0 & I_{01} \\
+I_{10} & 0 & 0 & 0 & I_{11} & 0 & 0 & 0 \\
+0 & I_{10} & 0 & 0 & 0 & I_{11} & 0 & 0 \\
+0 & 0 & I_{10} & 0 & 0 & 0 & I_{11} & 0 \\
+0 & 0 & 0 & I_{10} & 0 & 0 & 0 & I_{11} \\
+\end{bmatrix}
+\begin{bmatrix}
+I_{00} & 0 & I_{01} & 0 & 0 & 0 & 0 & 0 \\
+0 & I_{00} & 0 & I_{01} & 0 & 0 & 0 & 0 \\
+I_{10} & 0 & I_{11} & 0 & 0 & 0 & 0 & 0 \\
+0 & I_{10} & 0 & I_{11} & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & I_{00} & 0 & I_{01} & 0 \\
+0 & 0 & 0 & 0 & 0 & I_{00} & 0 & I_{01} \\
+0 & 0 & 0 & 0 & I_{10} & 0 & I_{11} & 0 \\
+0 & 0 & 0 & 0 & 0 & I_{10} & 0 & I_{11} \\
+\end{bmatrix} \\
+&
+\begin{bmatrix}
+D_{00} & D_{01} & 0 & 0 & 0 & 0 & 0 & 0 \\
+D_{10} & D_{11} & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & D_{00} & D_{01} & 0 & 0 & 0 & 0 \\
+0 & 0 & D_{10} & D_{11} & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & D_{00} & D_{01} & 0 & 0 \\
+0 & 0 & 0 & 0 & D_{10} & D_{11} & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & D_{00} & D_{01} \\
+0 & 0 & 0 & 0 & 0 & 0 & D_{10} & D_{11} \\
+\end{bmatrix}
+\begin{bmatrix}
+\hat{f}^r_{1,000} \\
+\hat{f}^r_{1,100} \\
+\hat{f}^r_{1,010} \\
+\hat{f}^r_{1,110} \\
+\hat{f}^r_{1,001} \\
+\hat{f}^r_{1,101} \\
+\hat{f}^r_{1,011} \\
+\hat{f}^r_{1,111} \\
+\end{bmatrix}.
+\end{split}
+\end{equation}
+
+Noting that the non-zero elements in the decomposed components of $\boldsymbol D^{Weak}_r$ are built from repeatition of the 1D operators and assuming that $\hat{\boldsymbol f}^r_{1}$ is stored continuously in memory based on sequential variation of indices $r$, $s$, then $t$, the application of the standard operator can be done in the following steps:
+
+\begin{enumerate}
+\item Multiplication in the $r$ direction by $\boldsymbol D^{Weak,1D}$, interpreting $\hat{\boldsymbol f}^{r}_{1}$ as a $N \times N^2$ column-major matrix,
+\begin{equation} \nonumber
+\hat{\boldsymbol f}^{Int1,r}_{1}
+=
+\begin{bmatrix}
+D_{00} & D_{01} \\
+D_{10} & D_{11} \\
+\end{bmatrix}
+\begin{bmatrix}
+\hat{f}^r_{1,000} & \hat{f}^r_{1,010} & \hat{f}^r_{1,001} & \hat{f}^r_{1,011} \\
+\hat{f}^r_{1,100} & \hat{f}^r_{1,110} & \hat{f}^r_{1,101} & \hat{f}^r_{1,111} \\
+\end{bmatrix}
+\end{equation}
+
+\item Transposition of $\hat{\boldsymbol f}^{Int1,r}_{1}$, interpreted as a $N \times N^2$ column-major matrix, followed by multiplication by $\boldsymbol I^{Weak,1D}$ (now in the $s$ direction), followed by a transpose interpreting the result as a $N^2 \times N$ matrix,
+\begin{equation} \nonumber
+\hat{\boldsymbol f}^{Int1,r}_{1}
+=
+\begin{bmatrix}
+\hat{f}^{Int1,r}_{1,000} & \hat{f}^{Int1,r}_{1,010} & \hat{f}^{Int1,r}_{1,001} & \hat{f}^{Int1,r}_{1,011} \\
+\hat{f}^{Int1,r}_{1,100} & \hat{f}^{Int1,r}_{1,110} & \hat{f}^{Int1,r}_{1,101} & \hat{f}^{Int1,r}_{1,111} \\
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+\hat{f}^{Int1,r}_{1,000} & \hat{f}^{Int1,r}_{1,001} & \hat{f}^{Int1,r}_{1,100} & \hat{f}^{Int1,r}_{1,101} \\
+\hat{f}^{Int1,r}_{1,010} & \hat{f}^{Int1,r}_{1,011} & \hat{f}^{Int1,r}_{1,110} & \hat{f}^{Int1,r}_{1,111} \\
+\end{bmatrix}
+\end{equation}
+\begin{equation} \nonumber
+\hat{\boldsymbol f}^{Int2,r}_{1}
+=
+\begin{bmatrix}
+I_{00} & I_{01} \\
+I_{10} & I_{11} \\
+\end{bmatrix}
+\begin{bmatrix}
+\hat{f}^{Int1,r}_{1,000} & \hat{f}^{Int1,r}_{1,001} & \hat{f}^{Int1,r}_{1,100} & \hat{f}^{Int1,r}_{1,101} \\
+\hat{f}^{Int1,r}_{1,010} & \hat{f}^{Int1,r}_{1,011} & \hat{f}^{Int1,r}_{1,110} & \hat{f}^{Int1,r}_{1,111} \\
+\end{bmatrix}
+\end{equation}
+\begin{equation} \nonumber
+\hat{\boldsymbol f}^{Int2,r}_{1}
+=
+\begin{bmatrix}
+\hat{f}^{Int1,r}_{1,000} & \hat{f}^{Int1,r}_{1,001} & \hat{f}^{Int1,r}_{1,100} & \hat{f}^{Int1,r}_{1,101} \\
+\hat{f}^{Int1,r}_{1,010} & \hat{f}^{Int1,r}_{1,011} & \hat{f}^{Int1,r}_{1,110} & \hat{f}^{Int1,r}_{1,111} \\
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+\hat{f}^{Int2,r}_{1,000} & \hat{f}^{Int2,r}_{1,010} & \hat{f}^{Int2,r}_{1,001} & \hat{f}^{Int2,r}_{1,011} \\
+\hat{f}^{Int2,r}_{1,100} & \hat{f}^{Int2,r}_{1,110} & \hat{f}^{Int2,r}_{1,101} & \hat{f}^{Int2,r}_{1,111} \\
+\end{bmatrix}
+\end{equation}
+
+\item Transposition of $\hat{\boldsymbol f}^{Int2,r}_{1}$, interpreted as a $N^2 \times N$ column-major matrix, followed by multiplication by $\boldsymbol I^{Weak,1D}$ (now in the $s$ direction), followed by a transpose interpreting the result as a $N \times N^2$ matrix,
+\begin{equation} \nonumber
+\hat{\boldsymbol f}^{Int1,r}_{1}
+=
+\begin{bmatrix}
+\hat{f}^{Int2,r}_{1,000} & \hat{f}^{Int2,r}_{1,010} & \hat{f}^{Int2,r}_{1,001} & \hat{f}^{Int2,r}_{1,011} \\
+\hat{f}^{Int2,r}_{1,100} & \hat{f}^{Int2,r}_{1,110} & \hat{f}^{Int2,r}_{1,101} & \hat{f}^{Int2,r}_{1,111} \\
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+\hat{f}^{Int2,r}_{1,000} & \hat{f}^{Int2,r}_{1,100} & \hat{f}^{Int2,r}_{1,010} & \hat{f}^{Int2,r}_{1,110} \\
+\hat{f}^{Int2,r}_{1,001} & \hat{f}^{Int2,r}_{1,101} & \hat{f}^{Int2,r}_{1,011} & \hat{f}^{Int2,r}_{1,111} \\
+\end{bmatrix}
+\end{equation}
+\begin{equation} \nonumber
+\boldsymbol {Df}^{r}_{1}
+=
+\begin{bmatrix}
+I_{00} & I_{01} \\
+I_{10} & I_{11} \\
+\end{bmatrix}
+\begin{bmatrix}
+\hat{f}^{Int2,r}_{1,000} & \hat{f}^{Int2,r}_{1,100} & \hat{f}^{Int2,r}_{1,010} & \hat{f}^{Int2,r}_{1,110} \\
+\hat{f}^{Int2,r}_{1,001} & \hat{f}^{Int2,r}_{1,101} & \hat{f}^{Int2,r}_{1,011} & \hat{f}^{Int2,r}_{1,111} \\
+\end{bmatrix}
+\end{equation}
+\begin{equation} \nonumber
+\begin{split}
+\boldsymbol {Df}^{r}_{1}
+= &
+\begin{bmatrix}
+{Df}^{r}_{1,000} & {Df}^{r}_{1,100} & {Df}^{r}_{1,010} & {Df}^{r}_{1,110} \\
+{Df}^{r}_{1,001} & {Df}^{r}_{1,101} & {Df}^{r}_{1,011} & {Df}^{r}_{1,111} \\
+\end{bmatrix} \\
+\rightarrow &
+\begin{bmatrix}
+{Df}^{r}_{1,000} & {Df}^{r}_{1,010} & {Df}^{r}_{1,001} & {Df}^{r}_{1,011} \\
+{Df}^{r}_{1,100} & {Df}^{r}_{1,110} & {Df}^{r}_{1,101} & {Df}^{r}_{1,111} \\
+\end{bmatrix}.
+\end{split}
+\end{equation}
+\end{enumerate}
+
+Note that the redundant double transpose between applications of $s$ and $t$ operators can be combined into one but was not done in the interest of clarity. In the 2D TP case, the operation with the $t$ direction operator is skipped and in the 3D case using WEDGE elements, the TRI operator is interpreted as the $r$ operator, with no operator in the $s$ direction, followed by the 1D TP operation in the $t$ direction. Counting operations using general dimensions of $N$ in each coordinate direction, it is clear for the application of the fully dense standard operator that the operation count is
+
+\begin{equation}
+N^3 * (2N^3-1) = O(N^6) = O(N^{2d}),
+\end{equation}
+
+while for the 3 1D TP operators (omitting the transposes) the operation count is
+
+\begin{equation}
+3*N * (2N-1)*N^2 = O(N^4) = O(N^{d+1}).
+\end{equation}
+
+This result is of course asymptotic and the advantages of the sum factorized approach are not apparent at low orders. Furthermore, for collocated schemes, TP interpolation operators are identity matrices and the differentiation operator becomes very sparse. Using compressed sparse row (CSR) storage and application of standard operators remains competitive with sum factorized operators for all orders tested in this case.~\autoref{sec:sf_results} presents results for timing comparisons using the different formulations.
+
+{\color{red} don't forget to discuss implicit operators}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Timing Comparisons}
+\label{sec:sf_results}
+
+{\color{red} Add results}
+
+\section{Representation of Operators in Fourier Space}
 
 
 
@@ -419,11 +685,11 @@ we add meaningless text until we can see a second line.} footnote.
 \ETDAppendix{Appendix B}{Here is the text of a second, additional Appendix}%
 %\end{\ETDAppendix}%
 
-\bibHeading{\uppercase{\textbf{References}}}
+\bibHeading{\uppercase{References}}
 \bibliography{PhD_Thesis}
 \bibliographystyle{elsarticle-num}
 %\bibliographystyle{plain}
 
 
 
-\end{document}
+\end{document}\grid
