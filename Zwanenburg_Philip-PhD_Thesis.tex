@@ -89,6 +89,26 @@
 
 \usepackage{titling}
 \usepackage[parfill]{parskip}
+\usepackage{bm}
+
+\newcommand{\mat}[1]{\bm{{#1}}}
+\newcommand{\vect}[1]{\bm{{#1}}}
+%\newcommand{\mat}[1]{\underline{\overline{{#1}}}}
+%\newcommand{\vect}[1]{\underline{{#1}}}
+
+\newcommand{\coloneqqspace}{\coloneqq \hspace{1mm}}
+
+\allowdisplaybreaks[1]
+
+\expandafter\def\expandafter\normalsize\expandafter{%
+    \normalsize
+    \setlength\abovedisplayskip{3pt}
+    \setlength\belowdisplayskip{3pt}
+    \setlength\abovedisplayshortskip{3pt}
+    \setlength\belowdisplayshortskip{3pt}
+}
+
+\raggedbottom
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -299,14 +319,14 @@ Potential comparison of blending vs ToBeCurved. Investigation into proper treatm
 \begin{equation} \label{eq:DG_strong_integral_poly_ref}
 \begin{split}
 \int_{\boldsymbol \Omega_r}
-\boldsymbol \chi(\boldsymbol \xi^r)^T &
-J_m^{\Omega} \boldsymbol \chi(\boldsymbol \xi^r) \frac{d}{dt} \hat{\boldsymbol u}_m(t)^T
+\boldsymbol \phi(\boldsymbol \xi^r)^T &
+J_m^{\Omega} \boldsymbol \phi(\boldsymbol \xi^r) \frac{d}{dt} \hat{\boldsymbol u}_m(t)^T
 d \boldsymbol \Omega_r
-+ \int_{\boldsymbol \Omega_r} \boldsymbol \chi(\boldsymbol \xi^r)^T \frac{\partial}{\partial \xi} \boldsymbol \chi(\boldsymbol \xi^r) \hat{\boldsymbol f}^r_{1m}(t)^T d \boldsymbol \Omega_r \\
-& + \int_{\boldsymbol \Omega_r} \boldsymbol \chi(\boldsymbol \xi^r)^T \frac{\partial}{\partial \eta} \boldsymbol \chi(\boldsymbol \xi^r) \hat{\boldsymbol f}^r_{2m}(t)^T d \boldsymbol \Omega_r
-+ \int_{\boldsymbol \Omega_r} \boldsymbol \chi(\boldsymbol \xi^r)^T \frac{\partial}{\partial \zeta} \boldsymbol \chi(\boldsymbol \xi^r) \hat{\boldsymbol f}^r_{3m}(t)^T d \boldsymbol \Omega_r \\
++ \int_{\boldsymbol \Omega_r} \boldsymbol \phi(\boldsymbol \xi^r)^T \frac{\partial}{\partial \xi} \boldsymbol \phi(\boldsymbol \xi^r) \hat{\boldsymbol f}^r_{1m}(t)^T d \boldsymbol \Omega_r \\
+& + \int_{\boldsymbol \Omega_r} \boldsymbol \phi(\boldsymbol \xi^r)^T \frac{\partial}{\partial \eta} \boldsymbol \phi(\boldsymbol \xi^r) \hat{\boldsymbol f}^r_{2m}(t)^T d \boldsymbol \Omega_r
++ \int_{\boldsymbol \Omega_r} \boldsymbol \phi(\boldsymbol \xi^r)^T \frac{\partial}{\partial \zeta} \boldsymbol \phi(\boldsymbol \xi^r) \hat{\boldsymbol f}^r_{3m}(t)^T d \boldsymbol \Omega_r \\
 & + \int_{\boldsymbol \Gamma_r} 
-\boldsymbol \chi(\boldsymbol \xi^r)^T 
+\boldsymbol \phi(\boldsymbol \xi^r)^T 
 J_m^{\Gamma} \hat{\boldsymbol n}_m \cdot \boldsymbol f^{C}_m
 d \boldsymbol \Gamma_r = \boldsymbol 0^T,
 \end{split}
@@ -399,12 +419,13 @@ P4	& 6.74e-02 & 6.33e-06 & 7.24e-06 & 4.53e-06 & - & - & - \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Numerical Methods}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Discontinuous Galerkin Method}
+{\color{red} don't forget to add notation}
+% Note about vectors being lower case and matrices upper case
+% Note about multidimensional rst coordinates being written as R.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discontinuous Petrov-Galerkin Method}
+{\color{red} Present DG as a restriction of the DPG method.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Adjoint Formulation}
@@ -417,223 +438,232 @@ P4	& 6.74e-02 & 6.33e-06 & 7.24e-06 & 4.53e-06 & - & - & - \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sum Factorization}
 
-As discussed in~\autoref{sec:Comp_comp}, sum factorization reduces computational complexity of operator application from $O(N^{2d})$ to $O(N^{d+1})$ where $d$ is the dimension of the problem and $N = P+1$ where $P$ is the order of the method. This is achieved by noting the decomposition of multi-dimensional operators into their 1D components in a tensor-product (TP) fashion, whenever both the basis functions and interpolation/cubature nodes admit such a decomposition. 
+As discussed in~\autoref{sec:Comp_comp}, sum factorization reduces computational complexity of operator application from $O(N^{2d})$ to $O(N^{d+1})$ where $d$ is the dimension of the problem and $N = P+1$ where $P$ is the order of the method. This is achieved by exploiting the decomposition of multi-dimensional operators into their 1D components in a tensor-product (TP) fashion, whenever both the basis functions and interpolation/cubature nodes admit such a decomposition. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Representative Example}
-The algorithm is most clearly illustrated with a 3D example. Consider the case of numerical over-integration of the $r$ component of the flux divergence with respect to the DG test functions all represented in a P1 basis, $\chi_r(\boldsymbol r)$, using P2 cubature nodes, $\boldsymbol r_{vI}$, as in {\color{red} refer to equation},
+The algorithm is most generally illustrated with a 3D example. Consider the case of numerical integration of the first component of the flux divergence with respect to the DG test functions as in {\color{red} refer to equation},
 
 \begin{equation} \nonumber
-\boldsymbol \chi_r(\boldsymbol r_{vI})^T \boldsymbol W_{vI} \boldsymbol \chi(\boldsymbol r_{vI}) \hat{\boldsymbol f^r_{r}} 
-\hspace{2mm} \coloneqq \hspace{2mm}
-\boldsymbol D^{Weak}_r {\hat{\boldsymbol f}^{r,T}_{1}}.
+\vect{\phi_r}(\mat{R_{v_I}})^T \mat{W_{v_I}} \vect{\phi}(\mat{R_{v_I}}) \vect{\hat{\tilde{f_1}}}^T
+\coloneqq
+\mat{D^{w}_r} \vect{\hat{\tilde{f_1}}}^T.
 \end{equation}
 
-Defining the 1D differentiation and interpolation operators as
+The possibility of separation of the $\mat{D^{w}_r}$ operator into its 1D components is most easily seen by expanding the matrix operations into summations. Using indices of $b$, $t$ and $c$ to represent basis functions, test functions, and cubature nodes respectively, and visualizing $\vect{\hat{\tilde{f_1}}}$ as a 3D array with $b_1 \times b_2 \times b_3$ components,
 
-\begin{equation} \nonumber
-\begin{split}
-\boldsymbol I^{Weak,1D} 
-\coloneqq &
-\boldsymbol \chi^{1D}(\boldsymbol r^{1D}_{vI})^T \boldsymbol W^{1D}_{vI} \boldsymbol \chi(\boldsymbol r^{1D}_{vI}) \\
+\begin{align} \label{eq:sf_summation}
+& \phi_{{t_1,t_2,t_3}_r}(\mat{R_{v_I}}) \mat{W_{v_I}} \vect{\phi}(\mat{R_{v_I}}) \vect{\hat{\tilde{f_1}}}^T \nonumber \\
+= &
+\sum\limits_{c_1} \sum\limits_{c_2} \sum\limits_{c_3} 
+\phi_{{t_1,t_2,t_3}_r}(r_{c_1},s_{c_2},t_{c_3})
+w_{c_1} w_{c_2} w_{c_3}
+\vect{\phi}(r_{c_1},s_{c_2},t_{c_3}) \vect{\hat{\tilde{f_1}}}^T \nonumber \\
+= &
+\sum\limits_{c_1} \sum\limits_{c_2} \sum\limits_{c_3}
+\phi^{1D}_{{t_1}_r}(r_{c_1}) \phi^{1D}_{t_2}(r_{c_2}) \phi^{1D}_{t_3}(r_{c_3})
+w_{c_1} w_{c_2} w_{c_3}
+\sum\limits_{b_1} \sum\limits_{b_2} \sum\limits_{b_3}
+\phi^{1D}_{b_1}(r_{c_1}) \phi^{1D}_{b_2}(r_{c_2}) \phi^{1D}_{b_3}(r_{c_3})
+\hat{\tilde{f}}_{1_{b_1,b_2,b_3}} \nonumber \\
+= &
+\sum\limits_{c_3} \sum\limits_{b_3} \phi^{1D}_{t_3}(r_{c_3}) w_{c_3} \phi^{1D}_{b_3}(r_{c_3})
+\sum\limits_{c_2} \sum\limits_{b_2} \phi^{1D}_{t_2}(r_{c_2}) w_{c_2} \phi^{1D}_{b_2}(r_{c_2}) 
+\sum\limits_{c_1} \sum\limits_{b_1} \phi^{1D}_{{t_1}_r}(r_{c_1}) w_{c_1} \phi^{1D}_{b_1}(r_{c_1})
+\hat{\tilde{f}}_{1_{b_1,b_2,b_3}},
+\end{align}
+
+where summations are over the full range of each index. As the separation possibility is now apparent, it is advantageous to use a matrix operator formulation for~\eqref{eq:sf_summation}. Assuming that the reference flux and test functions both use a $P_1$ basis, $\vect{\phi_r}(\vect{R})$, and using $P_2$ cubature nodes, $\mat{R_{v_I}}$, the 1D interpolation and differentiation operators can be defined as
+
+\begin{align*}
+\mat{I^{w,1D}}
+\coloneqq & \hspace{1mm}
+\vect{\phi^{1D}}(\vect{r_{v_I}})^T \mat{W_{vI}}^{1D} \vect{\phi^{1D}}(\vect{r_{v_I}}) \\
 = &
 \begin{bmatrix}
-\chi^{1D}_0(r_{v,0}) & \chi^{1D}_0(r_{v,1}) & \chi^{1D}_0(r_{v,2}) \\
-\chi^{1D}_1(r_{v,0}) & \chi^{1D}_1(r_{v,1}) & \chi^{1D}_1(r_{v,2}) \\
+\phi^{1D}_0(r_{v_I,0}) & \phi^{1D}_0(r_{v_I,1}) & \phi^{1D}_0(r_{v_I,2}) \\
+\phi^{1D}_1(r_{v_I,0}) & \phi^{1D}_1(r_{v_I,1}) & \phi^{1D}_1(r_{v_I,2}) \\
 \end{bmatrix}
 \begin{bmatrix}
-W^{1D}_0 & 0 & 0 \\
-0 & W^{1D}_1 & 0 \\
-0 & 0 & W^{1D}_2 \\
+w^{1D}_0 & 0 & 0 \\
+0 & w^{1D}_1 & 0 \\
+0 & 0 & w^{1D}_2 \\
 \end{bmatrix}
 \begin{bmatrix}
-\chi^{1D}_0(r_{v,0}) & \chi^{1D}_1(r_{v,0}) \\
-\chi^{1D}_0(r_{v,1}) & \chi^{1D}_1(r_{v,1}) \\
-\chi^{1D}_0(r_{v,2}) & \chi^{1D}_1(r_{v,2}) \\
-\end{bmatrix} \\
-\coloneqq &
-\begin{bmatrix}
-I_{00} & I_{01} \\
-I_{10} & I_{11} \\
+\phi^{1D}_0(r_{v_I,0}) & \phi^{1D}_1(r_{v_I,0}) \\
+\phi^{1D}_0(r_{v_I,1}) & \phi^{1D}_1(r_{v_I,1}) \\
+\phi^{1D}_0(r_{v_I,2}) & \phi^{1D}_1(r_{v_I,2}) \\
 \end{bmatrix}
-\end{split}
-\end{equation}
+\end{align*}
 
 and
 
-\begin{equation} \nonumber
-\begin{split}
-\boldsymbol D^{Weak,1D} 
-\coloneqq &
-\boldsymbol \chi^{1D}_r(\boldsymbol r^{1D}_{vI})^T \boldsymbol W^{1D}_{vI} \boldsymbol \chi(\boldsymbol r^{1D}_{vI}) \\
+\begin{align*}
+\mat{D^{w,1D}}
+\coloneqq & \hspace{1mm}
+\vect{\phi^{1D}_r}(\vect{r_{v_I}})^T \mat{W_{vI}}^{1D} \vect{\phi^{1D}}(\vect{r_{v_I}}) \\
 = &
 \begin{bmatrix}
-\chi^{1D}_{r,0}(r_{v,0}) & \chi^{1D}_{r,0}(r_{v,1}) & \chi^{1D}_{r,0}(r_{v,2}) \\
-\chi^{1D}_{r,1}(r_{v,0}) & \chi^{1D}_{r,1}(r_{v,1}) & \chi^{1D}_{r,1}(r_{v,2}) \\
+\phi^{1D}_{r,0}(r_{v_I,0}) & \phi^{1D}_{r,0}(r_{v_I,1}) & \phi^{1D}_{r,0}(r_{v_I,2}) \\
+\phi^{1D}_{r,1}(r_{v_I,0}) & \phi^{1D}_{r,1}(r_{v_I,1}) & \phi^{1D}_{r,1}(r_{v_I,2}) \\
 \end{bmatrix}
 \begin{bmatrix}
-W^{1D}_0 & 0 & 0 \\
-0 & W^{1D}_1 & 0 \\
-0 & 0 & W^{1D}_2 \\
+w^{1D}_0 & 0 & 0 \\
+0 & w^{1D}_1 & 0 \\
+0 & 0 & w^{1D}_2 \\
 \end{bmatrix}
 \begin{bmatrix}
-\chi^{1D}_0(r_{v,0}) & \chi^{1D}_1(r_{v,0}) \\
-\chi^{1D}_0(r_{v,1}) & \chi^{1D}_1(r_{v,1}) \\
-\chi^{1D}_0(r_{v,2}) & \chi^{1D}_1(r_{v,2}) \\
-\end{bmatrix} \\
+\phi^{1D}_0(r_{v_I,0}) & \phi^{1D}_1(r_{v_I,0}) \\
+\phi^{1D}_0(r_{v_I,1}) & \phi^{1D}_1(r_{v_I,1}) \\
+\phi^{1D}_0(r_{v_I,2}) & \phi^{1D}_1(r_{v_I,2}) \\
+\end{bmatrix}.
+\end{align*}
+
+The standard operation can then be decomposed as
+
+\begin{align*}
+\boldsymbol D^{Weak}_r \hat{\boldsymbol f}^{r,T}_{1}
 \coloneqq &
 \begin{bmatrix}
-D_{00} & D_{01} \\
-D_{10} & D_{11} \\
-\end{bmatrix}
-\end{split}
-\end{equation}
-
-the standard operation can be decomposed as
-
-\begin{equation} \nonumber
-\begin{split}
-\boldsymbol D^{Weak}_r 
-\coloneqq &
-\begin{bmatrix}
-I_{00} & 0 & 0 & 0 & I_{01} & 0 & 0 & 0 \\
-0 & I_{00} & 0 & 0 & 0 & I_{01} & 0 & 0 \\
-0 & 0 & I_{00} & 0 & 0 & 0 & I_{01} & 0 \\
-0 & 0 & 0 & I_{00} & 0 & 0 & 0 & I_{01} \\
-I_{10} & 0 & 0 & 0 & I_{11} & 0 & 0 & 0 \\
-0 & I_{10} & 0 & 0 & 0 & I_{11} & 0 & 0 \\
-0 & 0 & I_{10} & 0 & 0 & 0 & I_{11} & 0 \\
-0 & 0 & 0 & I_{10} & 0 & 0 & 0 & I_{11} \\
+i_{00} & 0 & 0 & 0 & i_{01} & 0 & 0 & 0 \\
+0 & i_{00} & 0 & 0 & 0 & i_{01} & 0 & 0 \\
+0 & 0 & i_{00} & 0 & 0 & 0 & i_{01} & 0 \\
+0 & 0 & 0 & i_{00} & 0 & 0 & 0 & i_{01} \\
+i_{10} & 0 & 0 & 0 & i_{11} & 0 & 0 & 0 \\
+0 & i_{10} & 0 & 0 & 0 & i_{11} & 0 & 0 \\
+0 & 0 & i_{10} & 0 & 0 & 0 & i_{11} & 0 \\
+0 & 0 & 0 & i_{10} & 0 & 0 & 0 & i_{11} \\
 \end{bmatrix}
 \begin{bmatrix}
-I_{00} & 0 & I_{01} & 0 & 0 & 0 & 0 & 0 \\
-0 & I_{00} & 0 & I_{01} & 0 & 0 & 0 & 0 \\
-I_{10} & 0 & I_{11} & 0 & 0 & 0 & 0 & 0 \\
-0 & I_{10} & 0 & I_{11} & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & I_{00} & 0 & I_{01} & 0 \\
-0 & 0 & 0 & 0 & 0 & I_{00} & 0 & I_{01} \\
-0 & 0 & 0 & 0 & I_{10} & 0 & I_{11} & 0 \\
-0 & 0 & 0 & 0 & 0 & I_{10} & 0 & I_{11} \\
+i_{00} & 0 & i_{01} & 0 & 0 & 0 & 0 & 0 \\
+0 & i_{00} & 0 & i_{01} & 0 & 0 & 0 & 0 \\
+i_{10} & 0 & i_{11} & 0 & 0 & 0 & 0 & 0 \\
+0 & i_{10} & 0 & i_{11} & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & i_{00} & 0 & i_{01} & 0 \\
+0 & 0 & 0 & 0 & 0 & i_{00} & 0 & i_{01} \\
+0 & 0 & 0 & 0 & i_{10} & 0 & i_{11} & 0 \\
+0 & 0 & 0 & 0 & 0 & i_{10} & 0 & i_{11} \\
 \end{bmatrix} \\
 &
 \begin{bmatrix}
-D_{00} & D_{01} & 0 & 0 & 0 & 0 & 0 & 0 \\
-D_{10} & D_{11} & 0 & 0 & 0 & 0 & 0 & 0 \\
-0 & 0 & D_{00} & D_{01} & 0 & 0 & 0 & 0 \\
-0 & 0 & D_{10} & D_{11} & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & D_{00} & D_{01} & 0 & 0 \\
-0 & 0 & 0 & 0 & D_{10} & D_{11} & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 & 0 & D_{00} & D_{01} \\
-0 & 0 & 0 & 0 & 0 & 0 & D_{10} & D_{11} \\
+d_{00} & d_{01} & 0 & 0 & 0 & 0 & 0 & 0 \\
+d_{10} & d_{11} & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & d_{00} & d_{01} & 0 & 0 & 0 & 0 \\
+0 & 0 & d_{10} & d_{11} & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & d_{00} & d_{01} & 0 & 0 \\
+0 & 0 & 0 & 0 & d_{10} & d_{11} & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & d_{00} & d_{01} \\
+0 & 0 & 0 & 0 & 0 & 0 & d_{10} & d_{11} \\
 \end{bmatrix}
 \begin{bmatrix}
-\hat{f}^r_{1,000} \\
-\hat{f}^r_{1,100} \\
-\hat{f}^r_{1,010} \\
-\hat{f}^r_{1,110} \\
-\hat{f}^r_{1,001} \\
-\hat{f}^r_{1,101} \\
-\hat{f}^r_{1,011} \\
-\hat{f}^r_{1,111} \\
+\hat{\tilde{f}}_{1,000} \\
+\hat{\tilde{f}}_{1,100} \\
+\hat{\tilde{f}}_{1,010} \\
+\hat{\tilde{f}}_{1,110} \\
+\hat{\tilde{f}}_{1,001} \\
+\hat{\tilde{f}}_{1,101} \\
+\hat{\tilde{f}}_{1,011} \\
+\hat{\tilde{f}}_{1,111} \\
 \end{bmatrix}.
-\end{split}
-\end{equation}
+\end{align*}
 
-Noting that the non-zero elements in the decomposed components of $\boldsymbol D^{Weak}_r$ are built from repeatition of the 1D operators and assuming that $\hat{\boldsymbol f}^r_{1}$ is stored continuously in memory based on sequential variation of indices $r$, $s$, then $t$, the application of the standard operator can be done in the following steps:
+Noting that the non-zero elements in the decomposed components of $\mat{D^{w,1D}}$ are built from repetition of the 1D operators and assuming that $\vect{\hat{\tilde{f}}_{1}}$ is stored continuously in memory based on sequential variation of indices $r$, $s$, then $t$, the application of the standard operator can be performed in the following steps:
 
 \begin{enumerate}
-\item Multiplication in the $r$ direction by $\boldsymbol D^{Weak,1D}$, interpreting $\hat{\boldsymbol f}^{r}_{1}$ as a $N \times N^2$ column-major matrix,
+\item Multiplication in the $r$ direction by $\mat{D^{w,1D}}$, interpreting $\vect{\hat{\tilde{f}}_{1}}$ as a $N \times N^2$ column-major matrix,
+
 \begin{equation} \nonumber
-\hat{\boldsymbol f}^{Int1,r}_{1}
+\vect{\hat{\tilde{f}}_{1}}^{Int_1}
 =
 \begin{bmatrix}
-D_{00} & D_{01} \\
-D_{10} & D_{11} \\
+d_{00} & d_{01} \\
+d_{10} & d_{11} \\
 \end{bmatrix}
 \begin{bmatrix}
-\hat{f}^r_{1,000} & \hat{f}^r_{1,010} & \hat{f}^r_{1,001} & \hat{f}^r_{1,011} \\
-\hat{f}^r_{1,100} & \hat{f}^r_{1,110} & \hat{f}^r_{1,101} & \hat{f}^r_{1,111} \\
+\hat{\tilde{f}}_{1,000} & \hat{\tilde{f}}_{1,010} & \hat{\tilde{f}}_{1,001} & \hat{\tilde{f}}_{1,011} \\
+\hat{\tilde{f}}_{1,100} & \hat{\tilde{f}}_{1,110} & \hat{\tilde{f}}_{1,101} & \hat{\tilde{f}}_{1,111} \\
 \end{bmatrix}
 \end{equation}
 
-\item Transposition of $\hat{\boldsymbol f}^{Int1,r}_{1}$, interpreted as a $N \times N^2$ column-major matrix, followed by multiplication by $\boldsymbol I^{Weak,1D}$ (now in the $s$ direction), followed by a transpose interpreting the result as a $N^2 \times N$ matrix,
+\item Transposition of $\vect{\hat{\tilde{f}}_{1}}$, interpreted as a $N \times N^2$ column-major matrix, followed by multiplication by $\mat{I^{w,1D}}$ (in the $s$ direction), followed by a transpose interpreting the result as a $N^2 \times N$ matrix,
+
 \begin{equation} \nonumber
-\hat{\boldsymbol f}^{Int1,r}_{1}
+\vect{\hat{\tilde{f}}_{1}}^{Int_1}
 =
 \begin{bmatrix}
-\hat{f}^{Int1,r}_{1,000} & \hat{f}^{Int1,r}_{1,010} & \hat{f}^{Int1,r}_{1,001} & \hat{f}^{Int1,r}_{1,011} \\
-\hat{f}^{Int1,r}_{1,100} & \hat{f}^{Int1,r}_{1,110} & \hat{f}^{Int1,r}_{1,101} & \hat{f}^{Int1,r}_{1,111} \\
+\hat{\tilde{f}}^{Int_1}_{1,000} & \hat{\tilde{f}}^{Int_1}_{1,010} & \hat{\tilde{f}}^{Int_1}_{1,001} & \hat{\tilde{f}}^{Int_1}_{1,011} \\
+\hat{\tilde{f}}^{Int_1}_{1,100} & \hat{\tilde{f}}^{Int_1}_{1,110} & \hat{\tilde{f}}^{Int_1}_{1,101} & \hat{\tilde{f}}^{Int_1}_{1,111} \\
 \end{bmatrix}
 \rightarrow
 \begin{bmatrix}
-\hat{f}^{Int1,r}_{1,000} & \hat{f}^{Int1,r}_{1,001} & \hat{f}^{Int1,r}_{1,100} & \hat{f}^{Int1,r}_{1,101} \\
-\hat{f}^{Int1,r}_{1,010} & \hat{f}^{Int1,r}_{1,011} & \hat{f}^{Int1,r}_{1,110} & \hat{f}^{Int1,r}_{1,111} \\
+\hat{\tilde{f}}^{Int_1}_{1,000} & \hat{\tilde{f}}^{Int_1}_{1,001} & \hat{\tilde{f}}^{Int_1}_{1,100} & \hat{\tilde{f}}^{Int_1}_{1,101} \\
+\hat{\tilde{f}}^{Int_1}_{1,010} & \hat{\tilde{f}}^{Int_1}_{1,011} & \hat{\tilde{f}}^{Int_1}_{1,110} & \hat{\tilde{f}}^{Int_1}_{1,111} \\
 \end{bmatrix}
 \end{equation}
 \begin{equation} \nonumber
-\hat{\boldsymbol f}^{Int2,r}_{1}
+\vect{\hat{\tilde{f}}_{1}}^{Int_2}
 =
 \begin{bmatrix}
-I_{00} & I_{01} \\
-I_{10} & I_{11} \\
+i_{00} & i_{01} \\
+i_{10} & i_{11} \\
 \end{bmatrix}
 \begin{bmatrix}
-\hat{f}^{Int1,r}_{1,000} & \hat{f}^{Int1,r}_{1,001} & \hat{f}^{Int1,r}_{1,100} & \hat{f}^{Int1,r}_{1,101} \\
-\hat{f}^{Int1,r}_{1,010} & \hat{f}^{Int1,r}_{1,011} & \hat{f}^{Int1,r}_{1,110} & \hat{f}^{Int1,r}_{1,111} \\
+\hat{\tilde{f}}^{Int_1}_{1,000} & \hat{\tilde{f}}^{Int_1}_{1,001} & \hat{\tilde{f}}^{Int_1}_{1,100} & \hat{\tilde{f}}^{Int_1}_{1,101} \\
+\hat{\tilde{f}}^{Int_1}_{1,010} & \hat{\tilde{f}}^{Int_1}_{1,011} & \hat{\tilde{f}}^{Int_1}_{1,110} & \hat{\tilde{f}}^{Int_1}_{1,111} \\
 \end{bmatrix}
 \end{equation}
 \begin{equation} \nonumber
-\hat{\boldsymbol f}^{Int2,r}_{1}
+\vect{\hat{\tilde{f}}_{1}}^{Int_2}
 =
 \begin{bmatrix}
-\hat{f}^{Int1,r}_{1,000} & \hat{f}^{Int1,r}_{1,001} & \hat{f}^{Int1,r}_{1,100} & \hat{f}^{Int1,r}_{1,101} \\
-\hat{f}^{Int1,r}_{1,010} & \hat{f}^{Int1,r}_{1,011} & \hat{f}^{Int1,r}_{1,110} & \hat{f}^{Int1,r}_{1,111} \\
+\hat{\tilde{f}}^{Int_1}_{1,000} & \hat{\tilde{f}}^{Int_1}_{1,001} & \hat{\tilde{f}}^{Int_1}_{1,100} & \hat{\tilde{f}}^{Int_1}_{1,101} \\
+\hat{\tilde{f}}^{Int_1}_{1,010} & \hat{\tilde{f}}^{Int_1}_{1,011} & \hat{\tilde{f}}^{Int_1}_{1,110} & \hat{\tilde{f}}^{Int_1}_{1,111} \\
 \end{bmatrix}
 \rightarrow
 \begin{bmatrix}
-\hat{f}^{Int2,r}_{1,000} & \hat{f}^{Int2,r}_{1,010} & \hat{f}^{Int2,r}_{1,001} & \hat{f}^{Int2,r}_{1,011} \\
-\hat{f}^{Int2,r}_{1,100} & \hat{f}^{Int2,r}_{1,110} & \hat{f}^{Int2,r}_{1,101} & \hat{f}^{Int2,r}_{1,111} \\
+\hat{\tilde{f}}^{Int_2}_{1,000} & \hat{\tilde{f}}^{Int_2}_{1,010} & \hat{\tilde{f}}^{Int_2}_{1,001} & \hat{\tilde{f}}^{Int_2}_{1,011} \\
+\hat{\tilde{f}}^{Int_2}_{1,100} & \hat{\tilde{f}}^{Int_2}_{1,110} & \hat{\tilde{f}}^{Int_2}_{1,101} & \hat{\tilde{f}}^{Int_2}_{1,111} \\
 \end{bmatrix}
 \end{equation}
 
-\item Transposition of $\hat{\boldsymbol f}^{Int2,r}_{1}$, interpreted as a $N^2 \times N$ column-major matrix, followed by multiplication by $\boldsymbol I^{Weak,1D}$ (now in the $s$ direction), followed by a transpose interpreting the result as a $N \times N^2$ matrix,
+\item Transposition of $\vect{\hat{\tilde{f}}_{1}}^{Int_2}$, interpreted as a $N^2 \times N$ column-major matrix, followed by multiplication by $\mat{I^{w,1D}}$ (now in the $t$ direction), followed by a transpose interpreting the result as a $N \times N^2$ matrix,
 \begin{equation} \nonumber
-\hat{\boldsymbol f}^{Int1,r}_{1}
+\vect{\hat{\tilde{f}}_{1}}^{Int_2}
 =
 \begin{bmatrix}
-\hat{f}^{Int2,r}_{1,000} & \hat{f}^{Int2,r}_{1,010} & \hat{f}^{Int2,r}_{1,001} & \hat{f}^{Int2,r}_{1,011} \\
-\hat{f}^{Int2,r}_{1,100} & \hat{f}^{Int2,r}_{1,110} & \hat{f}^{Int2,r}_{1,101} & \hat{f}^{Int2,r}_{1,111} \\
+\hat{\tilde{f}}^{Int_2}_{1,000} & \hat{\tilde{f}}^{Int_2}_{1,010} & \hat{\tilde{f}}^{Int_2}_{1,001} & \hat{\tilde{f}}^{Int_2}_{1,011} \\
+\hat{\tilde{f}}^{Int_2}_{1,100} & \hat{\tilde{f}}^{Int_2}_{1,110} & \hat{\tilde{f}}^{Int_2}_{1,101} & \hat{\tilde{f}}^{Int_2}_{1,111} \\
 \end{bmatrix}
 \rightarrow
 \begin{bmatrix}
-\hat{f}^{Int2,r}_{1,000} & \hat{f}^{Int2,r}_{1,100} & \hat{f}^{Int2,r}_{1,010} & \hat{f}^{Int2,r}_{1,110} \\
-\hat{f}^{Int2,r}_{1,001} & \hat{f}^{Int2,r}_{1,101} & \hat{f}^{Int2,r}_{1,011} & \hat{f}^{Int2,r}_{1,111} \\
+\hat{\tilde{f}}^{Int_2}_{1,000} & \hat{\tilde{f}}^{Int_2}_{1,100} & \hat{\tilde{f}}^{Int_2}_{1,010} & \hat{\tilde{f}}^{Int_2}_{1,110} \\
+\hat{\tilde{f}}^{Int_2}_{1,001} & \hat{\tilde{f}}^{Int_2}_{1,101} & \hat{\tilde{f}}^{Int_2}_{1,011} & \hat{\tilde{f}}^{Int_2}_{1,111} \\
 \end{bmatrix}
 \end{equation}
 \begin{equation} \nonumber
-\boldsymbol {Df}^{r}_{1}
+\vect{\hat{\tilde{f}}_{1}}^{final}
 =
 \begin{bmatrix}
-I_{00} & I_{01} \\
-I_{10} & I_{11} \\
+i_{00} & i_{01} \\
+i_{10} & i_{11} \\
 \end{bmatrix}
 \begin{bmatrix}
-\hat{f}^{Int2,r}_{1,000} & \hat{f}^{Int2,r}_{1,100} & \hat{f}^{Int2,r}_{1,010} & \hat{f}^{Int2,r}_{1,110} \\
-\hat{f}^{Int2,r}_{1,001} & \hat{f}^{Int2,r}_{1,101} & \hat{f}^{Int2,r}_{1,011} & \hat{f}^{Int2,r}_{1,111} \\
+\hat{\tilde{f}}^{Int_2}_{1,000} & \hat{\tilde{f}}^{Int_2}_{1,100} & \hat{\tilde{f}}^{Int_2}_{1,010} & \hat{\tilde{f}}^{Int_2}_{1,110} \\
+\hat{\tilde{f}}^{Int_2}_{1,001} & \hat{\tilde{f}}^{Int_2}_{1,101} & \hat{\tilde{f}}^{Int_2}_{1,011} & \hat{\tilde{f}}^{Int_2}_{1,111} \\
 \end{bmatrix}
 \end{equation}
 \begin{equation} \nonumber
 \begin{split}
-\boldsymbol {Df}^{r}_{1}
+\vect{\hat{\tilde{f}}_{1}}^{fin}
 = &
 \begin{bmatrix}
-{Df}^{r}_{1,000} & {Df}^{r}_{1,100} & {Df}^{r}_{1,010} & {Df}^{r}_{1,110} \\
-{Df}^{r}_{1,001} & {Df}^{r}_{1,101} & {Df}^{r}_{1,011} & {Df}^{r}_{1,111} \\
-\end{bmatrix} \\
-\rightarrow &
+\hat{\tilde{f}}^{fin}_{1,000} & \hat{\tilde{f}}^{fin}_{1,100} & \hat{\tilde{f}}^{fin}_{1,010} & \hat{\tilde{f}}^{fin}_{1,110} \\
+\hat{\tilde{f}}^{fin}_{1,001} & \hat{\tilde{f}}^{fin}_{1,101} & \hat{\tilde{f}}^{fin}_{1,011} & \hat{\tilde{f}}^{fin}_{1,111} \\
+\end{bmatrix}
+\rightarrow
 \begin{bmatrix}
-{Df}^{r}_{1,000} & {Df}^{r}_{1,010} & {Df}^{r}_{1,001} & {Df}^{r}_{1,011} \\
-{Df}^{r}_{1,100} & {Df}^{r}_{1,110} & {Df}^{r}_{1,101} & {Df}^{r}_{1,111} \\
+\hat{\tilde{f}}^{fin}_{1,000} & \hat{\tilde{f}}^{fin}_{1,010} & \hat{\tilde{f}}^{fin}_{1,001} & \hat{\tilde{f}}^{fin}_{1,011} \\
+\hat{\tilde{f}}^{fin}_{1,100} & \hat{\tilde{f}}^{fin}_{1,110} & \hat{\tilde{f}}^{fin}_{1,101} & \hat{\tilde{f}}^{fin}_{1,111} \\
 \end{bmatrix}.
 \end{split}
 \end{equation}
@@ -642,13 +672,13 @@ I_{10} & I_{11} \\
 Note that the redundant double transpose between applications of $s$ and $t$ operators can be combined into one but was not done in the interest of clarity. In the 2D TP case, the operation with the $t$ direction operator is skipped and in the 3D case using WEDGE elements, the TRI operator is interpreted as the $r$ operator, with no operator in the $s$ direction, followed by the 1D TP operation in the $t$ direction. Counting operations using general dimensions of $N$ in each coordinate direction, it is clear for the application of the fully dense standard operator that the operation count is
 
 \begin{equation}
-N^3 * (2N^3-1) = O(N^6) = O(N^{2d}),
+N^3 \times (2N^3-1) = O(N^6) = O(N^{2d}),
 \end{equation}
 
-while for the 3 1D TP operators (omitting the transposes) the operation count is
+while for the three 1D TP operators (omitting the transposes) the operation count is
 
 \begin{equation}
-3*N * (2N-1)*N^2 = O(N^4) = O(N^{d+1}).
+3*N \times (2N-1) \times N^2 = O(N^4) = O(N^{d+1}).
 \end{equation}
 
 This result is of course asymptotic and the advantages of the sum factorized approach are not apparent at low orders. Furthermore, for collocated schemes, TP interpolation operators are identity matrices and the differentiation operator becomes very sparse. Using compressed sparse row (CSR) storage and application of standard operators remains competitive with sum factorized operators for all orders tested in this case.~\autoref{sec:sf_results} presents results for timing comparisons using the different formulations.

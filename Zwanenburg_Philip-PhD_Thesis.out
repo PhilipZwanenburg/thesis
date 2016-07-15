@@ -19,15 +19,14 @@
 \BOOKMARK [1][-]{section.2.3}{Boundary Conditions}{chapter.2}% 19
 \BOOKMARK [1][-]{section.2.4}{Non-Dimensionalization}{chapter.2}% 20
 \BOOKMARK [0][-]{chapter.3}{Numerical Methods}{}% 21
-\BOOKMARK [1][-]{section.3.1}{Discontinuous Galerkin Method}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.2}{Discontinuous Petrov-Galerkin Method}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.3}{Adjoint Formulation}{chapter.3}% 24
-\BOOKMARK [0][-]{chapter.4}{Computational Complexity Improvements}{}% 25
-\BOOKMARK [1][-]{section.4.1}{Sum Factorization}{chapter.4}% 26
-\BOOKMARK [2][-]{subsection.4.1.1}{Representative Example}{section.4.1}% 27
-\BOOKMARK [2][-]{subsection.4.1.2}{Timing Comparisons}{section.4.1}% 28
-\BOOKMARK [1][-]{section.4.2}{Representation of Operators in Fourier Space}{chapter.4}% 29
-\BOOKMARK [0][-]{chapter.5}{TESTING FOOTNOTES}{}% 30
-\BOOKMARK [0][-]{chapter.5}{Appendix A}{}% 31
-\BOOKMARK [0][-]{chapter.5}{Appendix B}{}% 32
-\BOOKMARK [0][-]{chapter*.7}{References}{}% 33
+\BOOKMARK [1][-]{section.3.1}{Discontinuous Petrov-Galerkin Method}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.2}{Adjoint Formulation}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{Computational Complexity Improvements}{}% 24
+\BOOKMARK [1][-]{section.4.1}{Sum Factorization}{chapter.4}% 25
+\BOOKMARK [2][-]{subsection.4.1.1}{Representative Example}{section.4.1}% 26
+\BOOKMARK [2][-]{subsection.4.1.2}{Timing Comparisons}{section.4.1}% 27
+\BOOKMARK [1][-]{section.4.2}{Representation of Operators in Fourier Space}{chapter.4}% 28
+\BOOKMARK [0][-]{chapter.5}{TESTING FOOTNOTES}{}% 29
+\BOOKMARK [0][-]{chapter.5}{Appendix A}{}% 30
+\BOOKMARK [0][-]{chapter.5}{Appendix B}{}% 31
+\BOOKMARK [0][-]{chapter*.7}{References}{}% 32
