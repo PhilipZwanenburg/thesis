@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.4)  14 JUL 2016 23:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.4)  20 JUL 2016 22:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -232,6 +232,27 @@ Package color Info: Redefining color LightGray on input line 1704.
 Package color Info: Redefining color LightLightGray on input line 1805.
 Package color Info: Redefining color LightLightLightGray on input line 1907.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
+))
 (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen114
 \WF@size=\dimen115
@@ -819,23 +840,7 @@ File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-LaTeX Info: Redefining \color on input line 702.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-)
+))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 
@@ -1263,7 +1268,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip124
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 69.
+Package hyperref Info: Option `colorlinks' set `true' on input line 70.
 
 (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
@@ -1288,6 +1293,63 @@ Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 207.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2016/02/29 version 3.90 text color boxes
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks53
+\verbatim@line=\toks54
+\verbatim@in@stream=\read5
+)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count284
+
+
+Package etoolbox Warning: Patching '\end' failed!
+(etoolbox)                '\AfterEndEnvironment' will not work.
+
+)
+\tcb@titlebox=\box70
+\tcb@upperbox=\box71
+\tcb@lowerbox=\box72
+\tcb@phantombox=\box73
+\c@tcbbreakpart=\count285
+\c@tcblayer=\count286
+\tcolorbox@number=\count287
+\tcb@temp=\box74
+\tcb@temp=\box75
+\tcb@temp=\box76
+\tcb@temp=\box77
+\tcb@out=\write6
+\tcb@record@out=\write7
+ (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '3.90'
+\tcb@testbox=\box78
+\tcb@totalupperbox=\box79
+\tcb@totallowerbox=\box80
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '3.90'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '3.90'
+\tcb@waterbox=\box81
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '3.90'
+)))
 
 LaTeX Warning: Unused global option(s):
     [letterpaper].
@@ -1295,39 +1357,39 @@ LaTeX Warning: Unused global option(s):
 (./Zwanenburg_Philip-PhD_Thesis.aux)
 \openout1 = `Zwanenburg_Philip-PhD_Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 155.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 155.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 184.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 184.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2013/09/01 v1.0 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 155.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 155.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 184.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 184.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 155.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 155.
-LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 155.
+LaTeX Info: Redefining \selectfont on input line 184.
 
 **************************************
 * Executing Begin Document Statement *
@@ -1367,23 +1429,23 @@ LaTeX Info: Redefining \selectfont on input line 155.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count284
+\scratchcounter=\count288
 \scratchdimen=\dimen341
-\scratchbox=\box70
-\nofMPsegments=\count285
-\nofMParguments=\count286
-\everyMPshowfont=\toks53
-\MPscratchCnt=\count287
+\scratchbox=\box82
+\nofMPsegments=\count289
+\nofMParguments=\count290
+\everyMPshowfont=\toks55
+\MPscratchCnt=\count291
 \MPscratchDim=\dimen342
-\MPnumerator=\count288
-\makeMPintoPDFobject=\count289
-\everyMPtoPDFconversion=\toks54
+\MPnumerator=\count292
+\makeMPintoPDFobject=\count293
+\everyMPtoPDFconversion=\toks56
 ) ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box71
-Package hyperref Info: Link coloring ON on input line 155.
+\AtBeginShipoutBox=\box83
+Package hyperref Info: Link coloring ON on input line 184.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1391,15 +1453,15 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count290
+\c@section@level=\count294
 )
-LaTeX Info: Redefining \ref on input line 155.
-LaTeX Info: Redefining \pageref on input line 155.
-LaTeX Info: Redefining \nameref on input line 155.
+LaTeX Info: Redefining \ref on input line 184.
+LaTeX Info: Redefining \pageref on input line 184.
+LaTeX Info: Redefining \nameref on input line 184.
 
 (./Zwanenburg_Philip-PhD_Thesis.out) (./Zwanenburg_Philip-PhD_Thesis.out)
-\@outlinefile=\write6
-\openout6 = `Zwanenburg_Philip-PhD_Thesis.out'.
+\@outlinefile=\write8
+\openout8 = `Zwanenburg_Philip-PhD_Thesis.out'.
 
 Package epstopdf Info: Source file: <./figures/McGillcrest.eps>
 (epstopdf)                    date: 2016-07-05 20:54:33
@@ -1410,7 +1472,7 @@ Package epstopdf Info: Source file: <./figures/McGillcrest.eps>
 (epstopdf)                    size: 7073 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/McGillcrest-eps-
 converted-to.pdf ./figures/McGillcrest.eps>
-(epstopdf)             \includegraphics on input line 173.
+(epstopdf)             \includegraphics on input line 202.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/McGillcrest-eps-converted-to.pdf, id=130, 43.16125pt x 54.2025pt>
@@ -1418,7 +1480,7 @@ File: ./figures/McGillcrest-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/McGillcrest-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/McGillcrest-eps-converted-to.pdf used on inp
-ut line 173.
+ut line 202.
 (pdftex.def)             Requested size: 85.9996pt x 108.01103pt.
  [1
 Non-PDF special ignored!
@@ -1431,14 +1493,14 @@ Package hyperref Warning: bookmark level for unknown extrachapter defaults to 0
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 186.
+(hyperref)                removing `\uppercase' on input line 215.
 
 [2
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 193.
+(hyperref)                removing `\uppercase' on input line 222.
 
 [3
 
@@ -1446,7 +1508,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 203.
+(hyperref)                removing `\uppercase' on input line 232.
 
 [4
 
@@ -1454,7 +1516,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 212.
+(hyperref)                removing `\uppercase' on input line 241.
 
 [5
 
@@ -1472,17 +1534,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ])
-\tf@toc=\write7
-\openout7 = `Zwanenburg_Philip-PhD_Thesis.toc'.
+\tf@toc=\write9
+\openout9 = `Zwanenburg_Philip-PhD_Thesis.toc'.
 
  [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 220.
+(hyperref)                removing `\uppercase' on input line 249.
 
 (./Zwanenburg_Philip-PhD_Thesis.lot)
-\tf@lot=\write8
-\openout8 = `Zwanenburg_Philip-PhD_Thesis.lot'.
+\tf@lot=\write10
+\openout10 = `Zwanenburg_Philip-PhD_Thesis.lot'.
 
  [8
 
@@ -1491,11 +1553,11 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 221.
+(hyperref)                removing `\uppercase' on input line 250.
 
 (./Zwanenburg_Philip-PhD_Thesis.lof)
-\tf@lof=\write9
-\openout9 = `Zwanenburg_Philip-PhD_Thesis.lof'.
+\tf@lof=\write11
+\openout11 = `Zwanenburg_Philip-PhD_Thesis.lof'.
 
  [9
 
@@ -1509,12 +1571,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.236 
+l.265 
        [1
 
 
 ] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
-Overfull \hbox (9.7517pt too wide) in paragraph at lines 343--373
+Overfull \hbox (30.0pt too wide) in paragraph at lines 336--336
+[][][] 
+ []
+
+
+Overfull \hbox (9.67415pt too wide) in paragraph at lines 348--378
  [] 
  []
 
@@ -1529,7 +1596,7 @@ eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/StructuredMixedM
 L1P4_ToBeCurved-eps-converted-to.pdf ./figures/StructuredMixedML1P4_ToBeCurved.
 eps>
-(epstopdf)             \includegraphics on input line 380.
+(epstopdf)             \includegraphics on input line 385.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/StructuredMixedML1P4_ToBeCurved-eps-converted-to.pdf, id=388, 652.43
@@ -1539,7 +1606,7 @@ le (type pdf)
 
 <use ./figures/StructuredMixedML1P4_ToBeCurved-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/StructuredMixedML1P4_ToBeCurved-eps-converte
-d-to.pdf used on input line 380.
+d-to.pdf used on input line 385.
 (pdftex.def)             Requested size: 193.50076pt x 172.06859pt.
 Package epstopdf Info: Source file: <./figures/StructuredMixedML1P4_Curved.eps>
 
@@ -1551,7 +1618,7 @@ converted-to.pdf>
 (epstopdf)                    size: 18841 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/StructuredMixedM
 L1P4_Curved-eps-converted-to.pdf ./figures/StructuredMixedML1P4_Curved.eps>
-(epstopdf)             \includegraphics on input line 385.
+(epstopdf)             \includegraphics on input line 390.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/StructuredMixedML1P4_Curved-eps-converted-to.pdf, id=389, 652.4375pt
@@ -1561,7 +1628,7 @@ type pdf)
 
 <use ./figures/StructuredMixedML1P4_Curved-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/StructuredMixedML1P4_Curved-eps-converted-to
-.pdf used on input line 385.
+.pdf used on input line 390.
 (pdftex.def)             Requested size: 193.50076pt x 172.06859pt.
 Package epstopdf Info: Source file: <./figures/SupersonicVortexMachDist_ML1P4.e
 ps>
@@ -1574,7 +1641,7 @@ ps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/SupersonicVortex
 MachDist_ML1P4-eps-converted-to.pdf ./figures/SupersonicVortexMachDist_ML1P4.ep
 s>
-(epstopdf)             \includegraphics on input line 395.
+(epstopdf)             \includegraphics on input line 400.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/SupersonicVortexMachDist_ML1P4-eps-converted-to.pdf, id=390, 652.437
@@ -1584,109 +1651,124 @@ e (type pdf)
 
 <use ./figures/SupersonicVortexMachDist_ML1P4-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/SupersonicVortexMachDist_ML1P4-eps-converted
--to.pdf used on input line 395.
+-to.pdf used on input line 400.
 (pdftex.def)             Requested size: 344.005pt x 305.91153pt.
- [13pdfTeX warning (ext4): destination with the same identifier (name{equation.
-1.4.1}) has been already used, duplicate ignored
-
-\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
-                                                  
-l.403 \chapter
-              {Governing Equations}] [14] [15 <./figures/StructuredMixedML1P4_T
-oBeCurved-eps-converted-to.pdf> <./figures/StructuredMixedML1P4_Curved-eps-conv
-erted-to.pdf>] [16 <./figures/SupersonicVortexMachDist_ML1P4-eps-converted-to.p
-df>]
+ [13]
+[14 <./figures/StructuredMixedML1P4_ToBeCurved-eps-converted-to.pdf> <./figures
+/StructuredMixedML1P4_Curved-eps-converted-to.pdf>] [15 <./figures/SupersonicVo
+rtexMachDist_ML1P4-eps-converted-to.pdf>]
 ***************************
 CHAPTER 2.
 ***************************
-[17
+[16
 
 ]
 ***************************
 CHAPTER 3.
 ***************************
-[18
+[17
 
-]
+] [18pdfTeX warning (ext4): destination with the same identifier (name{equation
+.3.1.1}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.483 \end{align*}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{equation.3.1.1}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.483 \end{align*}
+                  ]
+Overfull \hbox (6.44395pt too wide) in paragraph at lines 485--486
+[]\T1/cmr/m/n/12 where $\OT1/cmr/m/n/12 ^^@[]$ \T1/cmr/m/n/12 rep-re-sents the 
+el-e-ment sur-face, $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]\OT1/cmr/m/n/12 ([]
+\OML/cmm/m/it/12 ; t\OT1/cmr/m/n/12 ))$ \T1/cmr/m/n/12 de-notes the nu-mer-i-ca
+l flux, 
+ []
+
+[19]
 ***************************
 CHAPTER 4.
 ***************************
 
-Overfull \hbox (72.76962pt too wide) in paragraph at lines 474--474
+Overfull \hbox (72.76962pt too wide) in paragraph at lines 549--549
 [] 
  []
 
-[19
+[20
 
 ]
-Overfull \hbox (55.91907pt too wide) in paragraph at lines 497--497
+Overfull \hbox (55.91907pt too wide) in paragraph at lines 572--572
 [] 
  []
 
 
-Overfull \hbox (65.75703pt too wide) in paragraph at lines 520--520
+Overfull \hbox (65.75703pt too wide) in paragraph at lines 595--595
 [] 
  []
 
-[20pdfTeX warning (ext4): destination with the same identifier (name{equation.4
+[21pdfTeX warning (ext4): destination with the same identifier (name{equation.4
 .1.1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.520 \end{align*}
-                  ]
-Overfull \hbox (54.23732pt too wide) in paragraph at lines 568--568
+l.599 \begin{align*}
+                    ]
+Overfull \hbox (37.38148pt too wide) in paragraph at lines 643--643
 [] 
  []
 
-[21] [22pdfTeX warning (ext4): destination with the same identifier (name{equat
+[22] [23pdfTeX warning (ext4): destination with the same identifier (name{equat
 ion.4.1.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.642 \end{equation}
+l.729 \end{equation}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{equation.4.1.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.642 \end{equation}
+l.729 \end{equation}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{equation.4.1.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.642 \end{equation}
+l.729 \end{equation}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.4.1.2}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.729 \end{equation}
                     ]pdfTeX warning (ext4): destination with the same identifie
 r (name{equation.4.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.643 \begin{equation}
+l.730 \begin{equation}
                        \nonumberpdfTeX warning (ext4): destination with the sam
 e identifier (name{equation.4.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.655 \begin{equation}
-                       \nonumberpdfTeX warning (ext4): destination with the sam
-e identifier (name{equation.4.1.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.674 \begin{equation}
-                       [23pdfTeX warning (ext4): destination with the same iden
+l.749 \begin{equation}
+                       [24pdfTeX warning (ext4): destination with the same iden
 tifier (name{equation.4.1.2}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.685 
-      ] [24]
+l.760 
+      ] [25]
 ***************************
 CHAPTER 5.
 ***************************
-[25
-
-] [26
+[26
 
 ] [27
+
+] [28
 
 
 ] (./Zwanenburg_Philip-PhD_Thesis.bbl
@@ -1694,422 +1776,380 @@ CHAPTER 5.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 1.
 
-
-Underfull \hbox (badness 7468) in paragraph at lines 41--49
-[]\OT1/cmr/m/n/12 S. A. Orszag, [][]Spec-tral meth-ods for prob-lems in com-ple
-x ge-ome-
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 12.
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 7504) in paragraph at lines 41--49
+[]\T1/cmr/m/n/12 S. A. Orszag, [][]Spec-tral meth-ods for prob-lems in com-plex
+ ge-ome-
  []
 
 
-Underfull \hbox (badness 7796) in paragraph at lines 41--49
-\OT1/cmr/m/n/12 tries[][], Jour-nal of Com-pu-ta-tional Physics 37 (1) (1980) 7
-0 -- 92.
+Underfull \hbox (badness 7832) in paragraph at lines 41--49
+\T1/cmr/m/n/12 tries[][], Jour-nal of Com-pu-ta-tional Physics 37 (1) (1980) 70
+ -- 92.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 41--49
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
-[28
+[29
 
 
 
 ]
-Underfull \hbox (badness 3792) in paragraph at lines 66--74
-[]\OT1/cmr/m/n/12 J. Hes-thaven, T. War-bur-ton, [][]Nodal high-order meth-ods 
-on un-struc-
+Underfull \hbox (badness 3815) in paragraph at lines 66--74
+[]\T1/cmr/m/n/12 J. Hes-thaven, T. War-bur-ton, [][]Nodal high-order meth-ods o
+n un-struc-
  []
 
 
-Underfull \hbox (badness 4832) in paragraph at lines 66--74
-\OT1/cmr/m/n/12 tured grids: I. time-domain so-lu-tion of Maxwell's equa-tions[
-][], Jour-
+Underfull \hbox (badness 4846) in paragraph at lines 66--74
+\T1/cmr/m/n/12 tured grids: I. time-domain so-lu-tion of Maxwell's equa-tions[]
+[], Jour-
  []
 
 
-Underfull \hbox (badness 1655) in paragraph at lines 66--74
-\OT1/cmr/m/n/12 nal of Com-pu-ta-tional Physics 181 (1) (2002) 186 -- 221.  [][
-]$\OT1/cmtt/m/n/12 doi : http :
+Underfull \hbox (badness 1661) in paragraph at lines 66--74
+\T1/cmr/m/n/12 nal of Com-pu-ta-tional Physics 181 (1) (2002) 186 -- 221.  [][]
+$\T1/cmtt/m/n/12 doi : http :
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 66--74
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 76--81
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . springer . com / mat
-hematics / computational + science +
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . springer . com / mathe
+matics / computational + science +
  []
 
 
-Underfull \hbox (badness 2293) in paragraph at lines 99--107
-[]\OT1/cmr/m/n/12 D. Williams, L. Shunn, A. Jame-son, [][]Sym-met-ric quadra-tu
-re rules for
+Underfull \hbox (badness 2310) in paragraph at lines 99--107
+[]\T1/cmr/m/n/12 D. Williams, L. Shunn, A. Jame-son, [][]Sym-met-ric quadra-tur
+e rules for
  []
 
 
-Underfull \hbox (badness 5533) in paragraph at lines 99--107
-\OT1/cmr/m/n/12 sim-plexes based on sphere close packed lat-tice ar-range-ments
-[][], Jour-
+Underfull \hbox (badness 5563) in paragraph at lines 99--107
+\T1/cmr/m/n/12 sim-plexes based on sphere close packed lat-tice ar-range-ments[
+][], Jour-
  []
 
 
-Underfull \hbox (badness 1675) in paragraph at lines 99--107
-\OT1/cmr/m/n/12 nal of Com-pu-ta-tional and Ap-plied Math-e-mat-ics 266 (0) (20
-14) 18--38.
+Underfull \hbox (badness 1688) in paragraph at lines 99--107
+\T1/cmr/m/n/12 nal of Com-pu-ta-tional and Ap-plied Math-e-mat-ics 266 (0) (201
+4) 18--38.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 99--107
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 109--117
-[]\OT1/cmr/m/n/12 L. Shunn, F. Ham, [][]Sym-met-ric quadra-ture rules for tetra
--he-dra based
+Underfull \hbox (badness 2393) in paragraph at lines 109--117
+[]\T1/cmr/m/n/12 L. Shunn, F. Ham, [][]Sym-met-ric quadra-ture rules for tetra-
+he-dra based
  []
 
 
-Underfull \hbox (badness 7168) in paragraph at lines 109--117
-\OT1/cmr/m/n/12 on a cu-bic close-packed lat-tice ar-range-ment[][], Jour-nal o
-f Com-pu-ta-
+Underfull \hbox (badness 7203) in paragraph at lines 109--117
+\T1/cmr/m/n/12 on a cu-bic close-packed lat-tice ar-range-ment[][], Jour-nal of
+ Com-pu-ta-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 109--117
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
-[29]
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 141--149
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
 
-Underfull \hbox (badness 4353) in paragraph at lines 160--167
-[]\OT1/cmr/m/n/12 P. Cas-tonguay, D. Williams, P. Vin-cent, A. Jame-son, [][]En
--ergy sta-
+Underfull \hbox (badness 4378) in paragraph at lines 160--167
+[]\T1/cmr/m/n/12 P. Cas-tonguay, D. Williams, P. Vin-cent, A. Jame-son, [][]En-
+ergy sta-
  []
 
 
-Underfull \hbox (badness 2573) in paragraph at lines 160--167
-\OT1/cmr/m/n/12 ble flux re-con-struc-tion schemes for advection-diffusion prob
--lems[][], Com-
+Underfull \hbox (badness 2591) in paragraph at lines 160--167
+\T1/cmr/m/n/12 ble flux re-con-struc-tion schemes for advection-diffusion prob-
+lems[][], Com-
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 160--167
-\OT1/cmr/m/n/12 puter Meth-ods in Ap-plied Me-chan-ics and En-gi-neer-ing (2013
-) 400--417.
+Underfull \hbox (badness 2073) in paragraph at lines 160--167
+\T1/cmr/m/n/12 puter Meth-ods in Ap-plied Me-chan-ics and En-gi-neer-ing (2013)
+ 400--417.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 160--167
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
 
-Underfull \hbox (badness 4353) in paragraph at lines 178--185
-[]\OT1/cmr/m/n/12 D. Williams, P. Cas-tonguay, P. Vin-cent, A. Jame-son, [][]En
--ergy sta-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--185
-\OT1/cmr/m/n/12 ble flux re-con-struc-tion schemes for advection-diffusion prob
--lems on
- []
-
-
-Underfull \hbox (badness 7759) in paragraph at lines 178--185
-\OT1/cmr/m/n/12 tri-an-gles[][], Jour-nal of Com-pu-ta-tional Physics 250 (2013
-) 53 -- 76.
+Underfull \hbox (badness 4378) in paragraph at lines 178--185
+[]\T1/cmr/m/n/12 D. Williams, P. Cas-tonguay, P. Vin-cent, A. Jame-son, [][]En-
+ergy sta-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 178--185
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 ble flux re-con-struc-tion schemes for advection-diffusion prob-
+lems on
  []
 
-[30]
-Underfull \hbox (badness 2828) in paragraph at lines 215--223
-\OT1/cmr/m/n/12 of stable-symmetric-conservative flux re-con-struc-tion cor-rec
--tion func-tions[][],
+
+Underfull \hbox (badness 7796) in paragraph at lines 178--185
+\T1/cmr/m/n/12 tri-an-gles[][], Jour-nal of Com-pu-ta-tional Physics 250 (2013)
+ 53 -- 76.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--185
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
+ []
+
+[31]
+Underfull \hbox (badness 2856) in paragraph at lines 215--223
+\T1/cmr/m/n/12 of stable-symmetric-conservative flux re-con-struc-tion cor-rec-
+tion func-tions[][],
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 215--223
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 225--233
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
-[31]
-Underfull \hbox (badness 4634) in paragraph at lines 254--261
-[]\OT1/cmr/m/n/12 P. Zwa-nen-burg, S. Nadara-jah, [][]Equiv-a-lence be-tween th
-e en-ergy sta-
- []
-
-
-Underfull \hbox (badness 7759) in paragraph at lines 254--261
-\OT1/cmr/m/n/12 ble flux re-con-struc-tion and fil-tered dis-con-tin-u-ous Gale
-rkin schemes[][],
+[32]
+Underfull \hbox (badness 4660) in paragraph at lines 254--261
+[]\T1/cmr/m/n/12 P. Zwa-nen-burg, S. Nadara-jah, [][]Equiv-a-lence be-tween the
+ en-ergy sta-
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 254--261
-\OT1/cmr/m/n/12 Jour-nal of Com-pu-ta-tional Physics 306 (2016) 343 -- 369.  []
-[]$\OT1/cmtt/m/n/12 doi : http :
+Underfull \hbox (badness 7796) in paragraph at lines 254--261
+\T1/cmr/m/n/12 ble flux re-con-struc-tion and fil-tered dis-con-tin-u-ous Galer
+kin schemes[][],
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 254--261
+\T1/cmr/m/n/12 Jour-nal of Com-pu-ta-tional Physics 306 (2016) 343 -- 369.  [][
+]$\T1/cmtt/m/n/12 doi : http :
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 254--261
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 263--270
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
 
-Underfull \hbox (badness 5878) in paragraph at lines 289--297
-[]\OT1/cmr/m/n/12 G. M. Niel-son, [][]The side-vertex method for in-ter-po-la-t
-ion in tri-an-
+Underfull \hbox (badness 5893) in paragraph at lines 289--297
+[]\T1/cmr/m/n/12 G. M. Niel-son, [][]The side-vertex method for in-ter-po-la-ti
+on in tri-an-
  []
 
 
-Underfull \hbox (badness 5924) in paragraph at lines 289--297
-\OT1/cmr/m/n/12 gles[][], Jour-nal of Ap-prox-i-ma-tion The-ory 25 (4) (1979) 3
-18 -- 336.
+Underfull \hbox (badness 5939) in paragraph at lines 289--297
+\T1/cmr/m/n/12 gles[][], Jour-nal of Ap-prox-i-ma-tion The-ory 25 (4) (1979) 31
+8 -- 336.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 289--297
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
- []
-
-[32]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-
-Underfull \hbox (badness 5533) in paragraph at lines 324--333
-[]\OT1/cmr/m/n/12 S. Dey, M. S. Shep-hard, J. E. Fla-herty, [][]Ge-om-e-try rep
--re-sen-ta-tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--333
-\OT1/cmr/m/n/12 is-sues as-so-ci-ated with p-version fi-nite el-e-ment com-pu-t
-a-tions[][], Com-
- []
-
-
-Underfull \hbox (badness 1648) in paragraph at lines 324--333
-\OT1/cmr/m/n/12 puter Meth-ods in Ap-plied Me-chan-ics and En-gi-neer-ing 150 (
-14) (1997)
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--333
-\OT1/cmr/m/n/12 39 -- 55, sym-po-sium on Ad-vances in Com-pu-ta-tional Me-chan-
-ics.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--333
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
- []
-
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 352--360
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
 [33]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
+Underfull \hbox (badness 5563) in paragraph at lines 324--333
+[]\T1/cmr/m/n/12 S. Dey, M. S. Shep-hard, J. E. Fla-herty, [][]Ge-om-e-try rep-
+re-sen-ta-tion
+ []
 
-Underfull \hbox (badness 3078) in paragraph at lines 380--389
-[]\OT1/cmr/m/n/12 A. N. Brooks, T. J. Hughes, [][]Stream-line upwind/petrov-Gal
-erkin for-
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--333
+\T1/cmr/m/n/12 is-sues as-so-ci-ated with p-version fi-nite el-e-ment com-pu-ta
+-tions[][], Com-
+ []
+
+
+Underfull \hbox (badness 5711) in paragraph at lines 324--333
+\T1/cmr/m/n/12 puter Meth-ods in Ap-plied Me-chan-ics and En-gi-neer-ing 150 (1
+‚Äì4)
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 324--333
+\T1/cmr/m/n/12 (1997) 39 -- 55, sym-po-sium on Ad-vances in Com-pu-ta-tional Me
+-chan-ics.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--333
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--360
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
+ []
+
+[34]
+Underfull \hbox (badness 3088) in paragraph at lines 380--389
+[]\T1/cmr/m/n/12 A. N. Brooks, T. J. Hughes, [][]Stream-line upwind/petrov-Gale
+rkin for-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 380--389
-\OT1/cmr/m/n/12 mu-la-tions for con-vec-tion dom-i-nated flows with par-tic-u-l
-ar em-pha-
+\T1/cmr/m/n/12 mu-la-tions for con-vec-tion dom-i-nated flows with par-tic-u-la
+r em-pha-sis
+ []
+
+
+Underfull \hbox (badness 4739) in paragraph at lines 380--389
+\T1/cmr/m/n/12 on the in-com-press-ible navier-stokes equa-tions[][], Com-puter
+ Meth-ods in
+ []
+
+
+Underfull \hbox (badness 5475) in paragraph at lines 380--389
+\T1/cmr/m/n/12 Ap-plied Me-chan-ics and En-gi-neer-ing 32 (1‚Äì3) (1982) 199 --
+ 259.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 380--389
-\OT1/cmr/m/n/12 sis on the in-com-press-ible navier-stokes equa-tions[][], Com-
-puter Meth-
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 380--389
-\OT1/cmr/m/n/12 ods in Ap-plied Me-chan-ics and En-gi-neer-ing 32 (13) (1982) 1
-99 -- 259.
+Underfull \hbox (badness 5231) in paragraph at lines 391--400
+\T1/cmr/m/n/12 mul-ti-scale method-‚Äîa paradigm for com-pu-ta-tional me-chan-i
+cs[][], Com-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--389
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
- []
-
-Missing character: There is no √ in font cmr12!
-Missing character: There is no ≥ in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no î in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-
-Underfull \hbox (badness 1694) in paragraph at lines 391--400
-[]\OT1/cmr/m/n/12 T. J. Hughes, G. R. Feijo, L. Mazzei, J.-B. Quincy, [][]The v
-ari-a-tional
- []
-
-
-Underfull \hbox (badness 4454) in paragraph at lines 391--400
-\OT1/cmr/m/n/12 mul-ti-scale methoda paradigm for com-pu-ta-tional me-chan-ics[
-][], Com-puter
- []
-
-
-Underfull \hbox (badness 5345) in paragraph at lines 391--400
-\OT1/cmr/m/n/12 Meth-ods in Ap-plied Me-chan-ics and En-gi-neer-ing 166 (12) (1
-998) 3
- []
-
-
-Underfull \hbox (badness 5288) in paragraph at lines 391--400
-\OT1/cmr/m/n/12 -- 24, ad-vances in Sta-bi-lized Meth-ods in Com-pu-ta-tional M
-e-chan-ics.
+Underfull \hbox (badness 2221) in paragraph at lines 391--400
+\T1/cmr/m/n/12 3 -- 24, ad-vances in Sta-bi-lized Meth-ods in Com-pu-ta-tional 
+Me-chan-ics.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 391--400
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
- []
-
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ê in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-
-Underfull \hbox (badness 5064) in paragraph at lines 413--421
-[]\OT1/cmr/m/n/12 L. Demkow-icz, J. Gopalakr-ish-nan, [][]A class of dis-con-ti
-n-u-ous petrov-
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 413--421
-\OT1/cmr/m/n/12 Galerkin meth-ods. part i: The trans-port equa-tion[][], Com-pu
-ter Meth-ods
+Underfull \hbox (badness 1931) in paragraph at lines 413--421
+\T1/cmr/m/n/12 meth-ods. part i: The trans-port equa-tion[][], Com-puter Meth-o
+ds in Ap-
  []
 
 
-Underfull \hbox (badness 1210) in paragraph at lines 413--421
-\OT1/cmr/m/n/12 in Ap-plied Me-chan-ics and En-gi-neer-ing 199 (2324) (2010) 15
-58 -- 1572.
+Underfull \hbox (badness 2698) in paragraph at lines 413--421
+\T1/cmr/m/n/12 plied Me-chan-ics and En-gi-neer-ing 199 (23‚Äì24) (2010) 1558 -
+- 1572.
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 413--421
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 432--442
-\OT1/cmr/m/n/12 URL [][]$\OT1/cmtt/m/n/12 http : / / www . sciencedirect . com 
-/ science / article / pii /
+\T1/cmr/m/n/12 URL [][]$\T1/cmtt/m/n/12 http : / / www . sciencedirect . com / 
+science / article / pii /
  []
 
-[34] [35])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 725.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 725.
+[35] [36])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 800.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 800.
  (./Zwanenburg_Philip-PhD_Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 725.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 725.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 800.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 800.
 Package rerunfilecheck Info: File `Zwanenburg_Philip-PhD_Thesis.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: 418998C81EB33BC76D3C7768EC89BA75;2041.
+(rerunfilecheck)             Checksum: 5C79392CAE08C4C94C77A4B6FB4C7B54;2043.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 725.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 800.
  ) 
 Here is how much of TeX's memory you used:
- 33538 strings out of 493029
- 587836 string characters out of 6136235
- 731930 words of memory out of 5000000
- 36404 multiletter control sequences out of 15000+600000
- 13527 words of font info for 50 fonts, out of 8000000 for 9000
+ 36964 strings out of 493029
+ 673462 string characters out of 6136235
+ 852313 words of memory out of 5000000
+ 39781 multiletter control sequences out of 15000+600000
+ 20154 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,24n,96p,10402b,573s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-extra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cme
-xtra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfrm1200.pfb>
-Output written on Zwanenburg_Philip-PhD_Thesis.pdf (44 pages, 644911 bytes).
+ 66i,24n,96p,10402b,761s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
+fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cmextra/cmbsy8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sftt1200.pfb>
+Output written on Zwanenburg_Philip-PhD_Thesis.pdf (45 pages, 721119 bytes).
 PDF statistics:
- 837 PDF objects out of 1000 (max. 8388607)
- 755 compressed objects within 8 object streams
- 134 named destinations out of 1000 (max. 500000)
+ 859 PDF objects out of 1000 (max. 8388607)
+ 771 compressed objects within 8 object streams
+ 135 named destinations out of 1000 (max. 500000)
  289 words of extra memory for PDF output out of 10000 (max. 10000000)
 
